@@ -9,10 +9,10 @@
 //Initalize player moveSpeed (how fast they are)
 moveSpeed = 4;
 
-//Davis Spradling
-//Initialize players coordinate move spped
-movementSpeedX = 0;
-movementSpeedY = 0;
+//LD Montello
+//Used to determine the rotation
+//of the gun when drawn in the Draw call.
+gun_angle = direction;
 
 //Davis Spradling
 //Initalize main players health
@@ -20,9 +20,50 @@ mainPlayerHealth = 100;
 
 //Davis Spradling
 //Initialize player level, start experience, and levelUpExperience
-playerLevel = 1;
-currentPlayerExp = 0;
-levelUpPlayerExp = 100;
+//LD Montello - changed the name to just be level.
+level = 1;
+
+//LD Montello
+//Setup xp variable and functions for it
+//NEVER SET XP USING xp = #; 
+//You should always use the XP setter
+//so that the setter calls the 
+//function to check for leveling up.
+xp = 5;
+
+//LD Montello
+//Xp Setter.
+set_xp = function(_xp){
+	xp = _xp;
+	
+	//We always calculate level
+	//whenever xp is modified.
+	calc_level(xp);
+}
+
+
+//LD Montello
+//add xp, should be used
+//whenever you kill an enemy.
+add_xp = function(_xp_to_add){
+	set_xp(xp + _xp_to_add);
+}
+
+
+//LD Montello
+//This is where James 
+//can tweak the Leveling algorithm
+//I just setup the method for him.
+calc_level = function(_xp){
+	//currently the level is just
+	//the cube root of xp
+	//Regardless of your formula
+	//you should always use floor
+	//to round down to the nearest integer.
+	//in this formula 1,000,000 xp = level 100
+	//5 xp is level 1.
+	playerLevel = floor(power(_xp, 1/3));
+}
 
 //Davis Spradling
 //Initalize timer for shooting
@@ -41,11 +82,15 @@ player_bullets_fired = 3
 //Davis Spradling 
 //Functions
 
-//Davis Spradling
-//Upgrade player level
-increment_level = function() {
-    playerLevel += 1
-};
+//LD Montello
+//I removed the 
+//increment level function and 
+//replaced it with a getter
+//because we don't modify level
+//directly and instead just
+//let the xp modify it every 
+//time xp is changed.
+
 
 //Davis Spradling
 //Increment fire rate through decrementing interval of firing

@@ -3,39 +3,64 @@
 
 //Davis Spradling
 //Create variables to control player movement through keys.
-var right_ = keyboard_check(vk_right);
-var left_ = keyboard_check(vk_left);
-var up_ = keyboard_check(vk_up);
-var down_ = keyboard_check(vk_down);
+//LD Montello
+//Added WASD to the inputs.
+var right_ = keyboard_check(vk_right) || keyboard_check(ord("D"));
+var left_ = keyboard_check(vk_left) || keyboard_check(ord("A"));
+var up_ = keyboard_check(vk_up) || keyboard_check(ord("W"));
+var down_ = keyboard_check(vk_down) || keyboard_check(ord("S"));
 
 //Davis Spradling
 //Axis of player
 var yValue = down_-up_;
 var xValue = right_-left_;
 
-//Davis Spradling
-//Get movement speed of player
-var movementSpeed = moveSpeed;
 
-//Davis Spradling
-//Rotate angles based on left/right keys being pressed.
+
+
+//LD Montello
+//Use left and right for movement.
+//with hspeed so we can clamp diagonal
+//speed later.
 if (left_) {
-    image_angle += 4; 
+    hspeed = -moveSpeed;  
 }
 if (right_) {
-    image_angle -= 4;  
+    hspeed = moveSpeed;  
+}
+
+//LD Montello
+//if user is not inputting
+//left or right horizontal speed is zero.
+if (not left_ && not right_)
+{
+	hspeed = 0;
 }
 
 //Davis Spradling
 //Go forwards/backwards based on up/down keys being pressed.
+//LD Montello
+//Removed the x incrementation from these inputs.
 if (up_) {
-    x += lengthdir_x(movementSpeed, image_angle);  
-    y += lengthdir_y(movementSpeed, image_angle);
+    vspeed = -moveSpeed;  
 }
 if (down_) {
-    x -= lengthdir_x(movementSpeed, image_angle); 
-    y -= lengthdir_y(movementSpeed, image_angle);
+    vspeed = moveSpeed;  
 }
+
+//LD Montello
+//if user is not inputting
+//up or down vertical speed is zero.
+if (not up_ && not down_)
+{
+	vspeed = 0;
+}
+
+//clamp speed so that you
+//can't move faster in diagonal 
+//directions. 
+speed = min(speed, moveSpeed);
+
 
 //Davis Spradling
 //Allow for player movement not exceeding the room height/width.
@@ -57,7 +82,7 @@ if (shoot_timer >= shoot_interval) {
     shoot_timer = 0;
 	
     for (var i = 0; i < player_bullets_fired; i++) {
-        var bullet = instance_create_layer(x, y, "Instances", bullet_obj);
+        var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
         
 		//Davis Spradling
 		//Adjust bullet angle so not all bullets are stacked on top of each other
@@ -67,9 +92,18 @@ if (shoot_timer >= shoot_interval) {
 		//Assgin bullet direction and speed to bullet object
 		//For the direction take the current main_player objects image
 		//angle and then add the offset on to it so bullets won't stack
-        bullet.direction = main_player.image_angle+angle_offset;
+		//LD Montello
+		//Replace obj_player.direction
+		//to be the gun angle so that the bullet
+		//direction matches where the player aims.
+        bullet.direction = obj_player.gun_angle+angle_offset;
 		bullet.speed = bullet_speed;
     }
 }
 
 
+//LD Montello
+//Calculate the angle from
+//the player to the mouse
+//and store that in gun_angle
+gun_angle = point_direction(x, y, mouse_x, mouse_y);
