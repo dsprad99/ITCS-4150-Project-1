@@ -19,19 +19,7 @@ decrement_health = function(damage)
 	if (health <= 0)
 	{
 		health = 0;
-		//Create particle effect to show
-		//we were killed. 
-		//TODO:
-		//Replace this in the future LD
-		effect_create_above(ef_explosion, x, y, 1, c_red);
-		
-		//LD Montello
-		//find the player instance
-		//and give them our xp value
-		obj_player.add_xp(xp);
-		
-		//Destroy ourselves
-		instance_destroy()
+		kill();
 	}
 	
 }
@@ -46,5 +34,17 @@ pathing_speed = 3;
 
 kill = function()
 {
-	
+		//Create particle effect to show
+		//we were killed. 
+		//TODO:
+		//Replace this in the future LD
+		effect_create_above(ef_explosion, x, y, 1, c_red);
+		
+		//LD Montello
+		//find the player instance
+		//and give them our xp value
+		obj_player.add_xp(xp);
+		
+		//Destroy ourselves
+		instance_destroy()
 }

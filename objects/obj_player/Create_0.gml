@@ -21,7 +21,7 @@ mainPlayerHealth = 100;
 //Davis Spradling
 //Initialize player level, start experience, and levelUpExperience
 //LD Montello - changed the name to just be level.
-level = 1;
+level = 0;
 
 //LD Montello
 //Setup xp variable and functions for it
@@ -29,7 +29,7 @@ level = 1;
 //You should always use the XP setter
 //so that the setter calls the 
 //function to check for leveling up.
-xp = 5;
+xp = 0;
 
 //LD Montello
 //Xp Setter.
@@ -62,7 +62,7 @@ calc_level = function(_xp){
 	//to round down to the nearest integer.
 	//in this formula 1,000,000 xp = level 100
 	//5 xp is level 1.
-	playerLevel = floor(power(_xp, 1/3));
+	level = floor(power(_xp, 1/3));
 }
 
 //Davis Spradling

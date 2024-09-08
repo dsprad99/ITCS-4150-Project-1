@@ -37,10 +37,15 @@ else
 	
 //}
 
-mp_potential_path_object(path, obj_player.x, obj_player.y, pathing_speed, 4, obj_bullet);
+//LD Montello
+//If we're going to calculate every step
+//we should only calculate the next step in 
+//the pathfinding, instead of finding the
+//entire path.
+//this is much more efficient.
 
-//Start pathing
-//LD 
-path_start(path, pathing_speed, 0, 0);
+mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_bullet);
+
+
 
 #endregion
