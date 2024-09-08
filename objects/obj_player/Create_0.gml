@@ -10,6 +10,13 @@
 moveSpeed = 4;
 
 //LD Montello
+//this is a bullets health value
+//and is decremented when it hits an enemy.
+//this will be one of the random upgrades 
+//you can choose. (Incrementing the piercing count).
+piercing_count = 1;
+
+//LD Montello
 //Used to determine the rotation
 //of the gun when drawn in the Draw call.
 gun_angle = direction;
@@ -76,7 +83,7 @@ bullet_speed = 10;
 
 //Davis Spradling
 //Initalize number of bullets fired
-player_bullets_fired = 3
+player_bullets_fired = 1
 
 
 //Davis Spradling 
@@ -112,12 +119,20 @@ increment_main_players_health = function(){
 
 //Davis Spradling
 //Decrement main players health 
-decrement_main_players_health = function(){
-	mainPlayerHealth += 1
+decrement_main_players_health = function(damage){
+	mainPlayerHealth -= damage
+	
+	//LD Montello
+	//If the player has lost enough 
+	//health, kill them.
+	if (mainPlayerHealth <= 0)
+	{
+		kill();
+	}
 }
 
 //Davis Spradling
-//Decrement main players health 
+//Increment bullets fired in shotgun spread
 increment_bullets_fired = function(){
 	player_bullets_fired += 1
 }
@@ -126,5 +141,21 @@ increment_bullets_speed = function(){
 	bullet_speed += 3
 }
 
+//LD Montello
+//Use when choosing the upgrade
+//for piercing.
+set_piercing_count = function(count)
+{
+	piercing_count = count;
+}
 
 
+//LD Montello
+//Called when the player is killed.
+kill = function()
+{
+	//TODO:
+	//Run some sort of code that kills
+	//the player and displays some UI about it.
+	//Also play a VFX for the explosion.
+}

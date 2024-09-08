@@ -34,7 +34,8 @@
   },
   "name":"ITCS-4150-Project-1",
   "resources":[
-    {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
+    {"id":{"name":"obj_bullet_enemy","path":"objects/obj_bullet_enemy/obj_bullet_enemy.yy",},},
+    {"id":{"name":"obj_bullet_player","path":"objects/obj_bullet_player/obj_bullet_player.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

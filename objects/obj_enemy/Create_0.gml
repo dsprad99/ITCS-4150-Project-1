@@ -1,6 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+//LD Montello
+//the distance to stop
+//moving towards the player
+target_stop_distance = 100;
+
+//LD Montello
+//the angle of the enemies gun.
+gun_angle = direction;
+
 //LD Montello
 //how much xp this enemy
 //gives when it dies.
@@ -24,13 +34,28 @@ decrement_health = function(damage)
 	
 }
 
-path =  path_add();
 
-bullet_avoidance_range = 100;
-
-is_avoiding = false;
-
+//LD Montello
+//Speed enemies move.
 pathing_speed = 3;
+
+
+//LD Copied Davis's stuff.
+//Davis Spradling
+//Initalize timer for shooting
+shoot_timer = 0; 
+shoot_interval = 240;
+
+//LD Copied Davis's stuff.
+//Davis Spradling
+//Initialize how fast bullet will travel
+bullet_speed = 10;
+
+//LD Copied Davis's stuff.
+//Davis Spradling
+//Initalize number of bullets fired
+bullets_fired = 1
+
 
 kill = function()
 {

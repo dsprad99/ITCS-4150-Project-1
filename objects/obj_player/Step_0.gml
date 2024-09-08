@@ -82,7 +82,7 @@ if (shoot_timer >= shoot_interval) {
     shoot_timer = 0;
 	
     for (var i = 0; i < player_bullets_fired; i++) {
-        var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
+        var bullet = instance_create_layer(x, y, "Instances", obj_bullet_player);
         
 		//Davis Spradling
 		//Adjust bullet angle so not all bullets are stacked on top of each other
