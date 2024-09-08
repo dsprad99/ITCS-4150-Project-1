@@ -1,6 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//LD Montello
+//How close the enemy
+//must be to the player
+//to start firing at them.
+enemy_fire_range = 600;
 
 //LD Montello
 //the distance to stop

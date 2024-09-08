@@ -44,6 +44,7 @@
     {"id":{"name":"bullet_sprite","path":"sprites/bullet_sprite/bullet_sprite.yy",},},
     {"id":{"name":"checkered_sprite","path":"sprites/checkered_sprite/checkered_sprite.yy",},},
     {"id":{"name":"Enemy_Temp","path":"sprites/Enemy_Temp/Enemy_Temp.yy",},},
+    {"id":{"name":"EnemyBullet","path":"sprites/EnemyBullet/EnemyBullet.yy",},},
     {"id":{"name":"game_sprite","path":"sprites/game_sprite/game_sprite.yy",},},
     {"id":{"name":"PlayerBullet","path":"sprites/PlayerBullet/PlayerBullet.yy",},},
     {"id":{"name":"spr_gun_fire","path":"sprites/spr_gun_fire/spr_gun_fire.yy",},},

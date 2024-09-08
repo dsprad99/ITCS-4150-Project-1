@@ -41,6 +41,13 @@ if (distance_to_object(obj_player) > target_stop_distance)
 
 #region Attacking
 
+
+//LD Montello
+//Only fire if you're close
+//enough to the player.
+if (distance_to_object(obj_player) <= enemy_fire_range)
+{
+
 //LD Montello
 //I copied david's code 
 //from the player to code firing
@@ -66,8 +73,11 @@ if (shoot_timer >= shoot_interval) {
 		//to be the gun angle so that the bullet
 		//direction matches where the player aims.
         bullet.direction = gun_angle+angle_offset;
+		bullet.image_angle = bullet.direction;
 		bullet.speed = bullet_speed;
     }
+}
+
 }
 
 #endregion
