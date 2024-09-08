@@ -9,4 +9,4 @@ draw_self();
 //Draws the players gun at current animation frame
 //at a scale of 10
 //at gun_angle angle.
-draw_sprite_ext(spr_gun, -1, x, y, 10.0, 10.0, gun_angle, c_white, image_alpha);
+draw_sprite_ext(spr_gun_fire, gun_sprite_index, x, y, 5.0, 5.0, gun_angle, c_white, image_alpha);

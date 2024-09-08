@@ -159,3 +159,26 @@ kill = function()
 	//the player and displays some UI about it.
 	//Also play a VFX for the explosion.
 }
+
+//LD Montello
+
+#region gun animation parameters
+
+
+//Where LD Learned this:
+//https://www.reddit.com/r/gamemaker/comments/bl89xg/draw_sprite_ext_doesnt_animate_sprite/
+gun_sprite_fps = 10;
+gun_sprite_index = 0;
+
+//get the speed we need to spread
+//our frames over the game's frame rate.
+gun_sprite_speed = gun_sprite_fps / 60;
+
+//get the number of frames.
+gun_sprite_number = sprite_get_number(spr_gun_fire);
+
+do_fire_animation = false;
+
+did_play_fire_animation = false;
+
+#endregion

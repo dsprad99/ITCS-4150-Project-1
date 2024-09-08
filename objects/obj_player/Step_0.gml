@@ -73,13 +73,74 @@ x = clamp(x, half_sprite_width, room_width - half_sprite_width);
 y = clamp(y, half_sprite_height, room_height - half_sprite_height);
 
 
+
+//David Spradling
+shoot_timer++;
+
+
+#region animating gun
+
+//LD Montello
+//if we are the exact amount of time
+//it takes our fire animation to play
+//away from firing
+//then play the fire animation once
+//so that it lines up.
+//we calculate the speed it takes
+//to play the animation 
+
+//first we need to divide the 
+//desired fps and the actual
+//number of frames, and
+//we do 60 divided by that
+//value to get the exact
+//number of frames it'll take
+//to play the animation.
+var temp = floor(shoot_interval - (60 / (gun_sprite_fps / gun_sprite_number)));
+//We only want to play the fire animation once
+//which is why we have the did_play_fire_animation
+if (shoot_timer >= temp && did_play_fire_animation == false)
+{
+	do_fire_animation = true;
+}
+
+
+
+//LD Montello
+//Calculate the angle from
+//the player to the mouse
+//and store that in gun_angle
+gun_angle = point_direction(x, y, mouse_x, mouse_y);
+
+//do fire animation.
+if (do_fire_animation == true)
+{
+
+//LD Montello
+//increment index by speed.
+gun_sprite_index += gun_sprite_speed;
+
+	//go back to zero
+	if (gun_sprite_index >= gun_sprite_number)
+	{
+		gun_sprite_index = 0;
+		do_fire_animation = false;
+		did_play_fire_animation = true;
+	}
+}
+
+#endregion
+
 //Davis Spradling
 //Time management of shooting mechanism as well as creating bullet instances
 //of the object bullet_obj.
-
-shoot_timer++;
 if (shoot_timer >= shoot_interval) {
     shoot_timer = 0;
+	
+	//LD Montello
+	//let the fire animation
+	//play again.
+	did_play_fire_animation = false;
 	
     for (var i = 0; i < player_bullets_fired; i++) {
         var bullet = instance_create_layer(x, y, "Instances", obj_bullet_player);
@@ -97,13 +158,9 @@ if (shoot_timer >= shoot_interval) {
 		//to be the gun angle so that the bullet
 		//direction matches where the player aims.
         bullet.direction = obj_player.gun_angle+angle_offset;
+		bullet.image_angle = bullet.direction;
 		bullet.speed = bullet_speed;
     }
 }
 
 
-//LD Montello
-//Calculate the angle from
-//the player to the mouse
-//and store that in gun_angle
-gun_angle = point_direction(x, y, mouse_x, mouse_y);

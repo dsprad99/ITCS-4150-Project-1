@@ -2,6 +2,12 @@
 // You can write your code in this editor
 
 //LD Montello
+//I need the bullet image size to be
+//this large so it's visible on screen.
+image_xscale = 5;
+image_yscale = 5;
+
+//LD Montello
 //init damage inflicted by bullet
 damage = 1;
 
