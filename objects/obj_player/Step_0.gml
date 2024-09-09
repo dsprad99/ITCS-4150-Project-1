@@ -10,6 +10,7 @@ var left_ = keyboard_check(vk_left) || keyboard_check(ord("A"));
 var up_ = keyboard_check(vk_up) || keyboard_check(ord("W"));
 var down_ = keyboard_check(vk_down) || keyboard_check(ord("S"));
 
+
 //Davis Spradling
 //Axis of player
 var yValue = down_-up_;
@@ -163,4 +164,13 @@ if (shoot_timer >= shoot_interval) {
     }
 }
 
+
+#region underglow
+
+//LD Montello
+//Draw underglow
+layer_sprite_x(ug1, x);
+layer_sprite_y(ug1, y);
+
+#endregion
 

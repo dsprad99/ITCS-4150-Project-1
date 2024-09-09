@@ -81,3 +81,12 @@ if (shoot_timer >= shoot_interval) {
 }
 
 #endregion
+
+#region underglow
+
+//LD Montello
+//Draw underglow
+layer_sprite_x(ug1, x);
+layer_sprite_y(ug1, y);
+
+#endregion
