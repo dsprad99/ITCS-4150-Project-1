@@ -85,6 +85,24 @@ bullet_speed = 10;
 //Initalize number of bullets fired
 player_bullets_fired = 1
 
+//LD Montello
+//bursts per interval
+bursts_per_interval = 1;
+
+//LD Montello
+//time between bursts
+//This CANNOT be upgraded.
+burst_interval = 10;
+
+//LD Montello
+//this is decremented
+//every time the alarm 0
+//event is triggered
+//until it is 0.
+//This must start as 0
+//for the shoot_interval 
+//timer to start.
+cur_burst_count = 0
 
 //Davis Spradling 
 //Functions
@@ -104,6 +122,7 @@ player_bullets_fired = 1
 decrement_shoot_interval = function(){
 	shoot_interval -= 10;
 };
+
 
 //Davis Spradling
 //Increment how fast main player is.
@@ -142,11 +161,24 @@ increment_bullets_speed = function(){
 }
 
 //LD Montello
+increment_piercing_count = function(){
+	set_piercing_count(piercing_count + 1);
+}
+
+//LD Montello
 //Use when choosing the upgrade
 //for piercing.
 set_piercing_count = function(count)
 {
 	piercing_count = count;
+}
+
+//LD Montello
+//Use when upgrading the number
+//of bursts fired every shoot interval
+increment_burst_count = function()
+{
+	bursts_per_interval++;
 }
 
 
@@ -207,3 +239,6 @@ layer_sprite_xscale(ug1, 5);
 layer_sprite_yscale(ug1, 5);
 
 #endregion
+
+
+

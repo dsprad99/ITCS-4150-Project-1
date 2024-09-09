@@ -16,6 +16,13 @@ time_between_waves = 240;
 cur_wave_size = 5;
 
 //LD Montello
+//Increase wave size
+increment_wave_size = function()
+{
+	cur_wave_size += 5;
+}
+
+//LD Montello
 //Where I learned how to do this:
 //https://www.reddit.com/r/gamemaker/comments/ppts1l/make_enemies_spawn_randomly_around_edges/
 spawn_wave_on_edge = function(wave_size)

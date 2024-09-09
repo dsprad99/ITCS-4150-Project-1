@@ -75,9 +75,17 @@ y = clamp(y, half_sprite_height, room_height - half_sprite_height);
 
 
 
+//LD Montello
+//if we've
+//done all our
+//bursts then 
+//we can start counting
+//our timer again.
+if (cur_burst_count == 0)
+{
 //David Spradling
 shoot_timer++;
-
+}
 
 #region animating gun
 
@@ -97,10 +105,15 @@ shoot_timer++;
 //value to get the exact
 //number of frames it'll take
 //to play the animation.
-var temp = floor(shoot_interval - (60 / (gun_sprite_fps / gun_sprite_number)));
+var time_to_start_anim = floor(shoot_interval - (60 / (gun_sprite_fps / gun_sprite_number)));
+//We need to also add
+//the amount of time it takes
+//until the first burst
+//occurs.
+time_to_start_anim += burst_interval;
 //We only want to play the fire animation once
 //which is why we have the did_play_fire_animation
-if (shoot_timer >= temp && did_play_fire_animation == false)
+if (shoot_timer >= time_to_start_anim && did_play_fire_animation == false)
 {
 	do_fire_animation = true;
 }
@@ -143,25 +156,19 @@ if (shoot_timer >= shoot_interval) {
 	//play again.
 	did_play_fire_animation = false;
 	
-    for (var i = 0; i < player_bullets_fired; i++) {
-        var bullet = instance_create_layer(x, y, "Instances", obj_bullet_player);
-        
-		//Davis Spradling
-		//Adjust bullet angle so not all bullets are stacked on top of each other
-		var angle_offset = (i*10) - ((player_bullets_fired-1) *5);
-		
-		//Davis Spradling
-		//Assgin bullet direction and speed to bullet object
-		//For the direction take the current main_player objects image
-		//angle and then add the offset on to it so bullets won't stack
-		//LD Montello
-		//Replace obj_player.direction
-		//to be the gun angle so that the bullet
-		//direction matches where the player aims.
-        bullet.direction = obj_player.gun_angle+angle_offset;
-		bullet.image_angle = bullet.direction;
-		bullet.speed = bullet_speed;
-    }
+	//LD Montello
+	//I moved Davis's stuff
+	//to the alarm 0 event
+	//so we can have a burst 
+	//upgrade.
+    //Set the cur burst count
+	//so that the alarm 0
+	//knows how many times to run.
+	//we can't do this as a loop
+	//because there's an amount 
+	//of time between bursts.
+	cur_burst_count = bursts_per_interval;
+	alarm_set(0, burst_interval);
 }
 
 
