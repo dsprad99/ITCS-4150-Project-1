@@ -211,8 +211,6 @@ gun_sprite_number = sprite_get_number(spr_gun_fire);
 
 do_fire_animation = false;
 
-did_play_fire_animation = false;
-
 #endregion
 
 

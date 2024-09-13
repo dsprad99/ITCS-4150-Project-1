@@ -105,15 +105,12 @@ shoot_timer++;
 //value to get the exact
 //number of frames it'll take
 //to play the animation.
-var time_to_start_anim = floor(shoot_interval - (60 / (gun_sprite_fps / gun_sprite_number)));
+var time_to_start_anim = floor(shoot_interval - (60 / (gun_sprite_fps / gun_sprite_number))) + burst_interval;
 //We need to also add
 //the amount of time it takes
 //until the first burst
 //occurs.
-time_to_start_anim += burst_interval;
-//We only want to play the fire animation once
-//which is why we have the did_play_fire_animation
-if (shoot_timer >= time_to_start_anim && did_play_fire_animation == false)
+if (shoot_timer >= time_to_start_anim)
 {
 	do_fire_animation = true;
 }
@@ -139,7 +136,7 @@ gun_sprite_index += gun_sprite_speed;
 	{
 		gun_sprite_index = 0;
 		do_fire_animation = false;
-		did_play_fire_animation = true;
+		
 	}
 }
 
@@ -150,11 +147,6 @@ gun_sprite_index += gun_sprite_speed;
 //of the object bullet_obj.
 if (shoot_timer >= shoot_interval) {
     shoot_timer = 0;
-	
-	//LD Montello
-	//let the fire animation
-	//play again.
-	did_play_fire_animation = false;
 	
 	//LD Montello
 	//I moved Davis's stuff
