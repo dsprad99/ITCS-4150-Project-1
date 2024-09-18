@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Create function for enemies
 // You can write your code in this editor
 
 //LD Montello

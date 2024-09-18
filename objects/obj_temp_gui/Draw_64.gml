@@ -11,8 +11,13 @@ draw_text_transformed_color(10, 10, "Level: " + string(obj_player.level), 2, 2, 
 //Draw xp
 draw_text_transformed_color(10, 40, "xp: " + string(obj_player.xp), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
+//James Reneo
+//Temporary Health Bar
+draw_healthbar(8,85,256,107,obj_player.mainPlayerHealth,c_grey,c_red,c_lime,0,true,true)
+
+
 //Draw health
-draw_text_transformed_color(10, 80, "Health: " + string(obj_player.mainPlayerHealth), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+//draw_text_transformed_color(10, 80, "Health: " + string(obj_player.mainPlayerHealth), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
 draw_text_transformed_color(10, 120, "Debug Controls:", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
@@ -31,3 +36,4 @@ draw_text_transformed_color(10, 360, "Press 6 to upgrade movement: " + string(ob
 draw_text_transformed_color(10, 400, "Press 7 to upgrade health: " + string(obj_player.mainPlayerHealth), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
 draw_text_transformed_color(10, 440, "Press 8 to increase wave size: " + string(obj_spawner.cur_wave_size), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+

@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Playermovement and RenderStep functions
 // You can write your code in this editor
 
 //Davis Spradling
@@ -17,7 +17,13 @@ var yValue = down_-up_;
 var xValue = right_-left_;
 
 
-
+//James Reneo
+//Stops step function for timestopping
+if(global.game_state == GAME_STATE.PAUSED){
+	hspeed = 0;
+	vspeed = 0;
+	return;
+}
 
 //LD Montello
 //Use left and right for movement.

@@ -1,64 +1,27 @@
-/// @description Draw underglow
+/// @description Insert description here
 // You can write your code in this editor
 
-//LD Montello
-//TODO:
-//Remove this 
-//after Ryan implements UI.
-#region upgrade testing
+//James Reneo
+//Button handling
+var upgrade_options = [
+    "Upgrade bullets fired per burst: " + string(obj_player.player_bullets_fired),
+    "Upgrade individual bullet speed: " + string(obj_player.bullet_speed),
+    "Upgrade fire interval: " + string(obj_player.shoot_interval),
+    "Upgrade piercing: " + string(obj_player.piercing_count),
+    "Upgrade burst count: " + string(obj_player.bursts_per_interval),
+    "Upgrade movement: " + string(obj_player.speed),
+    "Upgrade health: " + string(obj_player.mainPlayerHealth),
+    "Increase wave size: " + string(obj_spawner.cur_wave_size)
+];
 
-if (keyboard_check_pressed(ord("1")))
-{
-	obj_player.increment_bullets_fired();
-}
+// Get the number of available upgrades
+var num_upgrades = array_length(upgrade_options);
 
-if (keyboard_check_pressed(ord("2")))
-{
-	obj_player.increment_bullets_speed();
-}
+// Pick a random index from the list
+upgrade_ind = irandom_range(1,num_upgrades-1);
+// Select the random upgrade
+selected_upgrade = upgrade_options[upgrade_ind];
 
-if (keyboard_check_pressed(ord("3")))
-{
-	obj_player.decrement_shoot_interval();
-}
-
-if (keyboard_check_pressed(ord("4")))
-{
-	obj_player.increment_piercing_count();
-}
-
-if (keyboard_check_pressed(ord("5")))
-{
-	obj_player.increment_burst_count();
-}
-
-if (keyboard_check_pressed(ord("6")))
-{
-	obj_player.increment_movement_speed();
-}
-
-if (keyboard_check_pressed(ord("7")))
-{
-	obj_player.increment_main_players_health();
-}
-
-//LD Montello
-//JUST FOR DEBUG
-//REMOVE AFTER IMPLEMENTING UI
-if (keyboard_check_pressed(ord("8")))
-{
-	obj_spawner.increment_wave_size();
-}
-
-#endregion
-
-
-// Clicking level up buttons:
-if (show_gui) {
-   
-}
-
-// Function to apply the upgrade based on index
 apply_upgrade = function(upgrade_index) {
     switch (upgrade_index) {
         case 0: // Upgrade bullets fired per burst
@@ -85,5 +48,7 @@ apply_upgrade = function(upgrade_index) {
         case 7: // Increase wave size
             obj_spawner.increment_wave_size();
             break;
+		default: 
+			show_debug_message("Not valid upgrade");
     }
 }

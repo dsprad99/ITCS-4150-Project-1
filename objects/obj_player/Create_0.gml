@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Creates the player
 // You can write your code in this editor
 
 //Davis Spradling
@@ -29,6 +29,7 @@ mainPlayerHealth = 100;
 //Initialize player level, start experience, and levelUpExperience
 //LD Montello - changed the name to just be level.
 level = 0;
+templevel = 0;
 
 //LD Montello
 //Setup xp variable and functions for it
@@ -37,6 +38,7 @@ level = 0;
 //so that the setter calls the 
 //function to check for leveling up.
 xp = 0;
+
 
 //LD Montello
 //Xp Setter.
@@ -69,7 +71,24 @@ calc_level = function(_xp){
 	//to round down to the nearest integer.
 	//in this formula 1,000,000 xp = level 100
 	//5 xp is level 1.
+	
+	templevel = level
 	level = floor(power(_xp, 1/3));
+	
+	//James Reneo
+	//Checks if there is a difference in level
+	//if yes then call level up function
+	if (templevel != level){
+		level_up()
+	}
+}
+
+//James Reneo
+//Level_up function
+level_up = function(){
+	global.game_state = GAME_STATE.PAUSED
+	instance_create_layer(x,y,"UI2",obj_level_up_menu);
+	show_debug_message("LEVELEDUP", level);
 }
 
 //Davis Spradling

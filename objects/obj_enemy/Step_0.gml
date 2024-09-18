@@ -2,6 +2,12 @@
 // You can write your code in this editor
 
 
+//James Reneo
+//Timestoping enemies
+if(global.game_state == GAME_STATE.PAUSED){
+	return;
+}
+
 
 #region gun orientation
 

@@ -1,13 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_temp_gui",
+  "%Name":"obj_level_up_menu",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_temp_gui",
+  "name":"obj_level_up_menu",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_level_up_bg",
+    "path":"sprites/spr_level_up_bg/spr_level_up_bg.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

@@ -12,4 +12,3 @@ draw_self();
 draw_sprite_ext(spr_gun_fire, gun_sprite_index, x, y, 5.0, 5.0, gun_angle, c_white, image_alpha);
 
 
-
