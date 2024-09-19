@@ -87,7 +87,8 @@ calc_level = function(_xp){
 //Level_up function
 level_up = function(){
 	global.game_state = GAME_STATE.PAUSED
-	instance_create_layer(x,y,"UI2",obj_level_up_menu);
+	var cam = view_get_camera(0);
+	instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2, camera_get_view_y(cam) + camera_get_view_height(cam) / 2,"UI2",obj_level_up_menu);
 	show_debug_message("LEVELEDUP", level);
 }
 
