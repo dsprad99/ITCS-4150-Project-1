@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//Current wave the player 
+//has reached. 
+curWave = 0;
 
 //LD Montello
 //the time between spawning waves.
@@ -16,10 +19,35 @@ time_between_waves = 240;
 cur_wave_size = 5;
 
 //LD Montello
+//number of waves required to win.
+waves_to_win = 50;
+
+calc_should_spawn_wave = function(_enemies)
+{
+	//TODO
+	//Change this to be an increasing
+	//formula later. Like each wave 
+	//kill X out of the total spawned
+	//by the previous wave.
+	if (_enemies > 5)
+	{
+		//Spawn a wave
+		spawn_wave_on_edge(cur_wave_size);
+	}
+}
+
+//LD Montello
 //Increase wave size
 increment_wave_size = function()
 {
 	cur_wave_size += 5;
+}
+
+//Called when you reach 
+win_condition_reached = function()
+{
+	//TODO:
+	//Go to win screen.
 }
 
 //LD Montello
@@ -27,6 +55,16 @@ increment_wave_size = function()
 //https://www.reddit.com/r/gamemaker/comments/ppts1l/make_enemies_spawn_randomly_around_edges/
 spawn_wave_on_edge = function(wave_size)
 {
+	curWave++;
+	
+	//LD Montello
+	//when we reach
+	//this wave we have won.
+	if (curWave >= waves_to_win)
+	{
+		win_condition_reached();
+	}
+	
 	var centerx, centery, random_dir, radius;
 	
 	centerx = room_width / 2;
@@ -52,6 +90,3 @@ spawn_wave_on_edge = function(wave_size)
 	
 	
 }
-
-//Alarm 0 is our wave alarm.
-alarm_set(0, time_between_waves);

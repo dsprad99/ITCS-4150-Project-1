@@ -21,6 +21,26 @@ piercing_count = 1;
 //of the gun when drawn in the Draw call.
 gun_angle = direction;
 
+//LD Montello
+//
+enemies_killed = 0;
+
+
+//LD Montello
+//enemies_killed Setter.
+set_enemies_killed = function(_enemies){
+	enemies_killed = _enemies;
+	
+	//We always calculate if we should
+	//spawn another wave
+	//based on number of enemies killed.
+	if (instance_exists(obj_spawner))
+	{
+		obj_spawner.calc_should_spawn_wave(_enemies);	
+	}
+}
+
+
 //Davis Spradling
 //Initalize main players health
 mainPlayerHealth = 100;
