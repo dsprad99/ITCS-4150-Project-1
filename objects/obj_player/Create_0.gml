@@ -5,6 +5,7 @@
 //main_player object controls the main player
 //used throughout the game
 
+
 //Davis Spradling
 //Initalize player moveSpeed (how fast they are)
 moveSpeed = 4;
@@ -187,6 +188,12 @@ decrement_main_players_health = function(damage){
 	if (mainPlayerHealth <= 0)
 	{
 		kill();
+		
+		//Davis Sprading
+		show_debug_message("Object was destroyed");
+		
+		room_next(lose)
+		
 	}
 }
 

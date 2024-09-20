@@ -179,3 +179,8 @@ layer_sprite_y(ug1, y);
 
 #endregion
 
+//Davis Spradling
+//Level checking for winning
+if(templevel>3){
+	room_next(win)
+}

@@ -3,6 +3,7 @@
 
 //James Reneo
 //Code for pausing the game
+
 pause_game = function(){
 	if (global.game_state == GAME_STATE.RUNNING){
 		global.game_state = GAME_STATE.PAUSED;
