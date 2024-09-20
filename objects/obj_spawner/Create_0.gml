@@ -20,7 +20,7 @@ cur_wave_size = 5;
 
 //LD Montello
 //number of waves required to win.
-waves_to_win = 50;
+waves_to_win = 5;
 
 calc_should_spawn_wave = function(_enemies)
 {
@@ -48,6 +48,10 @@ win_condition_reached = function()
 {
 	//TODO:
 	//Go to win screen.
+	
+	//Davis Spradling
+	//Go to the win room
+	room_goto(win)
 }
 
 //LD Montello

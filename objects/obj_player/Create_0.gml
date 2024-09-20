@@ -102,6 +102,7 @@ calc_level = function(_xp){
 	if (templevel != level){
 		level_up()
 	}
+	
 }
 
 //James Reneo
@@ -190,9 +191,9 @@ decrement_main_players_health = function(damage){
 		kill();
 		
 		//Davis Sprading
-		show_debug_message("Object was destroyed");
-		
-		room_next(lose)
+		//Go to the loss screen.
+		show_debug_message("Main player has died. Switch rooms.");
+		room_goto(lose)
 		
 	}
 }
