@@ -166,6 +166,13 @@ decrement_shoot_interval = function(){
 };
 
 
+global.game_state = GAME_STATE.PAUSED
+var cam = view_get_camera(0);
+
+instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2-120, camera_get_view_y(cam) + camera_get_view_height(cam) / 2+80,"UI",obj_singleHealthBar);
+instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2-120, camera_get_view_y(cam) + camera_get_view_height(cam) / 2+80,"UI",obj_expBar);
+
+
 //Davis Spradling
 //Increment how fast main player is.
 increment_movement_speed = function(){
