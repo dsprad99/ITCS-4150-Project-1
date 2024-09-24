@@ -18,7 +18,7 @@ var upgrade_options = [
 var num_upgrades = array_length(upgrade_options);
 
 // Pick a random index from the list
-upgrade_ind = irandom_range(1,num_upgrades-1);
+upgrade_ind = irandom_range(0,num_upgrades-1);
 // Select the random upgrade
 selected_upgrade = upgrade_options[upgrade_ind];
 

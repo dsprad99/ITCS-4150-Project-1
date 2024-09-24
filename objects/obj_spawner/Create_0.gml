@@ -19,8 +19,11 @@ time_between_waves = 240;
 cur_wave_size = 5;
 
 //LD Montello
+kills_to_spawn_next_wave = 5;
+
+//LD Montello
 //number of waves required to win.
-waves_to_win = 5;
+waves_to_win = 50;
 
 calc_should_spawn_wave = function(_enemies)
 {
@@ -29,10 +32,18 @@ calc_should_spawn_wave = function(_enemies)
 	//formula later. Like each wave 
 	//kill X out of the total spawned
 	//by the previous wave.
-	if (_enemies > 5)
+	if (_enemies > kills_to_spawn_next_wave)
 	{
 		//Spawn a wave
 		spawn_wave_on_edge(cur_wave_size);
+		//Increase the enemies spawned
+		//per wave exponentially.
+		//raise the required kills
+		//to move to the next wave
+		//to be some percent
+		//of the total wave size.
+		cur_wave_size = power(curWave, 2);
+		kills_to_spawn_next_wave = floor(cur_wave_size * 0.6);
 	}
 }
 
