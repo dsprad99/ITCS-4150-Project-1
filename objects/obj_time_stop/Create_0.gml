@@ -7,7 +7,7 @@
 pause_game = function(){
 	if (global.game_state == GAME_STATE.RUNNING){
 		global.game_state = GAME_STATE.PAUSED;
-		for (var i = 0; i < instance_count;i++){
+		for (var i = 0; i < instance_count; i++){
 		var instance = instance_id_get(i);
 		
 		if (instance.speed > 0){ //loops through moving objects

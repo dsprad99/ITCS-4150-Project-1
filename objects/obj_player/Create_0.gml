@@ -126,7 +126,16 @@ get_xp_to_reach_level = function(_level)
 //James Reneo
 //Level_up function
 level_up = function(){
-	global.game_state = GAME_STATE.PAUSED
+	//LD Montello,
+	//James was just setting the game state here,
+	//not calling pause_game() which is why
+	//some objects continued moving even 
+	//when the game became puased.
+	if (instance_exists(obj_time_stop))
+	{
+		obj_time_stop.pause_game();
+	}
+	
 	var cam = view_get_camera(0);
 	instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2, camera_get_view_y(cam) + camera_get_view_height(cam) / 2,"UI2",obj_level_up_menu);
 	show_debug_message("LEVELEDUP", level);

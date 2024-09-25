@@ -43,7 +43,7 @@ calc_should_spawn_wave = function(_enemies)
 		//to be some percent
 		//of the total wave size.
 		cur_wave_size = power(curWave, 2);
-		kills_to_spawn_next_wave = floor(cur_wave_size * 0.6);
+		kills_to_spawn_next_wave = floor(cur_wave_size * 0.5);
 	}
 }
 
