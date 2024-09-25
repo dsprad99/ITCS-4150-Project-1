@@ -17,9 +17,15 @@ for (var j = 0; j < num_buttons; j++) {
 	var button_x = 80 +  x - total_buttons_width / 2 + (button_size + button_gap) * j;
 	var button_y = y + 80;
     // Create button instance
-    var button = instance_create_layer(button_x, button_y , "UI", obj_level_button);
-    show_debug_message("ARE U KIDDING")
+	//LD Montello
+	//set button category to be the index
+	//of j in this loop by passing a struct
+	//containing j.
+	//I learned how to do this here: https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_create_layer.htm
+    var button = instance_create_layer(button_x, button_y , "UI", obj_level_button, {upgrade_category : j});
+ 
+	show_debug_message("ARE U KIDDING")
     // Set button properties
-   
+	
 }
 

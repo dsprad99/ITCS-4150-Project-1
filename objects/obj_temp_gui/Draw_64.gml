@@ -9,7 +9,16 @@ draw_text_transformed_color(200, 870, "Wave: " + string(obj_player.level), 2, 2,
 //James Reneo
 //Draw Health Bar
 draw_text_transformed_color(210, 970, "Health", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
-draw_healthbar(50, 1010, 500, 1040, obj_player.mainPlayerHealth, -1, c_white, c_green, 0, false, false);
+//LD Montello
+//the fill value
+//is expressed as a ratio
+//of the current health / max_health
+//and multiplied by the value for the size
+//of the "full" bar in the gui
+//to show how far from full health
+//the player currently is.
+//health bar is always "full" at 100.
+draw_healthbar(50, 1010, 500, 1040, (obj_player.mainPlayerHealth / obj_player.max_health) * 100, c_black, global.neon_cyan, global.neon_cyan, 0, true, false);
 
 //Davis Spradling 
 //Bar to show progress player has made through the wave
@@ -17,14 +26,23 @@ bar_width = 1000;
 bar_height = 20;    
 bar_x = 670;  
 bar_y = 995;  
-roundness = 10
 
-//To-Do
-//Calculation for percentage of wave completed once balancing is done.
-//Currently just check number of killed enemies and divides by 5
-filled_width = (obj_player.enemies_killed / 5) * bar_width
-draw_set_color(c_white); 
-draw_roundrect(bar_x, bar_y, bar_x + filled_width, bar_y + bar_height, false);
+//LD Montello
+//Draw the xp bar to it's filled amount.
+//draw_healthbar's fill amount should always
+//be a 0-100 value, we just divide current xp
+//by the amount of xp we need to reach the next
+//level and that gives us a 0-1 value,
+//we multiply that by 100 and we have our
+//fill amount for the xp bar.
+fill_amount = obj_player.xp / obj_player.get_xp_to_reach_level(obj_player.level + 1) * 100
+draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, fill_amount, c_black, c_white, c_white, 0, false, false);
+
+//TODO
+//LD Montello
+//I want to add color blending
+//to the bar when you level up
+//so that it does a small blending animation before resetting.
 
 
 //LD Montello

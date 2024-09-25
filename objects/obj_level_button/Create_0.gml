@@ -1,29 +1,78 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//LD Montello
+//the category of this button,
+//this determines which of the upgrades
+//can appear for this button.
+//This is set byt the obj_level_up_menu
+//when each button is created.
+//upgrade_category
+//This is declared in the variable definitions
+//as it needs to be referenced in the instance_create_layer
+//function.
+//I learned how to do this here: https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_create_layer.htm
+
+
 //James Reneo
 //Button handling
-var upgrade_options = [
+//LD Montello,
+//I seperated the upgrades
+//into 2 categories,
+//Weapon and Other,
+//there will always be 1 weapon
+//upgrade and 2 "other" upgrades.
+var weapon_upgrades = [
     "Upgrade bullets fired per burst: " + string(obj_player.player_bullets_fired),
     "Upgrade individual bullet speed: " + string(obj_player.bullet_speed),
     "Upgrade fire interval: " + string(obj_player.shoot_interval),
     "Upgrade piercing: " + string(obj_player.piercing_count),
     "Upgrade burst count: " + string(obj_player.bursts_per_interval),
-    "Upgrade movement: " + string(obj_player.speed),
+];
+
+var other_upgrades = [
+	"Upgrade movement: " + string(obj_player.speed),
     "Upgrade health: " + string(obj_player.mainPlayerHealth),
     "Increase wave size: " + string(obj_spawner.cur_wave_size)
 ];
 
-// Get the number of available upgrades
-var num_upgrades = array_length(upgrade_options);
 
-// Pick a random index from the list
-upgrade_ind = irandom_range(0,num_upgrades-1);
-// Select the random upgrade
-selected_upgrade = upgrade_options[upgrade_ind];
+
+// Get the number of available upgrades
+var num_upgrades = -1;
+//LD Montello,
+//the number of upgrades changes on category.
+//Weapon upgrade
+if (upgrade_category == 0)
+{
+	num_upgrades = array_length(weapon_upgrades)
+	// Pick a random index from the list
+	upgrade_ind = irandom_range(0,num_upgrades-1);
+	// Select the random upgrade from the weapon upgrades.
+	selected_upgrade = weapon_upgrades[upgrade_ind];
+}
+//"Other" category.
+else if (upgrade_category > 0)
+{
+	num_upgrades = array_length(other_upgrades)
+	// Pick a random index from the list
+	upgrade_ind = irandom_range(0,num_upgrades-1);
+	// Select the random upgrade from the "other" upgrades
+	selected_upgrade = other_upgrades[upgrade_ind];
+}
+//LD Montello
+//if the -1 is not changed for num_upgrades
+//it will cause an error when we level up.
+//this is intended so we know if the above
+//if statement is not evaluated.
+
+
 
 apply_upgrade = function(upgrade_index) {
-    switch (upgrade_index) {
+	//if weapon category
+    if (upgrade_category == 0)
+	{
+		switch (upgrade_index) {
         case 0: // Upgrade bullets fired per burst
             obj_player.increment_bullets_fired();
             break;
@@ -39,16 +88,27 @@ apply_upgrade = function(upgrade_index) {
         case 4: // Upgrade burst count
             obj_player.increment_burst_count();
             break;
-        case 5: // Upgrade movement
+		default: 
+			show_debug_message("Not valid upgrade");
+		}
+	}
+	//if "other" category.
+	else
+	{
+		switch (upgrade_index) {
+        case 0: // Upgrade movement
             obj_player.increment_movement_speed();
             break;
-        case 6: // Upgrade health
+        case 1: // Upgrade health
             obj_player.increment_main_players_health();
             break;
-        case 7: // Increase wave size
+        case 2: // Increase wave size
             obj_spawner.increment_wave_size();
             break;
 		default: 
 			show_debug_message("Not valid upgrade");
-    }
+		}
+	}
+	
+	
 }

@@ -42,6 +42,12 @@ set_enemies_killed = function(_enemies){
 }
 
 
+//LD Montello
+//player's maximum health,
+//used for calculating the 
+//fill size of the health bar.
+max_health = 100;
+
 //Davis Spradling
 //Initalize main players health
 mainPlayerHealth = 100;
@@ -103,6 +109,18 @@ calc_level = function(_xp){
 		level_up()
 	}
 	
+}
+
+get_xp_to_reach_level = function(_level)
+{
+	//If the level up function is ever changed,
+	//write out the xp function using x as the variable for xp
+	//and the left hand side to be level
+	//then solve the formula for x.
+	//this will give the function that you can give a level
+	//value to and it will return the xp required to meet that value.
+	
+	return power(_level, 3);
 }
 
 //James Reneo
