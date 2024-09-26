@@ -13,6 +13,7 @@ var spr_width = sprite_get_height(spr_level_up_bg);
 
 var total_buttons_width = button_size * num_buttons + button_gap * (num_buttons - 1);
 
+
 for (var j = 0; j < num_buttons; j++) {
 	var button_x = 80 +  x - total_buttons_width / 2 + (button_size + button_gap) * j;
 	var button_y = y + 80;

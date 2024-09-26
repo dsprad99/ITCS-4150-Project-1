@@ -20,8 +20,8 @@
 //I seperated the upgrades
 //into 2 categories,
 //Weapon and Other,
-//there will always be 1 weapon
-//upgrade and 2 "other" upgrades.
+//there will always be 2 weapon
+//upgrades and 1 "other" upgrade.
 var weapon_upgrades = [
     "Upgrade bullets fired per burst: " + string(obj_player.player_bullets_fired),
     "Upgrade individual bullet speed: " + string(obj_player.bullet_speed),
@@ -43,16 +43,36 @@ var num_upgrades = -1;
 //LD Montello,
 //the number of upgrades changes on category.
 //Weapon upgrade
-if (upgrade_category == 0)
+if (upgrade_category == 0 or upgrade_category == 1)
 {
 	num_upgrades = array_length(weapon_upgrades)
 	// Pick a random index from the list
 	upgrade_ind = irandom_range(0,num_upgrades-1);
+
+	//LD Montello
+	//This code is here to avoid duplicate
+	//upgrades
+	//for every upgrade button
+	with (obj_level_button)
+	{
+		//LD Montello.
+		//while this button
+		//is a duplicate of another button
+		//select a different upgrade type.
+		//only do this for the weapon category.
+		while (self != other and other.upgrade_ind == upgrade_ind)
+		{
+			other.upgrade_ind = irandom_range(0,num_upgrades-1);
+			show_debug_message("Current: " + string(other.upgrade_ind) + " Previous: " + string(upgrade_ind))
+		}
+	}
+
 	// Select the random upgrade from the weapon upgrades.
 	selected_upgrade = weapon_upgrades[upgrade_ind];
+
 }
 //"Other" category.
-else if (upgrade_category > 0)
+else if (upgrade_category == 2)
 {
 	num_upgrades = array_length(other_upgrades)
 	// Pick a random index from the list
@@ -70,7 +90,7 @@ else if (upgrade_category > 0)
 
 apply_upgrade = function(upgrade_index) {
 	//if weapon category
-    if (upgrade_category == 0)
+    if (upgrade_category == 0 or upgrade_category == 1)
 	{
 		switch (upgrade_index) {
         case 0: // Upgrade bullets fired per burst
@@ -93,7 +113,7 @@ apply_upgrade = function(upgrade_index) {
 		}
 	}
 	//if "other" category.
-	else
+	else if (upgrade_category == 2)
 	{
 		switch (upgrade_index) {
         case 0: // Upgrade movement
