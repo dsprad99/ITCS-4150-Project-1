@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"game_sprite",
-    "path":"sprites/game_sprite/game_sprite.yy",
+    "name":"spr_PlayerFrontIdle",
+    "path":"sprites/spr_PlayerFrontIdle/spr_PlayerFrontIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

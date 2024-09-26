@@ -30,10 +30,18 @@ if(global.game_state == GAME_STATE.PAUSED){
 //with hspeed so we can clamp diagonal
 //speed later.
 if (left_) {
-    hspeed = -moveSpeed;  
+    hspeed = -moveSpeed; 
+	//LD Montello
+	//set facing direction
+	//for animation.
+	face_dir = FACE_DIR.LEFT;
 }
 if (right_) {
     hspeed = moveSpeed;  
+	//LD Montello
+	//set facing direction
+	//for animation.
+	face_dir = FACE_DIR.RIGHT;
 }
 
 //LD Montello
@@ -50,9 +58,17 @@ if (not left_ && not right_)
 //Removed the x incrementation from these inputs.
 if (up_) {
     vspeed = -moveSpeed;  
+	//LD Montello
+	//set facing direction
+	//for animation.
+	face_dir = FACE_DIR.UP;
 }
 if (down_) {
     vspeed = moveSpeed;  
+	//LD Montello
+	//set facing direction
+	//for animation.
+	face_dir = FACE_DIR.DOWN;
 }
 
 //LD Montello
@@ -93,6 +109,7 @@ if (cur_burst_count == 0)
 shoot_timer++;
 }
 
+//LD Montello
 #region animating gun
 
 //LD Montello
@@ -144,6 +161,84 @@ gun_sprite_index += gun_sprite_speed;
 		do_fire_animation = false;
 		
 	}
+}
+
+#endregion
+
+//LD Montello
+#region animating player
+
+switch (face_dir)
+{
+	case FACE_DIR.LEFT:
+		//If we are moving.
+		if (hspeed != 0)
+		{
+			//Start playing our left walk cycle.
+			sprite_index = spr_PlayerLeftWalkCycle;			
+		}
+		else
+		{
+			//Start playing our left idle.
+			sprite_index = spr_PlayerLeftIdle;
+		}
+
+		//make sure the scale of the image is positive
+		//so it faces left.
+		image_xscale = x_sprite_size;
+		break;
+	case FACE_DIR.RIGHT:
+		//If we are moving.
+		if (hspeed != 0)
+		{
+			//Start playing our left walk cycle.
+			sprite_index = spr_PlayerLeftWalkCycle;			
+		}
+		else
+		{
+			//Start playing our left idle.
+			sprite_index = spr_PlayerLeftIdle;
+		}
+		
+		//reverse the scale of the image.
+		image_xscale = -x_sprite_size;
+		break;
+	case FACE_DIR.DOWN:
+		//If we are moving.
+		if (vspeed != 0)
+		{
+			//Start playing our down facing walk cycle.
+			sprite_index = spr_PlayerFrontWalkCycle;		
+		}
+		else
+		{
+			//Start playing our down facing idle.
+			sprite_index = spr_PlayerFrontIdle;
+		}
+
+		//make sure the xscale is not negative.
+		image_xscale = x_sprite_size;
+		break;
+	case FACE_DIR.UP:
+	
+		//If we are moving.
+		if (vspeed != 0)
+		{
+			//Start playing our up facing walk cycle.
+			sprite_index = spr_PlayerBackWalkCycle;		
+		}
+		else
+		{
+			//Start playing our up facing idle.
+			sprite_index = spr_PlayerBackIdle;
+		}
+		
+	
+		//Start playing our up facing walk cycle.
+		sprite_index = spr_PlayerBackWalkCycle;
+		//make sure the xscale is not negative.
+		image_xscale = x_sprite_size;
+		break;
 }
 
 #endregion

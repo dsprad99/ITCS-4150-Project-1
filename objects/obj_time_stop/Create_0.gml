@@ -10,7 +10,10 @@ pause_game = function(){
 		for (var i = 0; i < instance_count; i++){
 		var instance = instance_id_get(i);
 		
-		if (instance.speed > 0){ //loops through moving objects
+		//LD Montello,
+		//make sure instance exists
+		//as it could be destroyed by the time we get here.
+		if (instance_exists(instance) and instance.speed > 0){ //loops through moving objects
 			instance.image_speed = 0;
 			add_speed(instance,instance.speed);
 		}

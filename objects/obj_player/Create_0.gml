@@ -6,6 +6,34 @@
 //used throughout the game
 
 
+//LD Montello
+//enum to determine which direction
+//the player is facing.
+enum FACE_DIR {
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+}
+
+//LD Montello
+//Default to facing down.
+//we use this as an easy
+//way to leave the player
+//facing a direction
+//when they stop giving input.
+face_dir = FACE_DIR.DOWN;
+
+//LD Montello
+//these are the x and y scales
+//for the sprite of the player.
+//these are used when animating.
+x_sprite_size = 5;
+y_sprite_size = 5;
+
+image_xscale = x_sprite_size;
+image_yscale = y_sprite_size;
+
 //Davis Spradling
 //Initalize player moveSpeed (how fast they are)
 moveSpeed = 4;

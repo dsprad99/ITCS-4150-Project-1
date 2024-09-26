@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"PlayerBullet",
-    "path":"sprites/PlayerBullet/PlayerBullet.yy",
+    "name":"spr_PlayerBullet",
+    "path":"sprites/spr_PlayerBullet/spr_PlayerBullet.yy",
   },
   "spriteMaskId":null,
   "visible":true,
