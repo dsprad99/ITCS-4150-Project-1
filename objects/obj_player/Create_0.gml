@@ -39,6 +39,16 @@ image_yscale = y_sprite_size;
 moveSpeed = 4;
 
 //LD Montello
+//the base move speed from
+//the start of the game.
+//this allows us to speed
+//up the player's movement
+//animations when they upgrade movement speed.
+//we will make animation speed be moveSpeed / baseSpeed
+//so that the animations will scale up with our movement speed.
+baseSpeed = moveSpeed;
+
+//LD Montello
 //this is a bullets health value
 //and is decremented when it hits an enemy.
 //this will be one of the random upgrades 

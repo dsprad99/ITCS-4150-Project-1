@@ -168,6 +168,72 @@ gun_sprite_index += gun_sprite_speed;
 //LD Montello
 #region animating player
 
+//Make our player sprite
+//look in the direction
+//that we are aiming.
+//we divide the angle 
+//into 90 degree areas
+//where if the aim
+//is in one of those cardinal
+//directions that is our facing direction.
+if (gun_angle >= 90-45 and gun_angle <= 90+45)
+{
+	face_dir = FACE_DIR.UP;
+}
+if (gun_angle >= 180-45 and gun_angle <= 180+45)
+{
+	face_dir = FACE_DIR.LEFT;
+}
+if (gun_angle >= 270-45 and gun_angle <= 270+45)
+{
+	face_dir = FACE_DIR.DOWN;
+}
+if (gun_angle > 360-45 or gun_angle < 45)
+{
+	face_dir = FACE_DIR.RIGHT;
+}
+
+//LD Montello
+//if we are facing left or right but 
+//moving vertically then we need to face
+//that vertical direction we are moving in.
+//This is so that we always have a walking
+//animation of the correct direction playing
+//while maintaining facing our aiming direction otherwise.
+if ((face_dir == FACE_DIR.LEFT || face_dir == FACE_DIR.RIGHT) && hspeed == 0 && vspeed != 0)
+{
+	if (vspeed > 0)
+	{
+		face_dir = FACE_DIR.DOWN;
+	}
+	else
+	{
+		face_dir = FACE_DIR.UP;
+	}
+}
+
+//LD Montello
+//if we are facing up or down but 
+//moving horizontally then we need to face
+//that horizontal direction we are moving in.
+//This is so that we always have a walking
+//animation of the correct direction playing
+//while maintaining facing our aiming direction otherwise.
+if ((face_dir == FACE_DIR.UP || face_dir == FACE_DIR.DOWN) && hspeed != 0 && vspeed == 0)
+{
+	if (hspeed > 0)
+	{
+		face_dir = FACE_DIR.RIGHT;
+	}
+	else
+	{
+		face_dir = FACE_DIR.LEFT;
+	}
+}
+
+show_debug_message(string(gun_angle))
+
+
 switch (face_dir)
 {
 	case FACE_DIR.LEFT:
@@ -186,6 +252,23 @@ switch (face_dir)
 		//make sure the scale of the image is positive
 		//so it faces left.
 		image_xscale = x_sprite_size;
+		
+				//reverse our animation
+		//if we are facing a direction
+		//but walking the opposite direction.
+		if (hspeed > 0)
+		{
+			image_speed = -moveSpeed / baseSpeed;	
+		}
+		else if (hspeed < 0)
+		{
+			image_speed = moveSpeed / baseSpeed;
+		}
+		else
+		{
+			image_speed = moveSpeed / baseSpeed;
+		}
+		
 		break;
 	case FACE_DIR.RIGHT:
 		//If we are moving.
@@ -200,8 +283,26 @@ switch (face_dir)
 			sprite_index = spr_PlayerLeftIdle;
 		}
 		
+		
 		//reverse the scale of the image.
 		image_xscale = -x_sprite_size;
+		
+				//reverse our animation
+		//if we are facing a direction
+		//but walking the opposite direction.
+		if (hspeed > 0)
+		{
+			image_speed = moveSpeed / baseSpeed;	
+		}
+		else if (hspeed < 0)
+		{
+			image_speed = -moveSpeed / baseSpeed;
+		}
+		else
+		{
+			image_speed = moveSpeed / baseSpeed;
+		}
+		
 		break;
 	case FACE_DIR.DOWN:
 		//If we are moving.
@@ -218,6 +319,23 @@ switch (face_dir)
 
 		//make sure the xscale is not negative.
 		image_xscale = x_sprite_size;
+		
+				//reverse our animation
+		//if we are facing a direction
+		//but walking the opposite direction.
+		if (vspeed > 0)
+		{
+			image_speed = -moveSpeed / baseSpeed;	
+		}
+		else if (vspeed < 0)
+		{
+			image_speed = moveSpeed / baseSpeed;
+		}
+		else
+		{
+			image_speed = moveSpeed / baseSpeed;
+		}
+		
 		break;
 	case FACE_DIR.UP:
 	
@@ -238,6 +356,23 @@ switch (face_dir)
 		sprite_index = spr_PlayerBackWalkCycle;
 		//make sure the xscale is not negative.
 		image_xscale = x_sprite_size;
+		
+		//reverse our animation
+		//if we are facing a direction
+		//but walking the opposite direction.
+		if (vspeed > 0)
+		{
+			image_speed = moveSpeed / baseSpeed;	
+		}
+		else if (vspeed < 0)
+		{
+			image_speed = -moveSpeed / baseSpeed;
+		}
+		else
+		{
+			image_speed = moveSpeed / baseSpeed;
+		}
+		
 		break;
 }
 
