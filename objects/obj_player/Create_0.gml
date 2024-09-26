@@ -51,7 +51,15 @@ piercing_count = 1;
 gun_angle = direction;
 
 //LD Montello
-//
+//The offset from the player
+//for the gun's position
+gun_x_offset = 0;
+gun_y_offset = 15;
+
+//LD Montello
+//used to store how many enemies we've
+//killed. This will tell us when to spawn the
+//next wave.
 enemies_killed = 0;
 
 

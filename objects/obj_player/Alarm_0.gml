@@ -17,7 +17,16 @@ cur_burst_count--;
 //it for the ability to 
 //have bursts.
 for (var i = 0; i < player_bullets_fired; i++) {
-        var bullet = instance_create_layer(x, y, "Instances", obj_bullet_player);
+		
+		//LD Montello
+		//I use the gun offsets
+		//and the length_dir here
+		//to offset the spawn position
+		//for bullets so that it spawns
+		//at the tip of the gun's sprite.
+		//100 is the distance from the 
+		//gun's origin that the bullet spawns at.
+        var bullet = instance_create_layer(x + lengthdir_x(100 + gun_x_offset, gun_angle), y + gun_y_offset + lengthdir_y(100, gun_angle), "Instances", obj_bullet_player);
         
 		//Davis Spradling
 		//Adjust bullet angle so not all bullets are stacked on top of each other
