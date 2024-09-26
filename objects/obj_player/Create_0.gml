@@ -88,6 +88,28 @@ set_enemies_killed = function(_enemies){
 }
 
 
+//The amount health will
+//increase by each regen.
+health_regen_amount = 5;
+
+//LD Montello
+//Time before next regen of health
+time_between_regens = 1;
+
+//LD Montello
+set_time_between_regens = function(_time)
+{
+	//if the alarm hasn't been started,
+	//we need to start it.
+	//this is only here if we decide to not give
+	//the player regen at the start of the game.
+	if (time_between_regens = 0)
+	{
+		alarm_set(1, game_get_speed(gamespeed_fps) * _time)
+	}
+	time_between_regens = _time;
+}
+
 //LD Montello
 //player's maximum health,
 //used for calculating the 
@@ -97,6 +119,13 @@ max_health = 100;
 //Davis Spradling
 //Initalize main players health
 mainPlayerHealth = 100;
+
+set_health = function(_health)
+{
+	mainPlayerHealth = _health;
+	//make sure to clamp our max health.
+	mainPlayerHealth = clamp(mainPlayerHealth, 0, max_health);
+}
 
 //Davis Spradling
 //Initialize player level, start experience, and levelUpExperience
@@ -341,6 +370,10 @@ do_fire_animation = false;
 
 #endregion
 
+
+//LD Montello
+//Start the regen alarm
+alarm_set(1, game_get_speed(gamespeed_fps) * time_between_regens)
 
 #region underglow
 

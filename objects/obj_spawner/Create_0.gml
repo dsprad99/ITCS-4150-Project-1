@@ -32,7 +32,7 @@ calc_should_spawn_wave = function(_enemies)
 	//formula later. Like each wave 
 	//kill X out of the total spawned
 	//by the previous wave.
-	if (_enemies > kills_to_spawn_next_wave)
+	if (_enemies >= kills_to_spawn_next_wave)
 	{
 		//Spawn a wave
 		spawn_wave_on_edge(cur_wave_size);
@@ -42,8 +42,8 @@ calc_should_spawn_wave = function(_enemies)
 		//to move to the next wave
 		//to be some percent
 		//of the total wave size.
-		cur_wave_size = power(curWave, 2);
-		kills_to_spawn_next_wave = floor(cur_wave_size * 0.5);
+		cur_wave_size += 5;
+		kills_to_spawn_next_wave = floor(cur_wave_size / 2);
 	}
 }
 
@@ -94,14 +94,36 @@ spawn_wave_on_edge = function(wave_size)
 		
 		//calculate spawn radius
 		radius = ((centerx ^ 2) + (centery ^ 2)) ^ (1/2);
-	
+		
+		spawn_x = centerx + lengthdir_x(radius, random_dir)
+		spawn_y = centery + lengthdir_y(radius, random_dir)
+		
+		//make sure not to spawn an enemy on another enemy
+		//as they will become stuck in pathing.
+		//while (position_meeting(spawn_x, spawn_y, obj_enemy_tank))
+		//{
+		//	//increase radius to avoid infinite loops.
+		//	radius++;
+			
+		//	//choose random direction
+		//	random_dir = irandom(360);
+		
+		//	spawn_x = centerx + lengthdir_x(radius, random_dir)
+		//	spawn_y = centery + lengthdir_y(radius, random_dir)
+		//}
+		
 		//spawn in the instance.
 		//TODO:
 		//in the future we may want to 
 		//use a list so we know if the player
 		//killed every wave.
-		instance_create_layer(centerx + lengthdir_x(radius, random_dir), centery + lengthdir_y(radius, random_dir), "Instances", obj_enemy_tank);		
+		instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_tank);
+		//instance_create_layer(centerx, centery, "Instances", obj_enemy_tank);
 	}
 	
 	
 }
+
+
+//Start the loop on create.
+spawn_wave_on_edge(cur_wave_size)

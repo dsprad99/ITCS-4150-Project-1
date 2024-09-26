@@ -34,8 +34,23 @@ if (distance_to_object(obj_player) > target_stop_distance)
 	//the pathfinding, instead of finding the
 	//entire path.
 	//this is much more efficient.
+	
+	//if we're going to collide
+	//with another tank, we should
+	//ignore it and continue pathfinding.
+	//otherwise, path around other enemies.
+	if(instance_place(x,y, obj_enemy_tank))
+	{
+		mp_potential_step(obj_player.x, obj_player.y, pathing_speed, false)
+	}
+	else
+	{
+		mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
+	}
+	
 
-	mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
+	//mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
+	//mp_potential_step(obj_player.x, obj_player.y, pathing_speed, false)
 }
 
 

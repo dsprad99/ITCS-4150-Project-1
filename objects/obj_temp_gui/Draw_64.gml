@@ -44,6 +44,13 @@ draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, fill_amount,
 //to the bar when you level up
 //so that it does a small blending animation before resetting.
 
+draw_set_halign(fa_none)
+
+draw_text_transformed_color(10, 120, "Kills Required for next wave: " + string(obj_spawner.kills_to_spawn_next_wave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+draw_text_transformed_color(10, 160, "Wave size: " + string(obj_spawner.cur_wave_size), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+draw_text_transformed_color(10, 200, "Kills: " + string(obj_player.enemies_killed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
 //LD Montello
 //Temporary,
