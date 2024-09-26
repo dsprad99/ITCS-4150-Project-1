@@ -31,17 +31,9 @@ if(global.game_state == GAME_STATE.PAUSED){
 //speed later.
 if (left_) {
     hspeed = -moveSpeed; 
-	//LD Montello
-	//set facing direction
-	//for animation.
-	face_dir = FACE_DIR.LEFT;
 }
 if (right_) {
     hspeed = moveSpeed;  
-	//LD Montello
-	//set facing direction
-	//for animation.
-	face_dir = FACE_DIR.RIGHT;
 }
 
 //LD Montello
@@ -58,17 +50,9 @@ if (not left_ && not right_)
 //Removed the x incrementation from these inputs.
 if (up_) {
     vspeed = -moveSpeed;  
-	//LD Montello
-	//set facing direction
-	//for animation.
-	face_dir = FACE_DIR.UP;
 }
 if (down_) {
     vspeed = moveSpeed;  
-	//LD Montello
-	//set facing direction
-	//for animation.
-	face_dir = FACE_DIR.DOWN;
 }
 
 //LD Montello
@@ -168,6 +152,7 @@ gun_sprite_index += gun_sprite_speed;
 //LD Montello
 #region animating player
 
+//LD Montello
 //Make our player sprite
 //look in the direction
 //that we are aiming.
@@ -193,6 +178,12 @@ if (gun_angle > 360-45 or gun_angle < 45)
 	face_dir = FACE_DIR.RIGHT;
 }
 
+//These next 2 if statements
+//will override the direction the player
+//faces if they are walking on one axis
+//but aiming on the other so it still
+//plays the correct walking animation.
+
 //LD Montello
 //if we are facing left or right but 
 //moving vertically then we need to face
@@ -202,6 +193,8 @@ if (gun_angle > 360-45 or gun_angle < 45)
 //while maintaining facing our aiming direction otherwise.
 if ((face_dir == FACE_DIR.LEFT || face_dir == FACE_DIR.RIGHT) && hspeed == 0 && vspeed != 0)
 {
+	//switch sprite direction
+	//to match movement direction.
 	if (vspeed > 0)
 	{
 		face_dir = FACE_DIR.DOWN;
@@ -221,6 +214,8 @@ if ((face_dir == FACE_DIR.LEFT || face_dir == FACE_DIR.RIGHT) && hspeed == 0 && 
 //while maintaining facing our aiming direction otherwise.
 if ((face_dir == FACE_DIR.UP || face_dir == FACE_DIR.DOWN) && hspeed != 0 && vspeed == 0)
 {
+	//switch sprite direction
+	//to match movement direction.
 	if (hspeed > 0)
 	{
 		face_dir = FACE_DIR.RIGHT;

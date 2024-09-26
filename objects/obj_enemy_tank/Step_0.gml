@@ -35,7 +35,7 @@ if (distance_to_object(obj_player) > target_stop_distance)
 	//entire path.
 	//this is much more efficient.
 
-	mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy);	
+	mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
 }
 
 
@@ -85,6 +85,32 @@ if (shoot_timer >= shoot_interval) {
 }
 
 }
+
+#endregion
+
+//LD Montello
+#region Movement Animations
+
+//If we aren't moving
+//we shouldn't animate
+//the tank treads.
+if (is_moving())
+{
+	tread_anim_index += tread_anim_speed;
+	
+	//We want to lerp the object
+	//to slowly rotate to face
+	//the direction it's going
+	//in as that'll make it look more
+	//tank like.
+	//image_angle = lerp(start_angle, point_direction(x, y, obj_player.x, obj_player.y), target_stop_distance / distance_to_object(obj_player));
+
+}
+else
+{
+	image_speed = 0;
+}
+
 
 #endregion
 

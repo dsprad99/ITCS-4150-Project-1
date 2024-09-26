@@ -1,6 +1,38 @@
 /// @description Create function for enemies
 // You can write your code in this editor
 
+
+//LD Montello
+//the fps of the tread animation.
+tread_anim_fps = 10;
+
+//LD Montello
+//The speed the tank treads will move at in FPS
+tread_anim_speed = tread_anim_fps / 60;
+
+//LD Montello
+//The current index of the tank tread animatino
+tread_anim_index = 0;
+
+
+//LD Montello
+//Is the enemy moving?
+is_moving = function()
+{
+	//if the previous x and y 
+	//are the same as the current x and y
+	//then we are not moving.
+	if (xprevious != x or yprevious != y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
 //LD Montello
 //How close the enemy
 //must be to the player

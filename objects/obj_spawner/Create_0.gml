@@ -100,7 +100,7 @@ spawn_wave_on_edge = function(wave_size)
 		//in the future we may want to 
 		//use a list so we know if the player
 		//killed every wave.
-		instance_create_layer(centerx + lengthdir_x(radius, random_dir), centery + lengthdir_y(radius, random_dir), "Instances", obj_enemy);		
+		instance_create_layer(centerx + lengthdir_x(radius, random_dir), centery + lengthdir_y(radius, random_dir), "Instances", obj_enemy_tank);		
 	}
 	
 	

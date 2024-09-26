@@ -1,14 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy",
+  "%Name":"obj_enemy_tank",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_bullet_player","path":"objects/obj_bullet_player/obj_bullet_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_enemy",
+  "name":"obj_enemy_tank",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -33,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Enemy_Temp",
-    "path":"sprites/Enemy_Temp/Enemy_Temp.yy",
+    "name":"Enemy_Invis",
+    "path":"sprites/Enemy_Invis/Enemy_Invis.yy",
   },
   "spriteMaskId":null,
   "visible":true,
