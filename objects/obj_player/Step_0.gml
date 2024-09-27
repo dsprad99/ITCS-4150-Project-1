@@ -227,8 +227,6 @@ if ((face_dir == FACE_DIR.UP || face_dir == FACE_DIR.DOWN) && hspeed != 0 && vsp
 	}
 }
 
-show_debug_message(string(gun_angle))
-
 
 switch (face_dir)
 {

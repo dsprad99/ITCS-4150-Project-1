@@ -1,9 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+//LD Montello
+//Because james sets the
+//GUI alignment it was breaking
+//formatting here.
+//setting the halign to none
+//fixes that problem.
+draw_set_halign(fa_none)
+
 //Davis Spradling
 //Draw players current level
-draw_text_transformed_color(200, 870, "Wave: " + string(obj_player.level), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+draw_text_transformed_color(200, 870, "Wave: " + string(obj_spawner.curWave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
 //Davis Spradling
 //James Reneo
@@ -43,8 +52,6 @@ draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, fill_amount,
 //I want to add color blending
 //to the bar when you level up
 //so that it does a small blending animation before resetting.
-
-draw_set_halign(fa_none)
 
 
 

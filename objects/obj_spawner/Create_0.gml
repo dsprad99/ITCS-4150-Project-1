@@ -25,6 +25,8 @@ kills_to_spawn_next_wave = 5;
 //number of waves required to win.
 waves_to_win = 50;
 
+enemies_left_to_spawn = 0;
+
 calc_should_spawn_wave = function(_enemies)
 {
 	//TODO
@@ -36,14 +38,18 @@ calc_should_spawn_wave = function(_enemies)
 	{
 		//Spawn a wave
 		spawn_wave_on_edge(cur_wave_size);
+		
+		
+		//LD Montello
 		//Increase the enemies spawned
-		//per wave exponentially.
+		//per wave here.
 		//raise the required kills
 		//to move to the next wave
 		//to be some percent
 		//of the total wave size.
 		cur_wave_size += 5;
-		kills_to_spawn_next_wave = floor(cur_wave_size * 0.9);
+		//set the requirement to spawn the next wave here.
+		kills_to_spawn_next_wave = cur_wave_size//floor(cur_wave_size * 0.9);
 	}
 }
 
@@ -54,9 +60,13 @@ increment_wave_size = function()
 	cur_wave_size += 5;
 }
 
-//Called when you reach 
+//LD Montello
+//Called automatically when you reach the win condition.
 win_condition_reached = function()
 {
+	//Print out what our wave is
+	show_debug_message(curWave);
+	
 	//TODO:
 	//Go to win screen.
 	
@@ -66,11 +76,17 @@ win_condition_reached = function()
 }
 
 //LD Montello
-//Where I learned how to do this:
-//https://www.reddit.com/r/gamemaker/comments/ppts1l/make_enemies_spawn_randomly_around_edges/
+//Adds a wave to our spawn queue.
+//We aren't using a queue datastructure 
+//I'm just referring to the enemies_left_to_spawn
+//as that.
 spawn_wave_on_edge = function(wave_size)
 {
 	curWave++;
+	
+	//add enemies to our queue of enemies
+	//to spawn.
+	enemies_left_to_spawn += cur_wave_size;
 	
 	//LD Montello
 	//when we reach
@@ -79,52 +95,6 @@ spawn_wave_on_edge = function(wave_size)
 	{
 		win_condition_reached();
 	}
-	
-	var centerx, centery, random_dir, radius;
-	
-	centerx = room_width / 2;
-	centery = room_height / 2;
-	
-	
-	//spawn enemies of count wave_size.
-	for (i = 0; i < wave_size; i++)
-	{
-		//choose random direction
-		random_dir = irandom(360);
-		
-		//calculate spawn radius
-		radius = ((centerx ^ 2) + (centery ^ 2)) ^ (1/2);
-	
-		
-		spawn_x = centerx + lengthdir_x(radius, random_dir)
-		spawn_y = centery + lengthdir_y(radius, random_dir)
-		
-		//Don't do this,
-		//just have the enemies move if they overlap.
-		////make sure not to spawn an enemy on another enemy
-		////as they will become stuck in pathing.
-		//while (position_meeting(spawn_x, spawn_y, obj_enemy_tank))
-		//{
-		//	//increase radius to avoid infinite loops.
-		//	radius += 200;
-			
-		//	//choose random direction
-		//	random_dir = irandom(360);
-		
-		//	spawn_x = centerx + lengthdir_x(radius, random_dir)
-		//	spawn_y = centery + lengthdir_y(radius, random_dir)
-		//}
-		
-		//spawn in the instance.
-		//TODO:
-		//in the future we may want to 
-		//use a list so we know if the player
-		//killed every wave.
-		instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_tank);
-		//instance_create_layer(centerx, centery, "Instances", obj_enemy_tank);
-	}
-	
-	
 }
 
 
