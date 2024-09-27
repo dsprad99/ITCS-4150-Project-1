@@ -264,6 +264,13 @@ cur_burst_count = 0
 //Davis Spradling
 //Increment fire rate through decrementing interval of firing
 decrement_shoot_interval = function(){
+	//if we're going to make the interval
+	//zero or less than zero then return 
+	//to avoid breaking the firing.
+	if (shoot_interval - 10 <= 0)
+	{
+		return;
+	}
 	shoot_interval -= 10;
 };
 

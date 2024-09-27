@@ -1,6 +1,14 @@
 /// @description Burst fire timer
 // You can write your code in this editor
 
+//if we're paused don't do bursts until
+//we've unpaused.
+if (global.game_state == GAME_STATE.PAUSED)
+{
+	alarm_set(0, burst_interval);
+	return;
+}
+
 //LD Montello
 //this alarm goes off
 //to create an individual

@@ -43,7 +43,7 @@ calc_should_spawn_wave = function(_enemies)
 		//to be some percent
 		//of the total wave size.
 		cur_wave_size += 5;
-		kills_to_spawn_next_wave = floor(cur_wave_size / 2);
+		kills_to_spawn_next_wave = floor(cur_wave_size * 0.9);
 	}
 }
 
@@ -94,16 +94,19 @@ spawn_wave_on_edge = function(wave_size)
 		
 		//calculate spawn radius
 		radius = ((centerx ^ 2) + (centery ^ 2)) ^ (1/2);
+	
 		
 		spawn_x = centerx + lengthdir_x(radius, random_dir)
 		spawn_y = centery + lengthdir_y(radius, random_dir)
 		
-		//make sure not to spawn an enemy on another enemy
-		//as they will become stuck in pathing.
+		//Don't do this,
+		//just have the enemies move if they overlap.
+		////make sure not to spawn an enemy on another enemy
+		////as they will become stuck in pathing.
 		//while (position_meeting(spawn_x, spawn_y, obj_enemy_tank))
 		//{
 		//	//increase radius to avoid infinite loops.
-		//	radius++;
+		//	radius += 200;
 			
 		//	//choose random direction
 		//	random_dir = irandom(360);

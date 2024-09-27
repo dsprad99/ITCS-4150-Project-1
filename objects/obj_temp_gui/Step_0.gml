@@ -39,7 +39,7 @@ if (keyboard_check_pressed(ord("6")))
 
 if (keyboard_check_pressed(ord("7")))
 {
-	obj_player.increment_main_players_health();
+	obj_player.set_health(obj_player.max_health);
 }
 
 //LD Montello

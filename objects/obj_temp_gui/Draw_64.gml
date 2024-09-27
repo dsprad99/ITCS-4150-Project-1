@@ -46,11 +46,7 @@ draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, fill_amount,
 
 draw_set_halign(fa_none)
 
-draw_text_transformed_color(10, 120, "Kills Required for next wave: " + string(obj_spawner.kills_to_spawn_next_wave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
-draw_text_transformed_color(10, 160, "Wave size: " + string(obj_spawner.cur_wave_size), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
-
-draw_text_transformed_color(10, 200, "Kills: " + string(obj_player.enemies_killed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
 //LD Montello
 //Temporary,
@@ -58,7 +54,7 @@ draw_text_transformed_color(10, 200, "Kills: " + string(obj_player.enemies_kille
 //Draw health
 //draw_text_transformed_color(10, 80, "Health: " + string(obj_player.mainPlayerHealth), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 //Draw xp
-/*
+
 
 draw_text_transformed_color(10, 120, "Debug Controls:", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
@@ -74,7 +70,10 @@ draw_text_transformed_color(10, 320, "Press 5 to upgrade burst count: " + string
 
 draw_text_transformed_color(10, 360, "Press 6 to upgrade movement: " + string(obj_player.speed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
-draw_text_transformed_color(10, 400, "Press 7 to upgrade health: " + string(obj_player.mainPlayerHealth), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+draw_text_transformed_color(10, 400, "Press 7 to refill health: " + string(obj_player.mainPlayerHealth), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
 draw_text_transformed_color(10, 440, "Press 8 to increase wave size: " + string(obj_spawner.cur_wave_size), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
-*/
+
+draw_text_transformed_color(10, 480, "Kills Required for next wave: " + string(obj_spawner.kills_to_spawn_next_wave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+draw_text_transformed_color(10, 520, "Kills: " + string(obj_player.enemies_killed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);

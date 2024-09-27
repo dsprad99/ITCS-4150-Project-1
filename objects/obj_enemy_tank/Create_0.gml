@@ -74,7 +74,7 @@ decrement_health = function(damage)
 
 //LD Montello
 //Speed enemies move.
-pathing_speed = 3;
+pathing_speed = 2;
 
 
 //LD Copied Davis's stuff.

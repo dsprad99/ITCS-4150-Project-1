@@ -39,20 +39,60 @@ if (distance_to_object(obj_player) > target_stop_distance)
 	//with another tank, we should
 	//ignore it and continue pathfinding.
 	//otherwise, path around other enemies.
-	if(instance_place(x,y, obj_enemy_tank))
-	{
-		mp_potential_step(obj_player.x, obj_player.y, pathing_speed, false)
-	}
-	else
-	{
-		mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
-	}
+	//if(instance_place(x,y, obj_enemy_tank))
+	//{
+	//	mp_potential_step(obj_player.x, obj_player.y, pathing_speed, false)
+	//}
+	//else
+	//{
+	//	mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
+	//}
+	
+	//If we ignore objects when pathing enemies don't get stuck on each other.
+	//mp_potential_step(obj_player.x, obj_player.y, pathing_speed, false)
+	mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
+	
+	#region non-pathing solution
+
+	//var next_x = lengthdir_x(pathing_speed, gun_angle)
+	//var next_y = lengthdir_y(pathing_speed, gun_angle)
+	
+	//if (!instance_place(next_x, next_y, obj_enemy_tank))
+	//{
+	//	direction = gun_angle;
+	//	speed = pathing_speed;
+	//}
+	//else
+	//{
+	//	speed = 0;
+	//}
+	
+	//direction = gun_angle;
+	//speed = pathing_speed;
+	
+	#endregion
 	
 
 	//mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
 	//mp_potential_step(obj_player.x, obj_player.y, pathing_speed, false)
 }
+else
+{
+	speed = 0;
+}
 
+
+//LD Montello
+//if for whatever reason
+//the collisions stop
+//getting called we need
+//a fallback to check to make sure
+//we aren't stuck on another enemy.
+if (instance_place(x,y, obj_enemy_tank))
+{
+	x += (x - other.x);
+	y += (y - other.y);
+}
 
 
 
