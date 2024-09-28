@@ -36,8 +36,7 @@ calc_should_spawn_wave = function(_enemies)
 	//by the previous wave.
 	if (_enemies >= kills_to_spawn_next_wave)
 	{
-		//Spawn a wave
-		spawn_wave_on_edge(cur_wave_size);
+		
 		
 		
 		//LD Montello
@@ -49,7 +48,11 @@ calc_should_spawn_wave = function(_enemies)
 		//of the total wave size.
 		cur_wave_size += 5;
 		//set the requirement to spawn the next wave here.
-		kills_to_spawn_next_wave = cur_wave_size//floor(cur_wave_size * 0.9);
+		kills_to_spawn_next_wave = kills_to_spawn_next_wave + cur_wave_size//floor(cur_wave_size * 0.9);
+		
+		//Spawn a wave
+		spawn_wave_on_edge(cur_wave_size);
+	
 	}
 }
 
