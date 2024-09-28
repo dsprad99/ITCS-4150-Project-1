@@ -11,7 +11,7 @@ layer_sprite_destroy(ug1)
 if (instance_exists(obj_player))
 {
 	//increment enemies killed.
-	obj_player.set_enemies_killed(obj_player.enemies_killed+1);
+	global.set_enemies_killed(global.enemies_killed+1);
 }
 
 #endregion

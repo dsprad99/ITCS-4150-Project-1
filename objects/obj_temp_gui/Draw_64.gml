@@ -12,7 +12,7 @@ draw_set_halign(fa_none)
 
 //Davis Spradling
 //Draw players current level
-draw_text_transformed_color(200, 870, "Wave: " + string(obj_spawner.curWave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+draw_text_transformed_color(200, 870, "Wave: " + string(global.cur_wave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
 //Davis Spradling
 //James Reneo
@@ -83,4 +83,4 @@ draw_text_transformed_color(10, 440, "Press 8 to increase wave size: " + string(
 
 draw_text_transformed_color(10, 480, "Kills Required for next wave: " + string(obj_spawner.kills_to_spawn_next_wave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
-draw_text_transformed_color(10, 520, "Kills: " + string(obj_player.enemies_killed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+draw_text_transformed_color(10, 520, "Kills: " + string(global.enemies_killed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);

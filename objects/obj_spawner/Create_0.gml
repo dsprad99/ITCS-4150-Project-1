@@ -1,9 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//Current wave the player 
-//has reached. 
-curWave = 0;
 
 //LD Montello
 //the time between spawning waves.
@@ -37,7 +34,7 @@ calc_should_spawn_wave = function(_enemies)
 	if (_enemies >= kills_to_spawn_next_wave)
 	{
 		
-		
+		global.kills = _enemies;
 		
 		//LD Montello
 		//Increase the enemies spawned
@@ -68,7 +65,7 @@ increment_wave_size = function()
 win_condition_reached = function()
 {
 	//Print out what our wave is
-	show_debug_message(curWave);
+	show_debug_message(global.cur_wave);
 	
 	//TODO:
 	//Go to win screen.
@@ -85,7 +82,7 @@ win_condition_reached = function()
 //as that.
 spawn_wave_on_edge = function(wave_size)
 {
-	curWave++;
+	global.cur_wave++;
 	
 	//add enemies to our queue of enemies
 	//to spawn.
@@ -94,7 +91,7 @@ spawn_wave_on_edge = function(wave_size)
 	//LD Montello
 	//when we reach
 	//this wave we have won.
-	if (curWave >= waves_to_win)
+	if (global.cur_wave > waves_to_win)
 	{
 		win_condition_reached();
 	}

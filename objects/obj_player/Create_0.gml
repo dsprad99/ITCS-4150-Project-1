@@ -1,6 +1,8 @@
 /// @description Creates the player
 // You can write your code in this editor
 
+
+
 //Davis Spradling
 //main_player object controls the main player
 //used throughout the game
@@ -66,26 +68,7 @@ gun_angle = direction;
 gun_x_offset = 0;
 gun_y_offset = 15;
 
-//LD Montello
-//used to store how many enemies we've
-//killed. This will tell us when to spawn the
-//next wave.
-enemies_killed = 0;
 
-
-//LD Montello
-//enemies_killed Setter.
-set_enemies_killed = function(_enemies){
-	enemies_killed = _enemies;
-	
-	//We always calculate if we should
-	//spawn another wave
-	//based on number of enemies killed.
-	if (instance_exists(obj_spawner))
-	{
-		obj_spawner.calc_should_spawn_wave(_enemies);	
-	}
-}
 
 
 //The amount health will
