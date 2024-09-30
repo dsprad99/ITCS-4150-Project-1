@@ -10,6 +10,10 @@ global.neon_cyan = #5fffe4;
 global.neon_magenta = #ff1493;
 global.neon_lime = #a6fd29;
 
+//LD Montello
+//number of waves required to win.
+global.waves_to_win = 50;
+
 #endregion
 
 #region mutables

@@ -18,9 +18,7 @@ cur_wave_size = 5;
 //LD Montello
 kills_to_spawn_next_wave = 5;
 
-//LD Montello
-//number of waves required to win.
-waves_to_win = 50;
+
 
 enemies_left_to_spawn = 0;
 
@@ -91,7 +89,7 @@ spawn_wave_on_edge = function(wave_size)
 	//LD Montello
 	//when we reach
 	//this wave we have won.
-	if (global.cur_wave > waves_to_win)
+	if (global.cur_wave > global.waves_to_win)
 	{
 		win_condition_reached();
 	}

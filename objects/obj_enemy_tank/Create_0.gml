@@ -112,6 +112,22 @@ kill = function()
 }
 
 
+#region difficulty scaling
+
+//LD Montello
+//On create we need to get the global
+//wave count and decide what difficulty this enemy is
+//and change the variables accordingly.
+
+start_speed = 3;
+end_speed = 10
+//lerp from our start to our end
+//using our cur_wave / global.waves
+//to get a 0-1 value for progress in the lerp.
+pathing_speed = lerp(start_speed, end_speed, global.cur_wave / global.waves_to_win)
+
+#endregion
+
 #region underglow
 
 //LD Montello

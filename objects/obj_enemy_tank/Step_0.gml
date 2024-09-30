@@ -63,10 +63,13 @@ if (distance_to_object(obj_player) <= enemy_fire_range)
 //I copied david's code 
 //from the player to code firing
 //here.
+//I changed it to decrement
+//so that the enemy fires as soon as 
+//they are allowed to and then their
+//cooldown timer starts.
 
-shoot_timer++;
-if (shoot_timer >= shoot_interval) {
-    shoot_timer = 0;
+if (shoot_timer <= 0) {
+    shoot_timer = shoot_interval;
 	
     for (var i = 0; i < bullets_fired; i++) {
         var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
@@ -90,6 +93,12 @@ if (shoot_timer >= shoot_interval) {
 }
 
 }
+
+
+//LD Montello
+//Decrement shoot timer
+shoot_timer--;
+shoot_timer = clamp(shoot_timer, 0, shoot_interval)
 
 #endregion
 
