@@ -12,3 +12,9 @@ draw_set_font(fnt_gamecuben)
 //Modify the instance variables to change
 //the text and it's size.
 draw_text_transformed_color(x, y, text, font_size, font_size, 0, c_white, c_white, c_white, c_white, 1)
+
+//Go back to default alignment.
+draw_set_valign(-1)
+draw_set_halign(-1)
+//Go back to default font
+draw_set_font(-1)
