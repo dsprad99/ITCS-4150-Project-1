@@ -1,16 +1,16 @@
 {
   "$GMRoom":"v1",
-  "%Name":"main_game",
-  "creationCodeFile":"rooms/main_game/RoomCreationCode.gml",
+  "%Name":"rm_main_game",
+  "creationCodeFile":"rooms/rm_main_game/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_3C5B8A17","path":"rooms/main_game/main_game.yy",},
-    {"name":"inst_3D67C9A2","path":"rooms/main_game/main_game.yy",},
-    {"name":"inst_7039E1A9","path":"rooms/main_game/main_game.yy",},
-    {"name":"inst_3120A9DF","path":"rooms/main_game/main_game.yy",},
-    {"name":"inst_1BBE392C","path":"rooms/main_game/main_game.yy",},
+    {"name":"inst_3C5B8A17","path":"rooms/rm_main_game/rm_main_game.yy",},
+    {"name":"inst_3D67C9A2","path":"rooms/rm_main_game/rm_main_game.yy",},
+    {"name":"inst_7039E1A9","path":"rooms/rm_main_game/rm_main_game.yy",},
+    {"name":"inst_3120A9DF","path":"rooms/rm_main_game/rm_main_game.yy",},
+    {"name":"inst_1BBE392C","path":"rooms/rm_main_game/rm_main_game.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -30,7 +30,7 @@
     {"$GMRInstanceLayer":"","%Name":"Underglow","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Underglow","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":700,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"bullet_sprite","path":"sprites/bullet_sprite/bullet_sprite.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
-  "name":"main_game",
+  "name":"rm_main_game",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",

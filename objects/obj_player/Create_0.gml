@@ -261,8 +261,8 @@ decrement_shoot_interval = function(){
 global.game_state = GAME_STATE.PAUSED
 var cam = view_get_camera(0);
 
-instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2-120, camera_get_view_y(cam) + camera_get_view_height(cam) / 2+80,"UI",obj_singleHealthBar);
-instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2-120, camera_get_view_y(cam) + camera_get_view_height(cam) / 2+80,"UI",obj_expBar);
+instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2-120, camera_get_view_y(cam) + camera_get_view_height(cam) / 2+80,"UI",obj_xp_bar);
+instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2-120, camera_get_view_y(cam) + camera_get_view_height(cam) / 2+80,"UI",obj_health_bar);
 
 
 //Davis Spradling
@@ -292,7 +292,7 @@ decrement_main_players_health = function(damage){
 		//Davis Sprading
 		//Go to the loss screen.
 		show_debug_message("Main player has died. Switch rooms.");
-		room_goto(lose)
+		room_goto(rm_lose)
 		
 	}
 }

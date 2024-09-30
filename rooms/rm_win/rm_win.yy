@@ -1,14 +1,14 @@
 {
   "$GMRoom":"v1",
-  "%Name":"win",
+  "%Name":"rm_win",
   "creationCodeFile":"",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_5285C554","path":"rooms/win/win.yy",},
-    {"name":"inst_6A3462B9","path":"rooms/win/win.yy",},
-    {"name":"inst_301A314C","path":"rooms/win/win.yy",},
+    {"name":"inst_5285C554","path":"rooms/rm_win/rm_win.yy",},
+    {"name":"inst_6A3462B9","path":"rooms/rm_win/rm_win.yy",},
+    {"name":"inst_301A314C","path":"rooms/rm_win/rm_win.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -19,7 +19,7 @@
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_win","path":"sprites/spr_win/spr_win.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"win",
+  "name":"rm_win",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",

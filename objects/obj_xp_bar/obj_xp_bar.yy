@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_expBar",
+  "%Name":"obj_xp_bar",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_expBar",
+  "name":"obj_xp_bar",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_expBar",
-    "path":"sprites/spr_expBar/spr_expBar.yy",
+    "name":"spr_singleHealthBar",
+    "path":"sprites/spr_singleHealthBar/spr_singleHealthBar.yy",
   },
   "spriteMaskId":null,
   "visible":true,

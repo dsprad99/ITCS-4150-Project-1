@@ -72,7 +72,7 @@ win_condition_reached = function()
 	
 	//Davis Spradling
 	//Go to the win room
-	room_goto(win)
+	room_goto(rm_win)
 }
 
 //LD Montello
