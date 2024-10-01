@@ -126,7 +126,7 @@ apply_upgrade = function(upgrade_index) {
             obj_spawner.increment_wave_size();
             break;
 		case 3: // Decrease the cooldown of regen health.
-			obj_player.set_time_between_regens(obj_player.time_between_regens - 0.25);
+			obj_player.set_time_between_regens(obj_player.time_between_regens - 0.1);
 		default: 
 			show_debug_message("Not valid upgrade");
 		}

@@ -47,6 +47,8 @@ bar_y = 995;
 fill_amount = obj_player.xp / obj_player.get_xp_to_reach_level(obj_player.level + 1) * 100
 draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, fill_amount, c_black, c_white, c_white, 0, false, false);
 
+draw_text_transformed(bar_x + bar_width, bar_y, obj_player.level, 2, 2, 0)
+
 //TODO
 //LD Montello
 //I want to add color blending
@@ -55,13 +57,16 @@ draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, fill_amount,
 
 
 
+if (debug_gui)
+{
+
 //LD Montello
 //Temporary,
 //Just draw the level in the top left.
 //Draw health
-//draw_text_transformed_color(10, 80, "Health: " + string(obj_player.mainPlayerHealth), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+draw_text_transformed_color(10, 40, "Level: " + string(obj_player.level), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 //Draw xp
-
+draw_text_transformed_color(10, 80, "XP: " + string(obj_player.xp), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
 draw_text_transformed_color(10, 120, "Debug Controls:", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
@@ -84,3 +89,5 @@ draw_text_transformed_color(10, 440, "Press 8 to increase wave size: " + string(
 draw_text_transformed_color(10, 480, "Kills Required for next wave: " + string(obj_spawner.kills_to_spawn_next_wave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 
 draw_text_transformed_color(10, 520, "Kills: " + string(global.enemies_killed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+}

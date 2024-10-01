@@ -54,8 +54,13 @@ gun_angle = direction;
 xp = 5;
 
 //LD Montello
-//Init vars
-health = 1;
+//Health Scaling
+start_health = 1;
+end_health = 10;
+//lerp from our start to our end
+//using our cur_wave / global.waves
+//to get a 0-1 value for progress in the lerp.
+health = floor(lerp(start_health, end_health, global.cur_wave / global.waves_to_win))
 
 //LD Montello
 //Only modify health
@@ -74,7 +79,12 @@ decrement_health = function(damage)
 
 //LD Montello
 //Speed enemies move.
-pathing_speed = 2;
+start_speed = 3;
+end_speed = 5
+//lerp from our start to our end
+//using our cur_wave / global.waves
+//to get a 0-1 value for progress in the lerp.
+pathing_speed = lerp(start_speed, end_speed, global.cur_wave / global.waves_to_win)
 
 
 //LD Copied Davis's stuff.
@@ -96,11 +106,11 @@ bullets_fired = 1
 
 kill = function()
 {
+		//LD Montello
 		//Create particle effect to show
 		//we were killed. 
-		//TODO:
-		//Replace this in the future LD
-		effect_create_above(ef_explosion, x, y, 1, c_red);
+		if (instance_exists(obj_particle_sys_controller))
+			obj_particle_sys_controller.play_particle_system(ps_tank_death, x, y);
 		
 		//LD Montello
 		//find the player instance
@@ -111,22 +121,6 @@ kill = function()
 		instance_destroy()
 }
 
-
-#region difficulty scaling
-
-//LD Montello
-//On create we need to get the global
-//wave count and decide what difficulty this enemy is
-//and change the variables accordingly.
-
-start_speed = 3;
-end_speed = 10
-//lerp from our start to our end
-//using our cur_wave / global.waves
-//to get a 0-1 value for progress in the lerp.
-pathing_speed = lerp(start_speed, end_speed, global.cur_wave / global.waves_to_win)
-
-#endregion
 
 #region underglow
 

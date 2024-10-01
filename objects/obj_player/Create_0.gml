@@ -73,11 +73,16 @@ gun_y_offset = 15;
 
 //The amount health will
 //increase by each regen.
-health_regen_amount = 5;
+health_regen_amount = 1;
 
 //LD Montello
 //Time before next regen of health
 time_between_regens = 1;
+
+//LD Montello
+//The lowest time you can reach
+//for regen speed.
+min_time_between_regens = 0.1;
 
 //LD Montello
 set_time_between_regens = function(_time)
@@ -91,6 +96,10 @@ set_time_between_regens = function(_time)
 		alarm_set(1, game_get_speed(gamespeed_fps) * _time)
 	}
 	time_between_regens = _time;
+	//LD Montello
+	//Clamp the time_between_regens to a min value
+	//to avoid errors.
+	time_between_regens = clamp(time_between_regens, min_time_between_regens, 2)
 }
 
 //LD Montello
@@ -283,6 +292,14 @@ decrement_main_players_health = function(damage){
 	mainPlayerHealth -= damage
 	
 	//LD Montello
+	//Create visual flare to give 
+	//player feedback and show that they
+	//are recieving damage.
+	var flare = instance_create_layer(x, y, "FX", obj_player_flare, {parent : id})
+	flare.image_xscale = 5;
+	flare.image_yscale = 5;
+	
+	//LD Montello
 	//If the player has lost enough 
 	//health, kill them.
 	if (mainPlayerHealth <= 0)
@@ -383,7 +400,7 @@ layer_background_yscale(grid_background_id, 2.5);
 //the background and the grid
 //to make it look like the lines are glowing
 //because of the object's color.
-ug1 = layer_sprite_create(grid_id, x, y, spr_blue_underglow);
+ug1 = layer_sprite_create(grid_id, x, y, spr_cyan_underglow);
 layer_sprite_xscale(ug1, 5);
 layer_sprite_yscale(ug1, 5);
 

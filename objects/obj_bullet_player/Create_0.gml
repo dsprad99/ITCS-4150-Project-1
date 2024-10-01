@@ -48,7 +48,7 @@ layer_background_yscale(grid_background_id, 2.5);
 //the background and the grid
 //to make it look like the lines are glowing
 //because of the object's color.
-ug1 = layer_sprite_create(grid_id, x, y, spr_blue_underglow);
+ug1 = layer_sprite_create(grid_id, x, y, spr_cyan_underglow);
 layer_sprite_xscale(ug1, 2.5);
 layer_sprite_yscale(ug1, 2.5);
 

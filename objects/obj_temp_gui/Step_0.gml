@@ -2,10 +2,19 @@
 // You can write your code in this editor
 
 //LD Montello
-//TODO:
-//Remove this 
-//after Ryan implements UI.
+//Press "O" to OPEN the debug menu.
+if (keyboard_check_pressed(ord("O")))
+{
+	debug_gui = not debug_gui
+}
+
+
+//LD Montello
+//debug UI ("Cheat Menu")
 #region upgrade testing
+
+if (debug_gui)
+{
 
 if (keyboard_check_pressed(ord("1")))
 {
@@ -48,6 +57,8 @@ if (keyboard_check_pressed(ord("7")))
 if (keyboard_check_pressed(ord("8")))
 {
 	obj_spawner.increment_wave_size();
+}
+
 }
 
 #endregion
