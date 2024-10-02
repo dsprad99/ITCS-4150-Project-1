@@ -53,7 +53,13 @@ for (var i = 0; i < player_bullets_fired; i++) {
 		bullet.speed = bullet_speed;
     }
 	
-	
+
+//LD Montello
+//Play laser sfx
+audio_play_sound_on(global.sfx_emitter, snd_laser_shoot, false, 1);
+
+
+//LD Montello
 //if we haven't
 //done enough bursts
 //then reset this alarm.

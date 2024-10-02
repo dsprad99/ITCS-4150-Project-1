@@ -48,6 +48,8 @@ calc_should_spawn_wave = function(_enemies)
 		//Spawn a wave
 		spawn_wave_on_edge(cur_wave_size);
 	
+		//Play SFX for getting to next wave
+		audio_play_sound_on(global.sfx_emitter, snd_nextWave, false, 1)
 	}
 }
 

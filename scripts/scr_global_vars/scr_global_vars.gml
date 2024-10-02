@@ -14,6 +14,17 @@ global.neon_lime = #a6fd29;
 //number of waves required to win.
 global.waves_to_win = 50;
 
+//LD Montello
+//We need to make 2 different
+//audio channels for music and SFX
+//This will allow us to have 2
+//different volume settings
+//for the music and SFX.
+//Here's where I learned how to do this:
+//https://www.reddit.com/r/gamemaker/comments/kn14hb/how_to_lower_volume_of_all_sounds/
+global.music_emitter = audio_emitter_create();
+global.sfx_emitter = audio_emitter_create();
+
 #endregion
 
 #region mutables

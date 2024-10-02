@@ -299,6 +299,28 @@ decrement_main_players_health = function(damage){
 	flare.image_xscale = 5;
 	flare.image_yscale = 5;
 	
+	
+	//LD Montello
+	//Play hit SFX
+	//when hit, 
+	//play death SFX
+	//when Dying.
+	if (mainPlayerHealth > 0)
+	{
+		//LD Montello
+		//Play SFX for getting hit.		
+		audio_play_sound_on(global.sfx_emitter, snd_hit, false, 1)
+	}
+	else
+	{
+		//LD Montello
+		//Play SFX for dying.		
+		audio_play_sound_on(global.sfx_emitter, snd_explosion_hit2, false, 1)
+	}
+	
+
+	
+	
 	//LD Montello
 	//If the player has lost enough 
 	//health, kill them.

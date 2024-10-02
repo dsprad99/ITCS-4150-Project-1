@@ -68,6 +68,32 @@ health = floor(lerp(start_health, end_health, global.cur_wave / global.waves_to_
 decrement_health = function(damage)
 {
 	health -= damage;
+	
+	
+	//LD Montello
+	//Create particle effect for taking damage
+	var flare = instance_create_layer(x, y, "FX", obj_tank_flare, {parent : id})
+	flare.image_xscale = 5;
+	flare.image_yscale = 5;
+	
+	//LD Montello
+	//Play hit SFX
+	//when hit, 
+	//play death SFX
+	//when Dying.
+	if (health > 0)
+	{
+		//LD Montello
+		//Play SFX for getting hit.		
+		audio_play_sound_on(global.sfx_emitter, snd_hit, false, 1)
+	}
+	else
+	{
+		//LD Montello
+		//Play SFX for dying.		
+		audio_play_sound_on(global.sfx_emitter, snd_explosion_hit2, false, 1)
+	}
+	
 	if (health <= 0)
 	{
 		health = 0;
