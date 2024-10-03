@@ -17,10 +17,17 @@ pause_game = function(){
 			instance.image_speed = 0;
 			add_speed(instance,instance.speed);
 		}
+		
+		//LD montello
+		//Turn on the Pause UI
+		instance_activate_object(obj_sfx_volume_slider)
 	}
 	} else if (global.game_state == GAME_STATE.PAUSED) {
 		global.game_state = GAME_STATE.RUNNING;
 		
+		//LD montello
+		//Turn off the Pause UI
+		instance_deactivate_object(obj_sfx_volume_slider)
 		
 		for (var i = 0; i < array_length(arr_speed); i++){
 			try { //Try catch is necessary because of 1 frame delay. Can crash without it

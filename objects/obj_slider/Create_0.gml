@@ -1,14 +1,20 @@
-/// @description Insert description here
+/// @description Init vars
 // You can write your code in this editor
+
+//LD Montello
+//The min and max values of this slider
 min_value = 0
 max_value = 1
 
-cur_value = 0;
-
+//The size (in pixels) of the slider width
 slider_width = 1000;
 
+//The scale we need to set our nine-slice sprite
+//to match the slider width.
 image_xscale = slider_width / 32
 
+//the object the player grabs
+//to slide along the bar
 slider_x_scale = 2;
 slider_y_scale = 2;
 
@@ -26,8 +32,13 @@ cam = view_get_camera(0);
 center_x = camera_get_view_x(cam) + camera_get_view_width(cam) / 2
 center_y = camera_get_view_y(cam) + camera_get_view_height(cam) / 2
 
+//LD Montello
+//The current offset
+//from the min x of the slider
 cur_offset = 0
 
+//LD Montello
+//The current x value of the grabbable slider
 cur_x = 0
 
 set_cur_value = function(_value)
@@ -46,6 +57,14 @@ set_cur_value = function(_value)
 	cur_offset = (slider_width * (cur_value / max_value));
 }
 
+//LD Montello,
+//Set the current value to match the default value in 
+//variable definitions
+set_cur_value(cur_value);
+
+//LD Montello
+//The bounds of the hitbox 
+//for the grabbable slider.
 left_bound = cur_x - slider_x_scale / 2
 right_bound = cur_x + slider_x_scale / 2
 up_bound = center_y - slider_y_scale / 2

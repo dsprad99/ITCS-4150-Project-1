@@ -12,4 +12,5 @@ y = center_y
 
 //LD Montello
 //Recalculate slider position
+//to be the min x + cur_offset
 cur_x = (center_x - (slider_width / 2)) + cur_offset;
