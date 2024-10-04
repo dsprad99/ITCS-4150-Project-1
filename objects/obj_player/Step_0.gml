@@ -1,6 +1,14 @@
 /// @description Playermovement and RenderStep functions
 // You can write your code in this editor
 
+//LD Montello
+//If the player is dead
+//and we aren't lerping the health bar anymore
+//then kill the player.
+if (mainPlayerHealth <= 0 and !obj_temp_gui.is_lerping_health)
+{
+	kill();
+}
 
 //Davis Spradling
 //Create variables to control player movement through keys.

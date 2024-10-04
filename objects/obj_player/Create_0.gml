@@ -117,6 +117,14 @@ set_health = function(_health)
 	mainPlayerHealth = _health;
 	//make sure to clamp our max health.
 	mainPlayerHealth = clamp(mainPlayerHealth, 0, max_health);
+
+	
+	if (instance_exists(obj_temp_gui))
+	{
+		//Animate the health bar to match the characters
+		//current health.
+		obj_temp_gui.should_play_health_lerp = true;
+	}
 }
 
 //Davis Spradling
@@ -331,7 +339,12 @@ increment_main_players_health = function(){
 //Davis Spradling
 //Decrement main players health 
 decrement_main_players_health = function(damage){
-	mainPlayerHealth -= damage
+	
+	//LD Montello
+	//Call set health
+	//so that health bar
+	//animations get triggered.
+	set_health(mainPlayerHealth - damage);
 	
 	//LD Montello
 	//Create visual flare to give 
@@ -353,12 +366,7 @@ decrement_main_players_health = function(damage){
 		//Play SFX for getting hit.		
 		audio_play_sound_on(global.sfx_emitter, snd_hit, false, 1)
 	}
-	else
-	{
-		//LD Montello
-		//Play SFX for dying.		
-		audio_play_sound_on(global.sfx_emitter, snd_explosion_hit2, false, 1)
-	}
+	
 	
 
 	
@@ -366,14 +374,18 @@ decrement_main_players_health = function(damage){
 	//LD Montello
 	//If the player has lost enough 
 	//health, kill them.
-	if (mainPlayerHealth <= 0)
+	//also, if the temp GUI is still
+	//lerping the health, don't let the player
+	//die until it is done lerping.
+	//If this doesn't execute, we'll check in 
+	//step when it runs out, 
+	//that way the player has a little "coyote time"
+	//for regen
+	if (mainPlayerHealth <= 0 and !obj_temp_gui.is_lerping_health)
 	{
 		kill();
 		
-		//Davis Sprading
-		//Go to the loss screen.
-		show_debug_message("Main player has died. Switch rooms.");
-		room_goto(rm_lose)
+		
 		
 	}
 }
@@ -418,6 +430,15 @@ kill = function()
 	//Run some sort of code that kills
 	//the player and displays some UI about it.
 	//Also play a VFX for the explosion.
+	
+	//Davis Sprading
+	//Go to the loss screen.
+	show_debug_message("Main player has died. Switch rooms.");
+	room_goto(rm_lose)
+	
+	//LD Montello
+	//Play SFX for dying.		
+	audio_play_sound_on(global.sfx_emitter, snd_explosion_hit2, false, 1)
 }
 
 //LD Montello

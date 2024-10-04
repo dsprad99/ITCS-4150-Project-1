@@ -13,21 +13,8 @@ show_gui = false;
 
 debug_gui = false;
 
-//LD Montello
-//Fill percent of the health bar
-health_fill = 100;
 
-//LD Montello
-//last fill percent of the health bar,
-//the one that we are lerping from.
-//only reset when we aren't lerping
-//health bar and the health just changed.
-last_health_fill = 0;
-
-//LD Montello
-//Are we currently animating the health bar?
-is_lerping_health = false;
-
+#region xp bar fill
 
 //LD Montello
 //Fill percent of the xp bar
@@ -42,7 +29,7 @@ last_xp_fill = 0;
 
 //LD Montello
 //The actual value used to set
-//the fill on the healthbar
+//the fill on the xp bar
 //This is calculated in the Step event
 cur_xp_fill = 0;
 
@@ -53,10 +40,10 @@ cur_xp_fill = 0;
 //to fill at a speed relative to the amount we fill
 //so that it isn't crazy fast for small amounts of xp
 //and it isn't crazy slow for large amounts.
-total_xp_anim_time = 1;
+total_xp_anim_time = 100;
 //This is the actual total time the lerp will be working
 //off of.
-cur_total_xp_anim_time = total_xp_anim_time * (xp_fill - last_xp_fill);
+cur_total_xp_anim_time = abs(total_xp_anim_time * (xp_fill / 100 - last_xp_fill / 100));
 
 //LD Montello
 //the current time in the animation for the xp bar
@@ -69,6 +56,54 @@ should_play_xp_lerp = false;
 //LD Montello
 //Are we currently animating the xp bar?
 is_lerping_xp = false;
+
+#endregion
+
+#region health bar fill lerping
+
+//LD Montello
+//Fill percent of the health bar
+health_fill = 100;
+
+//LD Montello
+//last fill percent of the health bar,
+//the one that we are lerping from.
+//only reset when we aren't lerping
+//health bar and the health just changed.
+last_health_fill = 0;
+
+//LD Montello
+//The actual value used to set
+//the fill on the healthbar
+//This is calculated in the Step event
+cur_health_fill = 0;
+
+
+//LD Montello
+//the total time of the health bar fill animation
+//This is the amount of time it would take 
+//to go from 0 to 100 fill, as we want
+//to fill at a speed relative to the amount we fill
+//so that it isn't crazy fast for small amounts of health
+//and it isn't crazy slow for large amounts.
+total_health_anim_time = 200;
+//This is the actual total time the lerp will be working
+//off of.
+cur_total_health_anim_time = abs(total_health_anim_time * (health_fill / 100 - last_health_fill / 100));
+
+//LD Montello
+//the current time in the animation for the health bar
+cur_health_anim_time = 0;
+
+//LD Montello
+//Should we start lerping the health bar?
+should_play_health_lerp = false;
+
+//LD Montello
+//Are we currently animating the health bar?
+is_lerping_health = false;
+
+#endregion
 
 #region lvl up text animation
 //LD Montello
