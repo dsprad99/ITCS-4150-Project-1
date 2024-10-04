@@ -13,24 +13,32 @@ slider_width = 1000;
 //to match the slider width.
 image_xscale = slider_width / 32
 
+//LD Montello
+//the scale of the
 //the object the player grabs
 //to slide along the bar
 slider_x_scale = 2;
 slider_y_scale = 2;
 
-slider_color = c_blue	
-
+//LD Montello
+//Is the user's mouse hovering
+//over the grabbable slider?
 is_hovering_slider = false;
 
+
+//LD Montello
+//Is the user's mouse clicking
+//over the grabbable slider?
 is_holding_slider = false;
 
-
-
-
+//LD Montello
+//Get the camera
 cam = view_get_camera(0);
 
+//Calculate our center
+//position relative to the camera.
 center_x = camera_get_view_x(cam) + camera_get_view_width(cam) / 2
-center_y = camera_get_view_y(cam) + camera_get_view_height(cam) / 2
+center_y = camera_get_view_y(cam) + screen_y/* camera_get_view_height(cam) / 2*/
 
 //LD Montello
 //The current offset

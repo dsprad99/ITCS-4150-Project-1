@@ -7,6 +7,11 @@ draw_self()
 
 
 //LD Montello
+//Draw the text that describes this slider
+//above it.
+//draw_text_transformed(center_x, center_y - 128, "SLIDER", );
+
+//LD Montello
 //Draw fill bar for slider
 //Draw from x_min + (cur_x / 2)
 //to set it at the center of the area between the

@@ -4,7 +4,7 @@
 //LD Montello
 //Recalculate center values.
 center_x = camera_get_view_x(cam) + camera_get_view_width(cam) / 2
-center_y = camera_get_view_y(cam) + camera_get_view_height(cam) / 2
+center_y = camera_get_view_y(cam) + screen_y/* camera_get_view_height(cam) / 2*/
 
 //Set Bar position
 x = center_x

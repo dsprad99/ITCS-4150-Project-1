@@ -12,8 +12,8 @@
   "name":"obj_bullet_enemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Tank",
+    "path":"folders/Objects/Enemies/Tank.yy",
   },
   "parentObjectId":null,
   "persistent":false,

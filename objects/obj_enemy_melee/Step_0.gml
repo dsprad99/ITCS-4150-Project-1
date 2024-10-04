@@ -54,53 +54,26 @@ if (distance_to_object(obj_player) > target_stop_distance)
 
 
 //LD Montello
-//Only fire if you're close
-//enough to the player.
-if (distance_to_object(obj_player) <= enemy_fire_range)
+//Only attack if you
+//are colliding with the player
+if (place_meeting(x, y, obj_player))
 {
 
-//LD Montello
-//I copied david's code 
-//from the player to code firing
-//here.
-//I changed it to decrement
-//so that the enemy fires as soon as 
-//they are allowed to and then their
-//cooldown timer starts.
-
-if (attack_timer <= 0) {
-    attack_timer = attack_interval;
+	//LD Montello
+	//If we are ready to attack
+	if (attack_timer <= 0) {
+		//LD Montello
+		//Reset attack timer
+		attack_timer = attack_interval;
 	
-    for (var i = 0; i < bullets_fired; i++) {
-		//LD Montello
-		//Create bullet,
-		//passing our damage into the 
-		//created object's damage parameter.
-        var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy, {damage : damage});
-        
-		//Davis Spradling
-		//Adjust bullet angle so not all bullets are stacked on top of each other
-		var angle_offset = (i*10) - ((bullets_fired-1) *5);
-		
-		//Davis Spradling
-		//Assgin bullet direction and speed to bullet object
-		//For the direction take the current main_player objects image
-		//angle and then add the offset on to it so bullets won't stack
-		//LD Montello
-		//Replace obj_player.direction
-		//to be the gun angle so that the bullet
-		//direction matches where the player aims.
-        bullet.direction = gun_angle+angle_offset;
-		bullet.image_angle = bullet.direction;
-		bullet.speed = bullet_speed;
-    }
-}
+		obj_player.decrement_main_players_health(damage);
+	}
 
 }
 
 
 //LD Montello
-//Decrement shoot timer
+//Decrement attack timer
 attack_timer--;
 attack_timer = clamp(attack_timer, 0, attack_interval)
 
