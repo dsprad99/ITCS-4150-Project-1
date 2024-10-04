@@ -11,14 +11,18 @@
 draw_set_halign(-1)
 draw_set_valign(-1)
 
+//LD Montello
+//Set the font
+draw_set_font(fnt_gamecuben)
+
 //Davis Spradling
 //Draw players current level
-draw_text_transformed_color(200, 870, "Wave: " + string(global.cur_wave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+draw_text_transformed_color(200, 870, "Wave: " + string(global.cur_wave),  24 / 72, 24 / 72, 0, c_white, c_white, c_white, c_white, 1);
 
 //Davis Spradling
 //James Reneo
 //Draw Health Bar
-draw_text_transformed_color(210, 970, "Health", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+draw_text_transformed_color(210, 970, "Health",  24 / 72, 24 / 72, 0, c_white, c_white, c_white, c_white, 1);
 //LD Montello
 //the fill value
 //is expressed as a ratio
@@ -48,7 +52,15 @@ bar_y = 995;
 fill_amount = obj_player.xp / obj_player.get_xp_to_reach_level(obj_player.level + 1) * 100
 draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, fill_amount, c_black, c_white, c_white, 0, false, false);
 
-draw_text_transformed(bar_x + bar_width, bar_y, "LVL." + string(obj_player.level), 2, 2, 0)
+
+//Draw current level on the level up bar.
+draw_text_transformed(bar_x + 70, bar_y - bar_height / 2, "LVL." + string(obj_player.level), 24 / 72, 24 / 72, 0)
+
+//Go back to default alignment.
+draw_set_valign(-1)
+draw_set_halign(-1)
+//Go back to default font
+draw_set_font(-1)
 
 //TODO
 //LD Montello
@@ -64,7 +76,9 @@ if (debug_gui)
 //LD Montello
 //Temporary,
 //Just draw the level in the top left.
-//Draw health
+//Draw max health
+draw_text_transformed_color(10, 0, "Max Health: " + string(obj_player.max_health), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+//Draw level
 draw_text_transformed_color(10, 40, "Level: " + string(obj_player.level), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 //Draw xp
 draw_text_transformed_color(10, 80, "XP: " + string(obj_player.xp), 2, 2, 0, c_white, c_white, c_white, c_white, 1);

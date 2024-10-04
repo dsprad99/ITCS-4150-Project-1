@@ -173,9 +173,31 @@ calc_level = function(_xp){
 	//Checks if there is a difference in level
 	//if yes then call level up function
 	if (templevel != level){
+		calc_health()
 		level_up()
 	}
 	
+}
+
+//LD Montello
+//Calculate the current
+//health and max health
+//based on level
+calc_health = function()
+{
+	//Calculate the percentage
+	//of health the player has left
+	var health_percent = mainPlayerHealth / max_health;
+	//Calculate new max health
+	//based on level,
+	//your health raises exponentially
+	//every 5 levels.
+	max_health = 100 * floor(power(2, level / 5))
+	//set the current health
+	//so that it's the same as the previous health
+	//but scaled to the new max health.
+	//that way the health bar visual is the same.
+	mainPlayerHealth = floor(max_health * health_percent)
 }
 
 get_xp_to_reach_level = function(_level)

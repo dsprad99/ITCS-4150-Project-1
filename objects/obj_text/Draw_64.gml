@@ -1,4 +1,4 @@
-/// @description Draw rules to screen
+/// @description Draw text to screen
 // You can write your code in this editor
 
 //LD Montello
