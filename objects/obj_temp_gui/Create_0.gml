@@ -57,6 +57,18 @@ should_play_xp_lerp = false;
 //Are we currently animating the xp bar?
 is_lerping_xp = false;
 
+//LD Montello
+//The last level the player was at when we animated
+//This will help us to do a rollover lerp
+//where we lerp to the max fill of the xp bar
+//then continue lerping to the xp value when we rollover.
+last_level = 0;
+
+//LD Montello
+//Do we need to fill the bar completely
+//and then rollover the xp?
+should_rollover_fill = false;
+
 #endregion
 
 #region health bar fill lerping
@@ -103,6 +115,7 @@ should_play_health_lerp = false;
 //Are we currently animating the health bar?
 is_lerping_health = false;
 
+
 #endregion
 
 #region lvl up text animation
@@ -115,7 +128,7 @@ is_playing_text_bounce = false;
 
 //LD Montello
 //level up animation time
-total_lvl_up_anim_time = 7;
+total_lvl_up_anim_time = 15;
 cur_lvl_up_anim_time = 0;
 
 //LD Montello

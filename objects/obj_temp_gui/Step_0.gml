@@ -110,6 +110,13 @@ if (should_play_xp_lerp)
 	//regardless of how large the lerp is.
 	cur_total_xp_anim_time = abs(total_xp_anim_time * (xp_fill / 100 - last_xp_fill / 100));
 	
+	if (last_level != obj_player.level)
+	{
+		xp_fill = 100;
+		cur_total_xp_anim_time = abs(total_xp_anim_time * (xp_fill / 100 - last_xp_fill / 100));
+		should_rollover_fill = true;
+	}
+	
 	//LD Montello
 	//Say we are playing the animation.
 	is_lerping_xp = true;
@@ -117,10 +124,13 @@ if (should_play_xp_lerp)
 	//LD Montello
 	//Say we shouldn't restart the animation.
 	should_play_xp_lerp = false;
+	
+	last_level = obj_player.level;
 }
 
 if (is_lerping_xp)
 {
+	
 	
 	cur_xp_anim_time++;
 	
@@ -129,9 +139,16 @@ if (is_lerping_xp)
 	//based on our animation.
 	cur_xp_fill = lerp(last_xp_fill, xp_fill, cur_xp_anim_time / cur_total_xp_anim_time);
 	
+	if (should_rollover_fill and cur_xp_anim_time >= cur_total_health_anim_time)
+	{
+		should_rollover_fill = false;
+		last_xp_fill = 0;
+		xp_fill = obj_player.xp / obj_player.get_xp_to_reach_level(obj_player.level + 1) * 100;
+		cur_total_xp_anim_time = abs(total_xp_anim_time * (xp_fill / 100 - last_xp_fill / 100));
+	}
 	//LD Montello
 	//if we've reached the end of our lerp
-	if (cur_xp_anim_time > cur_total_xp_anim_time)
+	else if (cur_xp_anim_time > cur_total_xp_anim_time)
 	{
 		//LD Montello
 		//stop lerping
