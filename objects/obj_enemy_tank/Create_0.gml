@@ -51,7 +51,8 @@ gun_angle = direction;
 //LD Montello
 //how much xp this enemy
 //gives when it dies.
-xp = 5;
+//set xp value based on wave.
+xp = 5
 
 //LD Montello
 //Health Scaling
@@ -59,11 +60,7 @@ xp = 5;
 //using our cur_wave / global.waves
 //to get a 0-1 value for progress in the lerp.
 health = floor(lerp(start_health, end_health, global.cur_wave / global.waves_to_win))
-if (health > 1)
-{
-	show_debug_log(true)
-	show_debug_message(health)
-}
+
 
 //LD Montello
 //Only modify health
@@ -125,7 +122,7 @@ attack_timer = 0;
 //LD Copied Davis's stuff.
 //Davis Spradling
 //Initialize how fast bullet will travel
-bullet_speed = 10;
+bullet_speed = 7;
 
 //LD Copied Davis's stuff.
 //Davis Spradling

@@ -6,7 +6,7 @@
 //Because james sets the
 //GUI alignment it was breaking
 //formatting here.
-//setting the halign to none
+//setting the halign to default
 //fixes that problem.
 draw_set_halign(-1)
 draw_set_valign(-1)
