@@ -13,3 +13,90 @@ show_gui = false;
 
 debug_gui = false;
 
+//LD Montello
+//Fill percent of the health bar
+health_fill = 100;
+
+//LD Montello
+//last fill percent of the health bar,
+//the one that we are lerping from.
+//only reset when we aren't lerping
+//health bar and the health just changed.
+last_health_fill = 0;
+
+//LD Montello
+//Are we currently animating the health bar?
+is_lerping_health = false;
+
+
+//LD Montello
+//Fill percent of the xp bar
+xp_fill = 0;
+
+//LD Montello
+//last fill percent of the xp bar,
+//the one that we are lerping from.
+//only reset when we aren't lerping
+//xp bar and the xp just changed.
+last_xp_fill = 0;
+
+//LD Montello
+//The actual value used to set
+//the fill on the healthbar
+//This is calculated in the Step event
+cur_xp_fill = 0;
+
+//LD Montello
+//the total time of the xp bar fill animation
+//This is the amount of time it would take 
+//to go from 0 to 100 fill, as we want
+//to fill at a speed relative to the amount we fill
+//so that it isn't crazy fast for small amounts of xp
+//and it isn't crazy slow for large amounts.
+total_xp_anim_time = 1;
+//This is the actual total time the lerp will be working
+//off of.
+cur_total_xp_anim_time = total_xp_anim_time * (xp_fill - last_xp_fill);
+
+//LD Montello
+//the current time in the animation for the xp bar
+cur_xp_anim_time = 0;
+
+//LD Montello
+//Should we lerp the xp bar?
+should_play_xp_lerp = false;
+
+//LD Montello
+//Are we currently animating the xp bar?
+is_lerping_xp = false;
+
+#region lvl up text animation
+//LD Montello
+//Should we play the level up animation for text?
+should_play_text_bounce = false;
+
+//Are we still playing the text bounce?
+is_playing_text_bounce = false;
+
+//LD Montello
+//level up animation time
+total_lvl_up_anim_time = 7;
+cur_lvl_up_anim_time = 0;
+
+//LD Montello
+//Should we be reversing the 
+//animation now?
+reverse_anim = false;
+
+//LD Montello
+//the current rotation of the lvl text
+lvl_text_rot = 0;
+//LD Montello
+//the current scale of the lvl text
+lvl_text_scale = 24 / 72;
+//LD Montello
+//the current color of the lvl text
+lvl_text_color = global.neon_cyan
+
+#endregion
+

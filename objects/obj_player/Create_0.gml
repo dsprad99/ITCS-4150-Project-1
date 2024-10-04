@@ -142,6 +142,15 @@ set_xp = function(_xp){
 	//We always calculate level
 	//whenever xp is modified.
 	calc_level(xp);
+	
+	if (instance_exists(obj_temp_gui))
+	{
+		//LD Montello
+		//lerp from the previous xp bar fill value
+		//to the current fill value.
+		obj_temp_gui.should_play_xp_lerp = true;
+	}
+	
 }
 
 
@@ -173,7 +182,7 @@ calc_level = function(_xp){
 	//Checks if there is a difference in level
 	//if yes then call level up function
 	if (templevel != level){
-		calc_health()
+		
 		level_up()
 	}
 	
@@ -223,6 +232,17 @@ level_up = function(){
 	if (instance_exists(obj_time_stop))
 	{
 		obj_time_stop.pause_game();
+	}
+	
+	//LD Montello
+	//Calculate the new health for this level.
+	calc_health()
+	
+	//LD Montello
+	//Play the level up text bounce animation
+	if (instance_exists(obj_temp_gui))
+	{
+		obj_temp_gui.should_play_text_bounce = true;
 	}
 	
 	var cam = view_get_camera(0);
@@ -410,6 +430,7 @@ kill = function()
 gun_sprite_fps = 10;
 gun_sprite_index = 0;
 
+//LD montello
 //get the speed we need to spread
 //our frames over the game's frame rate.
 gun_sprite_speed = gun_sprite_fps / 60;

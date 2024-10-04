@@ -1,5 +1,143 @@
-/// @description Draw underglow
+/// @description Draw underglow & Animate GUI
 // You can write your code in this editor
+
+
+//LD Montello
+//Start the xp bar fill animation
+if (should_play_xp_lerp)
+{
+	//if we have just changed
+	//the target fill we are lerping to,
+	//we need to calculate the relative
+	//progression so the visuals remain the same
+	//and don't jump because the lerp value changed.
+	
+	if (xp_fill != obj_player.xp / obj_player.get_xp_to_reach_level(obj_player.level + 1) * 100)
+	{
+		
+	}
+	
+	//LD Montello.
+	//If we were already lerping xp,
+	//don't change the starting
+	//value as that could make our
+	//animation look like it jumps
+	//Just continue lerping as normal
+	//and we'll just adjust the end value after.
+	if (!is_lerping_xp)
+	{
+	
+		//Reset to default start values for the animation.
+		//This will reset the animation if it plays back to back.
+		cur_xp_anim_time = 0;
+	
+	
+		//Set the last xp fill value so we start lerping from there
+		last_xp_fill = xp_fill
+	}
+	
+	//Set the new target xp fill
+	xp_fill = obj_player.xp / obj_player.get_xp_to_reach_level(obj_player.level + 1) * 100;
+	
+	//Set the new total time for the lerp
+	//so that it moves at the same speed
+	//regardless of how large the lerp is.
+	cur_total_xp_anim_time = total_xp_anim_time * (xp_fill - last_xp_fill);
+	
+	//Say we are playing the animation.
+	is_lerping_xp = true;
+	
+	//Say we shouldn't restart the animation.
+	should_play_xp_lerp = false;
+}
+
+if (is_lerping_xp)
+{
+	
+	cur_xp_anim_time++;
+	
+	//Set the fill value to lerp
+	//based on our animation.
+	cur_xp_fill = lerp(last_xp_fill, xp_fill, cur_xp_anim_time / cur_total_xp_anim_time);
+	
+	//if we've reached the end of our lerp
+	if (cur_xp_anim_time > cur_total_xp_anim_time)
+	{
+		//stop lerping
+		is_lerping_xp = false;
+		//set the current xp fill
+		//to be our target fill value
+		cur_xp_fill = xp_fill;
+	}
+	
+	
+}
+
+#region LVL. text bounce animation
+
+//LD Montello
+//Play text bounce if P is hit.
+if (keyboard_check_pressed(ord("P")))
+{
+	should_play_text_bounce = true;
+}
+
+//LD Montello
+//Start the text bounce animation
+if (should_play_text_bounce)
+{
+	//Reset to default start values for the animation.
+	//This will reset the animation if it plays back to back.
+	cur_lvl_up_anim_time = 0;
+	reverse_anim = false;
+	
+	//Say we are playing the animation.
+	is_playing_text_bounce = true;
+	
+	//Say we shouldn't reset and play the animation.
+	should_play_text_bounce = false;
+}
+
+if (is_playing_text_bounce)
+{
+	//LD Montello
+	//Animate LVL GUI text
+	//when the player levels up.
+	if (not reverse_anim)
+	cur_lvl_up_anim_time++;
+	else
+	//We want to reverse faster
+	//than we were going forward.
+	cur_lvl_up_anim_time-=2;
+
+	//LD Montello
+	//Lerp the values based on our time.
+	lvl_text_rot = lerp(0, 25, cur_lvl_up_anim_time / total_lvl_up_anim_time);
+    lvl_text_scale = lerp(24/72, 48/72, cur_lvl_up_anim_time / total_lvl_up_anim_time);
+	lvl_text_color = lerp(global.neon_cyan, global.neon_lime, cur_lvl_up_anim_time / total_lvl_up_anim_time)
+
+	if (cur_lvl_up_anim_time > total_lvl_up_anim_time and not reverse_anim)
+	{
+	
+		reverse_anim = true;
+	}
+	if (cur_lvl_up_anim_time < 0 and reverse_anim)
+	{
+		reverse_anim = false;
+		
+		//LD Montello
+		//stop playing animation
+		//and reset values to default.
+		is_playing_text_bounce = false;
+		lvl_text_scale = 24 / 72;
+		lvl_text_rot = 0
+		lvl_text_color = global.neon_cyan
+	}
+
+	
+}
+
+#endregion
 
 //LD Montello
 //Press "O" to OPEN the debug menu.
