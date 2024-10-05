@@ -21,14 +21,10 @@ gun_angle = point_direction(x, y, obj_player.x, obj_player.y);
 
 #region pathfinding
 
+
 //LD Montello
-//Stop moving towards player
-//at target_stop_distance distance.
-//This is a ranged enemy so getting
-//really close wouldn't make sense.
-if (distance_to_object(obj_player) > target_stop_distance)
-{
-	//LD Montello
+//Move towards player.
+//LD Montello
 	//If we're going to calculate every step
 	//we should only calculate the next step in 
 	//the pathfinding, instead of finding the
@@ -37,8 +33,6 @@ if (distance_to_object(obj_player) > target_stop_distance)
 	
 	//Path and avoid other tanks.
 	mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
-	
-}
 
 
 

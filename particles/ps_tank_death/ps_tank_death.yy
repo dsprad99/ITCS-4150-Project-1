@@ -14,7 +14,7 @@
   "name":"ps_tank_death",
   "parent":{
     "name":"Particle Systems",
-    "path":"folders/Scripts/Particle Systems.yy",
+    "path":"folders/Particle Systems.yy",
   },
   "resourceType":"GMParticleSystem",
   "resourceVersion":"2.0",

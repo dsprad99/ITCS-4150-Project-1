@@ -19,11 +19,23 @@ if (enemies_left_to_spawn > 0)
 	//spawn enemies outside room code:
 	//https://www.reddit.com/r/gamemaker/comments/ppts1l/make_enemies_spawn_randomly_around_edges/
 
+	var cam = view_get_camera(0);
 	
 	var centerx, centery, random_dir, radius;
 	
-	centerx = room_width / 2;
-	centery = room_height / 2;
+	//centerx = room_width / 2;
+	//centery = room_height / 2;
+	
+	//Use the camera width and height
+	cam_half_width = camera_get_view_width(cam) / 2;
+	cam_half_height = camera_get_view_height(cam) / 2;
+	
+	//Use the camera center position
+	//to calculate where to spawn enemies.
+    centerx = camera_get_view_x(cam) + cam_half_width;
+	centery = camera_get_view_y(cam) + cam_half_height;
+	
+	
 	
 	//spawn enemies until there isn't 
 	//any more room.
@@ -33,8 +45,14 @@ if (enemies_left_to_spawn > 0)
 		random_dir = irandom(360);
 		
 		//calculate spawn radius
-		radius = ((centerx ^ 2) + (centery ^ 2)) ^ (1/2);
-	
+		radius = ((cam_half_width ^ 2) + (cam_half_height ^ 2)) ^ (1/2);
+		
+		//Calculate random offset for spawn radius
+		//32 pixels is the width and height of
+		//an enemy, so we'll multiply the max number
+		//of rows of enemies we can have by 32 to get
+		//a nice spread
+		radius += random_range(0, 20 * 32);
 		
 		spawn_x = centerx + lengthdir_x(radius, random_dir)
 		spawn_y = centery + lengthdir_y(radius, random_dir)
@@ -55,8 +73,21 @@ if (enemies_left_to_spawn > 0)
 			break;
 		}
 		
-		//spawn in the instance.
-		instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_tank);
+		//if the wave count is greater than or at 15
+		//we have a chance to spawn 
+		//a tank instead of a melee enemy.
+		//basically, 1 in 10 chance to spawn a tank.
+		if (global.cur_wave >= 15 and floor(random_range(0, 10)) == 0)
+		{
+			//spawn in the tank instance.
+			instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_tank);
+		}
+		//only spawn melee enemies
+		else
+		{
+			//spawn in the melee instance.
+			instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_melee);
+		}
 		
 		
 		//LD Montello
