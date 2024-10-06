@@ -232,6 +232,11 @@ get_xp_to_reach_level = function(_level)
 //James Reneo
 //Level_up function
 level_up = function(){
+	
+	//LD Montello
+	//Play level up sound
+	audio_play_sound_on(global.sfx_emitter, snd_level_up, false, 2)
+	
 	//LD Montello,
 	//James was just setting the game state here,
 	//not calling pause_game() which is why
@@ -278,7 +283,7 @@ bursts_per_interval = 1;
 //LD Montello
 //time between bursts
 //This CANNOT be upgraded.
-burst_interval = 10;
+burst_interval = 30;
 
 //LD Montello
 //this is decremented

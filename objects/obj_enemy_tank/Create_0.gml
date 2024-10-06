@@ -59,7 +59,7 @@ xp = 5
 //lerp from our start to our end
 //using our cur_wave / global.waves
 //to get a 0-1 value for progress in the lerp.
-health = floor(lerp(start_health, end_health, global.cur_wave / global.waves_to_win))
+_health = floor(lerp(start_health, end_health, global.cur_wave / global.waves_to_win))
 
 
 //LD Montello
@@ -67,7 +67,7 @@ health = floor(lerp(start_health, end_health, global.cur_wave / global.waves_to_
 //using this method.
 decrement_health = function(damage)
 {
-	health -= damage;
+	_health -= damage;
 	
 	
 	//LD Montello
@@ -81,7 +81,7 @@ decrement_health = function(damage)
 	//when hit, 
 	//play death SFX
 	//when Dying.
-	if (health > 0)
+	if (_health > 0)
 	{
 		//LD Montello
 		//Play SFX for getting hit.		
@@ -94,9 +94,9 @@ decrement_health = function(damage)
 		audio_play_sound_on(global.sfx_emitter, snd_explosion_hit2, false, 1)
 	}
 	
-	if (health <= 0)
+	if (_health <= 0)
 	{
-		health = 0;
+		_health = 0;
 		kill();
 	}
 	
@@ -171,3 +171,10 @@ layer_sprite_xscale(ug1, 5);
 layer_sprite_yscale(ug1, 5);
 
 #endregion
+
+//Create an array
+//to store bullets that have already
+//hit this enemy.
+//We need this so we don't double
+//count when colliding with bullets.
+ignored_bullets = array_create(20)

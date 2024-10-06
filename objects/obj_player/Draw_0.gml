@@ -11,4 +11,3 @@ draw_self();
 //at gun_angle angle.
 draw_sprite_ext(spr_gun_fire, gun_sprite_index, x + gun_x_offset, y + gun_y_offset, 5.0, 5.0, gun_angle, c_white, image_alpha);
 
-
