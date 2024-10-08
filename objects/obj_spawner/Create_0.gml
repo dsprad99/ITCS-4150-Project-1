@@ -17,8 +17,45 @@ cur_wave_size = 5;
 //LD Montello
 kills_to_spawn_next_wave = 5;
 
+//LD Montello
+//The maximum percentage of the wave
+//that we allow to spawn in one burst.
+//before we break and use our 
+//spawn_burst_cooldown to wait
+//and spawn enemies again. 
+//it'll make the enemies spawn more staggered
+//like we wanted, instead of one huge burst.
+//0.1 = 10%
+spawn_percent_before_cooldown = 0.1;
+
+//count of enemies to spawn before cooldown,
+//set at the start of every wave and calculated
+//using the spawn_percent_before_cooldown
+//and the size of the wave.
+spawn_count_before_cooldown = 0;
+
+//LD Montello
+//the number of enemies spawned
+//since the last cooldown, resets
+//to zero every cooldown.
+enemies_spawned_since_cooldown = 0;
+
+//LD Montello
+//Cooldown before we spawn
+//another burst of enemies for
+//this wave.
+spawn_burst_cooldown = 50;
+
+//LD Montello
+//the current time since the last
+//burst, used to track if we've 
+//finished our cooldown.
+time_since_burst = 0;
 
 
+//LD Montello
+//stores the number of enemies we have left to spawn
+//to complete spawning all enemies for this wave.
 enemies_left_to_spawn = 0;
 
 calc_should_spawn_wave = function(_enemies)
@@ -82,11 +119,7 @@ win_condition_reached = function()
 spawn_wave_on_edge = function(wave_size)
 {
 	global.cur_wave++;
-	
-	//add enemies to our queue of enemies
-	//to spawn.
-	enemies_left_to_spawn += cur_wave_size;
-	
+
 	//LD Montello
 	//when we reach
 	//this wave we have won.
@@ -94,6 +127,15 @@ spawn_wave_on_edge = function(wave_size)
 	{
 		win_condition_reached();
 	}
+
+	
+	//add enemies to our queue of enemies
+	//to spawn.
+	enemies_left_to_spawn += cur_wave_size;
+	
+	//Calculate the current number of enemies
+	//per spawn burst before cooling down
+	spawn_count_before_cooldown = spawn_percent_before_cooldown * cur_wave_size;
 }
 
 

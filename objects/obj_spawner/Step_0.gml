@@ -3,6 +3,29 @@
 
 
 //LD Montello
+//if we've spawned enough enemies for this spawn burst,
+//then begin cooling down.
+if (enemies_spawned_since_cooldown >= spawn_count_before_cooldown)
+{
+	//LD Montello
+	//Check if we have fully cooled down
+	if (time_since_burst >= spawn_burst_cooldown)
+	{
+		//If so, reset the time_since_burst
+		//and the spawn_count_before_cooldown
+		//so that on the next step we do a spawn burst.
+		time_since_burst = 0;
+		enemies_spawned_since_cooldown = 0;
+	}
+	else
+	{
+		//Increment the amount of time since the last
+		//spawn burst
+		time_since_burst++;
+	}
+
+}
+//LD Montello
 //this produces waves that
 //are more manageable for the player
 //than spawning all enemies in a wave at once.
@@ -12,7 +35,7 @@
 //to spawn them without overlapping. We then stop spawning.
 //then, in the next step event we repeat until we have no
 //more enemies to spawn.
-if (enemies_left_to_spawn > 0)
+else if (enemies_left_to_spawn > 0)
 {
 	
 	//Where I learned how to do the basic
@@ -93,5 +116,9 @@ if (enemies_left_to_spawn > 0)
 		//LD Montello
 		//Decrement the number of enemies we still need to spawn
 		enemies_left_to_spawn--;
+		
+		//Increment the number of enemies spawned 
+		//since the last cooldown.
+		enemies_spawned_since_cooldown++;
 	}
 }

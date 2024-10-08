@@ -109,7 +109,9 @@ cur_health_anim_time = 0;
 
 //LD Montello
 //Should we start lerping the health bar?
-should_play_health_lerp = false;
+//This is true on start so the health
+//bar starts off filled.
+should_play_health_lerp = true;
 
 //LD Montello
 //Are we currently animating the health bar?
