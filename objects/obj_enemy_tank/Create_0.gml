@@ -52,14 +52,14 @@ gun_angle = direction;
 //how much xp this enemy
 //gives when it dies.
 //set xp value based on wave.
-xp = 5
+xp = start_xp * floor(power(2, global.cur_wave / 2))
 
 //LD Montello
 //Health Scaling
 //Use a similar formula to player's
 //health scaling but increase health
 //exponentially as the waves increase.
-_health = start_health * floor(power(2, global.cur_wave / 2))
+_health = start_health * floor(power(2, global.cur_wave / 10))
 
 //LD Montello
 //Scale enemy damage with wave

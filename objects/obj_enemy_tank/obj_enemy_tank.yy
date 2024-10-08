@@ -39,6 +39,7 @@
     {"$GMObjectProperty":"v1","%Name":"start_damage","filters":[],"listItems":[],"multiselect":false,"name":"start_damage","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"25","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"attack_interval","filters":[],"listItems":[],"multiselect":false,"name":"attack_interval","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"240","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"start_health","filters":[],"listItems":[],"multiselect":false,"name":"start_health","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"start_xp","filters":[],"listItems":[],"multiselect":false,"name":"start_xp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"15","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
