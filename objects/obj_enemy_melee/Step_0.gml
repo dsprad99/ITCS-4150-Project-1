@@ -22,6 +22,23 @@ gun_angle = point_direction(x, y, obj_player.x, obj_player.y);
 #region pathfinding
 
 
+//LD Montello,
+//This is a simple check to make sure
+//the enemy slows down when they
+//intersect with the player if for whatever
+//reason they are fast enough to always
+//be on top of the player
+if (place_meeting(x, y, obj_player))
+{
+	if (obj_player.moveSpeed <= pathing_speed)
+	{
+		//make our pathing speed
+		//90% of the player's speed
+		//so that the player can escape the enemy.
+		pathing_speed = 0.9 * obj_player.moveSpeed;
+	}
+}
+
 //LD Montello
 //Move towards player.
 //LD Montello
@@ -33,7 +50,6 @@ gun_angle = point_direction(x, y, obj_player.x, obj_player.y);
 	
 	//Path and avoid other tanks.
 	mp_potential_step_object(obj_player.x, obj_player.y, pathing_speed, obj_enemy_tank);	
-
 
 
 
@@ -70,32 +86,6 @@ if (place_meeting(x, y, obj_player))
 //Decrement attack timer
 attack_timer--;
 attack_timer = clamp(attack_timer, 0, attack_interval)
-
-#endregion
-
-//LD Montello
-#region Movement Animations
-
-//If we aren't moving
-//we shouldn't animate
-//the tank treads.
-if (is_moving())
-{
-	tread_anim_index += tread_anim_speed;
-	
-	//We want to lerp the object
-	//to slowly rotate to face
-	//the direction it's going
-	//in as that'll make it look more
-	//tank like.
-	//image_angle = lerp(start_angle, point_direction(x, y, obj_player.x, obj_player.y), target_stop_distance / distance_to_object(obj_player));
-
-}
-else
-{
-	image_speed = 0;
-}
-
 
 #endregion
 

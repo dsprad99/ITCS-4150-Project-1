@@ -1,18 +1,24 @@
 /// @description Create function for enemies
 // You can write your code in this editor
 
-
 //LD Montello
-//the fps of the tread animation.
-tread_anim_fps = 10;
+//Our sprite needs to be
+//a scale of 5x5 so that
+//it is the same size as the other
+//32x32 sprites.
+image_xscale = 5;
+image_yscale = 5;
 
-//LD Montello
-//The speed the tank treads will move at in FPS
-tread_anim_speed = tread_anim_fps / 60;
 
-//LD Montello
-//The current index of the tank tread animatino
-tread_anim_index = 0;
+//LD Montello,
+//I can't remove 
+//all of these vars
+//as they are inherited from the parent. 
+//I may need to change this code
+//such that this obejct is not parented
+//to the tank as it's code diverges a lot
+
+
 
 
 //LD Montello
@@ -106,7 +112,7 @@ decrement_health = function(damage)
 //LD Montello
 //Speed enemies move.
 start_speed = 3;
-end_speed = 5
+end_speed = 5;
 //lerp from our start to our end
 //using our cur_wave / global.waves
 //to get a 0-1 value for progress in the lerp.

@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Enemy_Melee_temp",
-    "path":"sprites/Enemy_Melee_temp/Enemy_Melee_temp.yy",
+    "name":"spr_squid_enemy",
+    "path":"sprites/spr_squid_enemy/spr_squid_enemy.yy",
   },
   "spriteMaskId":null,
   "visible":true,
