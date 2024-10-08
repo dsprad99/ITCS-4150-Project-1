@@ -8,7 +8,9 @@
   ],
   "managed":true,
   "name":"obj_enemy_melee",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"propertyId":{"name":"start_health","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
+  ],
   "parent":{
     "name":"Melee",
     "path":"folders/Objects/Enemies/Melee.yy",

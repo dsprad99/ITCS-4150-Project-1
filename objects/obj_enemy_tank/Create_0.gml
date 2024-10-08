@@ -56,11 +56,15 @@ xp = 5
 
 //LD Montello
 //Health Scaling
-//lerp from our start to our end
-//using our cur_wave / global.waves
-//to get a 0-1 value for progress in the lerp.
-_health = floor(lerp(start_health, end_health, global.cur_wave / global.waves_to_win))
+//Use a similar formula to player's
+//health scaling but increase health
+//exponentially as the waves increase.
+_health = start_health * floor(power(2, global.cur_wave / 2))
 
+//LD Montello
+//Scale enemy damage with wave
+//for now we won't scale damage with wave.
+damage = start_damage //* floor(power(2, global.cur_wave / 5))
 
 //LD Montello
 //Only modify health

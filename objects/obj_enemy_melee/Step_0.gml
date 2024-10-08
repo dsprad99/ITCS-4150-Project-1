@@ -5,7 +5,14 @@
 //James Reneo
 //Timestoping enemies
 if(global.game_state == GAME_STATE.PAUSED){
+	//Stop the animation
+	image_speed = 0;
 	return;
+}
+else
+{
+	//Resume the animation
+	image_speed = 1;
 }
 
 

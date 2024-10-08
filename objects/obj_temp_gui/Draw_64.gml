@@ -83,35 +83,86 @@ if (debug_gui)
 {
 
 //LD Montello
-//Temporary,
-//Just draw the level in the top left.
+//We recreate this every frame because
+//we must get the values of each
+//stat before drawing them.
+var debug_lines = [
+
 //Draw max health
-draw_text_transformed_color(10, 0, "Max Health: " + string(obj_player.max_health), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"Max Health: " + string(obj_player.max_health),
 //Draw level
-draw_text_transformed_color(10, 40, "Level: " + string(obj_player.level), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"Level: " + string(obj_player.level),
 //Draw xp
-draw_text_transformed_color(10, 80, "XP: " + string(obj_player.xp), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"XP: " + string(obj_player.xp),
 
-draw_text_transformed_color(10, 120, "Debug Controls:", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+//Draw current damage
+"Damage: " + string(obj_player.damage),
 
-draw_text_transformed_color(10, 160, "Press 1 to upgrade bullets fired per burst: " + string(obj_player.player_bullets_fired), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+//Draw required kills
+"Kills Required for next wave: " + string(obj_spawner.kills_to_spawn_next_wave), 
 
-draw_text_transformed_color(10, 200, "Press 2 to upgrade individual bullet speed: " + string(obj_player.bullet_speed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+//Draw current kills
+"Kills: " + string(global.enemies_killed), 
 
-draw_text_transformed_color(10, 240, "Press 3 to upgrade fire interval: " + string(obj_player.shoot_interval), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+//The various debug controls.
+"Debug Controls:",
 
-draw_text_transformed_color(10, 280, "Press 4 to upgrade piercing: " + string(obj_player.piercing_count), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"Press 1 to upgrade bullets fired per burst: " + string(obj_player.player_bullets_fired),
 
-draw_text_transformed_color(10, 320, "Press 5 to upgrade burst count: " + string(obj_player.bursts_per_interval), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"Press 2 to upgrade individual bullet speed: " + string(obj_player.bullet_speed),
 
-draw_text_transformed_color(10, 360, "Press 6 to upgrade movement: " + string(obj_player.speed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"Press 3 to upgrade fire interval: " + string(obj_player.shoot_interval),
 
-draw_text_transformed_color(10, 400, "Press 7 to refill health: " + string(obj_player.mainPlayerHealth), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"Press 4 to upgrade piercing: " + string(obj_player.piercing_count), 
 
-draw_text_transformed_color(10, 440, "Press 8 to increase wave size: " + string(obj_spawner.cur_wave_size), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"Press 5 to upgrade burst count: " + string(obj_player.bursts_per_interval),
 
-draw_text_transformed_color(10, 480, "Kills Required for next wave: " + string(obj_spawner.kills_to_spawn_next_wave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"Press 6 to upgrade movement: " + string(obj_player.speed), 
 
-draw_text_transformed_color(10, 520, "Kills: " + string(global.enemies_killed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+"Press 7 to refill health: " + string(obj_player.mainPlayerHealth),
+
+"Press 8 to increase wave size: " + string(obj_spawner.cur_wave_size), 
+
+]
+
+for (i = 0; i < array_length(debug_lines); i++)
+{
+	draw_text_transformed_color(10, 40 * i, debug_lines[i], 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+}
+
+
+////LD Montello
+////Temporary,
+////Just draw the level in the top left.
+////Draw max health
+//draw_text_transformed_color(10, 0, "Max Health: " + string(obj_player.max_health), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+////Draw level
+//draw_text_transformed_color(10, 40, "Level: " + string(obj_player.level), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+////Draw xp
+//draw_text_transformed_color(10, 80, "XP: " + string(obj_player.xp), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 120, "Debug Controls:", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 160, "Press 1 to upgrade bullets fired per burst: " + string(obj_player.player_bullets_fired), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 200, "Press 2 to upgrade individual bullet speed: " + string(obj_player.bullet_speed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 240, "Press 3 to upgrade fire interval: " + string(obj_player.shoot_interval), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 280, "Press 4 to upgrade piercing: " + string(obj_player.piercing_count), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 320, "Press 5 to upgrade burst count: " + string(obj_player.bursts_per_interval), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 360, "Press 6 to upgrade movement: " + string(obj_player.speed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 400, "Press 7 to refill health: " + string(obj_player.mainPlayerHealth), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 440, "Press 8 to increase wave size: " + string(obj_spawner.cur_wave_size), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 480, "Kills Required for next wave: " + string(obj_spawner.kills_to_spawn_next_wave), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 520, "Kills: " + string(global.enemies_killed), 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+
+//draw_text_transformed_color(10, 560, "Damage: " + string(obj_player.damage), )
 
 }

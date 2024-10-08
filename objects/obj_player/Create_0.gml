@@ -134,6 +134,22 @@ level = 0;
 templevel = 0;
 
 //LD Montello
+//The damage each bullet will inflict
+//Damage increases every 4 levels.
+//Level 1 = 1 damage
+//Level 4 = 4 damage
+//level 8 = 
+//We'll update this every time we level up.
+damage = 1 * floor(power(2, floor(level / 4)));
+
+//updates damage value,
+//called every level up.
+calc_damage = function()
+{
+	damage = 1 * floor(power(2, level / 4));
+}
+
+//LD Montello
 //Setup xp variable and functions for it
 //NEVER SET XP USING xp = #; 
 //You should always use the XP setter
@@ -252,6 +268,10 @@ level_up = function(){
 	calc_health()
 	
 	//LD Montello
+	//Calculate the new damage for this level.
+	calc_damage()
+	
+	//LD Montello
 	//Play the level up text bounce animation
 	if (instance_exists(obj_temp_gui))
 	{
@@ -343,13 +363,13 @@ increment_main_players_health = function(){
 
 //Davis Spradling
 //Decrement main players health 
-decrement_main_players_health = function(damage){
+decrement_main_players_health = function(_damage){
 	
 	//LD Montello
 	//Call set health
 	//so that health bar
 	//animations get triggered.
-	set_health(mainPlayerHealth - damage);
+	set_health(mainPlayerHealth - _damage);
 	
 	//LD Montello
 	//Create visual flare to give 
