@@ -7,8 +7,8 @@
 //is 250, the art is 300 pixels,
 //so we'll make the scale of the image
 //250 / 300
-image_xscale = 275 / 300;
-image_yscale = 275 / 300;
+//image_xscale = 275 / 300;
+//image_yscale = 275 / 300;
 
 //LD Montello
 //the category of this button,
