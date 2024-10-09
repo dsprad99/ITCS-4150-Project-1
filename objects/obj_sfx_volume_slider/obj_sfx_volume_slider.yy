@@ -6,7 +6,9 @@
   ],
   "managed":true,
   "name":"obj_sfx_volume_slider",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_slider","path":"objects/obj_slider/obj_slider.yy",},"propertyId":{"name":"display_name","path":"objects/obj_slider/obj_slider.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"SFX VOLUME",},
+  ],
   "parent":{
     "name":"UI",
     "path":"folders/Objects/UI.yy",

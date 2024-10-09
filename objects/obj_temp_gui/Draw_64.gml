@@ -48,12 +48,12 @@ bar_y = 995;
 
 //draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, cur_xp_fill, c_black, c_white, c_white, 0, false, false);
 
+//Go back to default alignment.
+draw_set_valign(-1)
+draw_set_halign(-1)
+//Go back to default font
+draw_set_font(-1)
 
-//TODO
-//LD Montello
-//I want to add color blending
-//to the bar when you level up
-//so that it does a small blending animation before resetting.
 
 
 

@@ -1,7 +1,9 @@
 /// @description Init vars
 // You can write your code in this editor
 
-
+//LD Montello
+//the current color of the slider
+slider_color = c_idle;
 
 //LD Montello
 //The min and max values of this slider
