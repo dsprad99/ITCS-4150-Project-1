@@ -73,6 +73,14 @@ open_pause_menu = function()
 	//LD Montello
 	//activate the pause menu object
 	instance_activate_object(obj_pause_menu)
+	
+	//LD Montello
+	//activate the resume button
+	instance_activate_object(obj_resume_button)
+	
+	//LD Montello
+	//activate the quit button 
+	instance_activate_object(obj_killGame)
 }
 
 //LD Montello
@@ -92,6 +100,14 @@ close_pause_menu = function()
 	//LD Montello
 	//deactivate the pause menu object
 	instance_deactivate_object(obj_pause_menu)
+	
+	//LD Montello
+	//deactivate the resume button
+	instance_deactivate_object(obj_resume_button)
+	
+	//LD Montello
+	//deactivate the quit button 
+	instance_deactivate_object(obj_killGame)
 }
 
 //LD Montello

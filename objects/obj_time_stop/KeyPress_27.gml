@@ -47,7 +47,7 @@ else
 	pause_game()
 	
 	//if the game is paused,
-	//close the pause menu.
+	//open the pause menu.
 	if (global.game_state == GAME_STATE.PAUSED)
 	{
 		open_pause_menu()

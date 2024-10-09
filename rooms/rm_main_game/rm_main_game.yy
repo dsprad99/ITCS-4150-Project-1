@@ -17,6 +17,8 @@
     {"name":"inst_1A649585","path":"rooms/rm_main_game/rm_main_game.yy",},
     {"name":"inst_74F9A622","path":"rooms/rm_main_game/rm_main_game.yy",},
     {"name":"inst_F1ADE91","path":"rooms/rm_main_game/rm_main_game.yy",},
+    {"name":"inst_72DE0609","path":"rooms/rm_main_game/rm_main_game.yy",},
+    {"name":"inst_D7B2D97","path":"rooms/rm_main_game/rm_main_game.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -29,6 +31,8 @@
             {"$GMRInstance":"v1","%Name":"inst_1A649585","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1A649585","objectId":{"name":"obj_music_volume_slider","path":"objects/obj_music_volume_slider/obj_music_volume_slider.yy",},"properties":[
                 {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_slider","path":"objects/obj_slider/obj_slider.yy",},"propertyId":{"name":"screen_y","path":"objects/obj_slider/obj_slider.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1080/2",},
               ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1696.0,"y":1536.0,},
+            {"$GMRInstance":"v1","%Name":"inst_72DE0609","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_72DE0609","objectId":{"name":"obj_killGame","path":"objects/obj_killGame/obj_killGame.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.125,"scaleY":1.171875,"x":1848.0,"y":1759.0,},
+            {"$GMRInstance":"v1","%Name":"inst_D7B2D97","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_D7B2D97","objectId":{"name":"obj_resume_button","path":"objects/obj_resume_button/obj_resume_button.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.140625,"scaleY":1.171875,"x":1609.0,"y":1759.0,},
           ],"layers":[],"name":"PauseUI","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
         {"$GMRInstanceLayer":"","%Name":"UpgradeUI","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"UpgradeUI","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
         {"$GMRInstanceLayer":"","%Name":"healthBar","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"healthBar","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
