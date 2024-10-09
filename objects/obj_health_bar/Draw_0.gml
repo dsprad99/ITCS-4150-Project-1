@@ -9,4 +9,4 @@ draw_self()
 //at the depth value of the current object
 //or on top of everything in draw_GUI
 //so, I opted to move this here.
-draw_healthbar(x, y, x+100, y+100, 100, c_black,  c_black, c_black, 0, true, false)
+//draw_healthbar(x, y, x+100, y+100, 100, c_black,  c_black, c_black, 0, true, false)

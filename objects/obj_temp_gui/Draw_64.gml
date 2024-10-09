@@ -35,7 +35,7 @@ draw_text_transformed_color(210, 970, "Health",  24 / 72, 24 / 72, 0, c_white, c
 //to show how far from full health
 //the player currently is.
 //health bar is always "full" at 100.
-//draw_healthbar(50, 1010, 500, 1040, cur_health_fill, c_black, global.neon_cyan, global.neon_cyan, 0, true, false);
+draw_healthbar(50, 1010, 500, 1040, cur_health_fill, c_black, global.neon_cyan, global.neon_cyan, 0, true, false);
 
 //Davis Spradling 
 //Bar to show progress player has made through the wave

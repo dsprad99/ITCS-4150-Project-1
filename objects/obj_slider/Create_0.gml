@@ -1,13 +1,15 @@
 /// @description Init vars
 // You can write your code in this editor
 
+
+
 //LD Montello
 //The min and max values of this slider
 min_value = 0
 max_value = 1
 
 //The size (in pixels) of the slider width
-slider_width = 1000;
+slider_width = 700;
 
 //The scale we need to set our nine-slice sprite
 //to match the slider width.

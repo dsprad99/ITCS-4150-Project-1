@@ -18,9 +18,6 @@ pause_game = function(){
 			add_speed(instance,instance.speed);
 		}
 		
-		//LD montello
-		//Turn on the Pause UI
-		instance_activate_object(obj_sfx_volume_slider)
 	}
 	} else if (global.game_state == GAME_STATE.PAUSED) {
 		global.game_state = GAME_STATE.RUNNING;
@@ -54,3 +51,49 @@ add_speed = function(instance,value){
 	//Sets speed to 0
 	instance.speed = 0;
 }
+
+//LD Montello,
+//is the pause menu currently open?
+is_pause_menu_open = false;
+
+//LD Montello
+//Activates the pause menu
+open_pause_menu = function()
+{
+	is_pause_menu_open = true;
+	
+	//LD montello
+	//activate the sfx slider instance. 
+	instance_activate_object(obj_sfx_volume_slider)
+	
+	//LD Montello
+	//activate the music slider instance.
+	instance_activate_object(obj_music_volume_slider)
+	
+	//LD Montello
+	//activate the pause menu object
+	instance_activate_object(obj_pause_menu)
+}
+
+//LD Montello
+//Deactivates the pause menu
+close_pause_menu = function()
+{
+	is_pause_menu_open = false;
+	
+	//LD montello
+	//deactivate the sfx slider instance. 
+	instance_deactivate_object(obj_sfx_volume_slider)
+	
+	//LD Montello
+	//deactivate the music slider instance.
+	instance_deactivate_object(obj_music_volume_slider)
+	
+	//LD Montello
+	//deactivate the pause menu object
+	instance_deactivate_object(obj_pause_menu)
+}
+
+//LD Montello
+//Deactivate the pause menu when rm_main_game starts
+close_pause_menu()

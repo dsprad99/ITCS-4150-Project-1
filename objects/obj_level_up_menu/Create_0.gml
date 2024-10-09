@@ -23,7 +23,10 @@ for (var j = 0; j < num_buttons; j++) {
 	//of j in this loop by passing a struct
 	//containing j.
 	//I learned how to do this here: https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_create_layer.htm
-    var button = instance_create_layer(button_x, button_y , "UI", obj_level_button, {upgrade_category : j});
+    var button = instance_create_layer(button_x, button_y , "UpgradeUI", obj_level_button, {upgrade_category : j});
+	//make sure the button is drawn above
+	//this object.
+	button.depth = depth - 1;
  
 	show_debug_message("ARE U KIDDING")
     // Set button properties

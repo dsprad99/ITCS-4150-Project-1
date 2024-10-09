@@ -272,7 +272,7 @@ level_up = function(){
 	calc_damage()
 	
 	var cam = view_get_camera(0);
-	instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2, camera_get_view_y(cam) + camera_get_view_height(cam) / 2,"UI2",obj_level_up_menu);
+	instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2, camera_get_view_y(cam) + camera_get_view_height(cam) / 2,"UpgradeUI",obj_level_up_menu);
 	show_debug_message("LEVELEDUP", level);
 }
 

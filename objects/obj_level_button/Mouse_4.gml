@@ -1,6 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//LD Montello
+//You cannot select in upgrade
+//if you are currently in the pause menu.
+if (obj_time_stop.is_pause_menu_open)
+{
+	return;
+}
+
 //James Reneo
 //logic for applying the upgrade
 show_debug_message("CLICKED");
