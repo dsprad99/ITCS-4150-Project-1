@@ -35,7 +35,7 @@ draw_text_transformed_color(210, 970, "Health",  24 / 72, 24 / 72, 0, c_white, c
 //to show how far from full health
 //the player currently is.
 //health bar is always "full" at 100.
-draw_healthbar(50, 1010, 500, 1040, cur_health_fill, c_black, global.neon_cyan, global.neon_cyan, 0, true, false);
+//draw_healthbar(50, 1010, 500, 1040, cur_health_fill, c_black, global.neon_cyan, global.neon_cyan, 0, true, false);
 
 //Davis Spradling 
 //Bar to show progress player has made through the wave
@@ -44,32 +44,10 @@ bar_height = 20;
 bar_x = 670;  
 bar_y = 995;  
 
-//LD Montello
-//Draw the xp bar to it's filled amount.
-//draw_healthbar's fill amount should always
-//be a 0-100 value, we just divide current xp
-//by the amount of xp we need to reach the next
-//level and that gives us a 0-1 value,
-//we multiply that by 100 and we have our
-//fill amount for the xp bar.
-//fill_amount = obj_player.xp / obj_player.get_xp_to_reach_level(obj_player.level + 1) * 100
-//This was how it was calculated,
-//but we animate it now so it's calculated in step.
 
 
-draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, cur_xp_fill, c_black, c_white, c_white, 0, false, false);
+//draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, cur_xp_fill, c_black, c_white, c_white, 0, false, false);
 
-//LD Montello
-//Draw current level on the level up bar.
-//We divide the bar_height by 4 because
-//the vertical alignment is middle.
-draw_text_transformed_color(bar_x + 140, bar_y - bar_height, "LVL." + string(obj_player.level), lvl_text_scale, lvl_text_scale, lvl_text_rot, lvl_text_color, lvl_text_color, lvl_text_color, lvl_text_color, 1)
-
-//Go back to default alignment.
-draw_set_valign(-1)
-draw_set_halign(-1)
-//Go back to default font
-draw_set_font(-1)
 
 //TODO
 //LD Montello

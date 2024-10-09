@@ -167,12 +167,12 @@ set_xp = function(_xp){
 	//whenever xp is modified.
 	calc_level(xp);
 	
-	if (instance_exists(obj_temp_gui))
+	if (instance_exists(obj_xp_bar))
 	{
 		//LD Montello
 		//lerp from the previous xp bar fill value
 		//to the current fill value.
-		obj_temp_gui.should_play_xp_lerp = true;
+		obj_xp_bar.should_play_xp_lerp = true;
 	}
 	
 }
@@ -270,13 +270,6 @@ level_up = function(){
 	//LD Montello
 	//Calculate the new damage for this level.
 	calc_damage()
-	
-	//LD Montello
-	//Play the level up text bounce animation
-	if (instance_exists(obj_temp_gui))
-	{
-		obj_temp_gui.should_play_text_bounce = true;
-	}
 	
 	var cam = view_get_camera(0);
 	instance_create_layer(camera_get_view_x(cam) + camera_get_view_width(cam) / 2, camera_get_view_y(cam) + camera_get_view_height(cam) / 2,"UI2",obj_level_up_menu);

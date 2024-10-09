@@ -1,16 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_health_bar",
+  "%Name":"obj_pause_menu",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_health_bar",
+  "name":"obj_pause_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"UI",
+    "path":"folders/Objects/UI.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_expBar",
-    "path":"sprites/spr_expBar/spr_expBar.yy",
+    "name":"spr_pause_menu_new",
+    "path":"sprites/spr_pause_menu_new/spr_pause_menu_new.yy",
   },
   "spriteMaskId":null,
   "visible":true,
