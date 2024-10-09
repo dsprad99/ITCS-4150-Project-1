@@ -53,6 +53,7 @@ cur_offset = 0
 //The current x value of the grabbable slider
 cur_x = 0
 
+
 set_cur_value = function(_value)
 {
 	//LD Montello

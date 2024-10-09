@@ -105,6 +105,7 @@
     {"id":{"name":"spr_cyan_underglow","path":"sprites/spr_cyan_underglow/spr_cyan_underglow.yy",},},
     {"id":{"name":"spr_EnemyBullet","path":"sprites/spr_EnemyBullet/spr_EnemyBullet.yy",},},
     {"id":{"name":"spr_expBar","path":"sprites/spr_expBar/spr_expBar.yy",},},
+    {"id":{"name":"spr_green_square","path":"sprites/spr_green_square/spr_green_square.yy",},},
     {"id":{"name":"spr_gun_fire","path":"sprites/spr_gun_fire/spr_gun_fire.yy",},},
     {"id":{"name":"spr_gun","path":"sprites/spr_gun/spr_gun.yy",},},
     {"id":{"name":"spr_level_up_bg","path":"sprites/spr_level_up_bg/spr_level_up_bg.yy",},},

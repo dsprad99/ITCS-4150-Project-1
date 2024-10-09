@@ -1,6 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+//LD Montello
+//The size we want this to be in pixels
+//is 250, the art is 300 pixels,
+//so we'll make the scale of the image
+//250 / 300
+image_xscale = 275 / 300;
+image_yscale = 275 / 300;
+
 //LD Montello
 //the category of this button,
 //this determines which of the upgrades

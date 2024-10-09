@@ -52,18 +52,24 @@ gun_angle = direction;
 //how much xp this enemy
 //gives when it dies.
 //set xp value based on wave.
-xp = start_xp * floor(power(2, global.cur_wave / 2))
+//Scaling is too complex for our time restraint,
+//so it is not included.
+xp = start_xp //* floor(power(2, global.cur_wave / 2))
 
 //LD Montello
 //Health Scaling
 //Use a similar formula to player's
 //health scaling but increase health
 //exponentially as the waves increase.
-_health = start_health * floor(power(2, global.cur_wave / 10))
+//Scaling is too complex for our time restraint,
+//so it is not included.
+_health = start_health //* floor(power(2, global.cur_wave / 10))
 
 //LD Montello
 //Scale enemy damage with wave
 //for now we won't scale damage with wave.
+//Scaling is too complex for our time restraint,
+//so it is not included.
 damage = start_damage //* floor(power(2, global.cur_wave / 5))
 
 //LD Montello

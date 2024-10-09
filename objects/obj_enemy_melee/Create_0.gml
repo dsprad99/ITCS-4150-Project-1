@@ -12,17 +12,7 @@ image_yscale = 5;
 //LD Montello
 //Scale enemy damage with wave
 //For now, we won't scale enemy damage with wave.
-damage = start_damage //* floor(power(2, global.cur_wave / 10))
-
-//LD Montello,
-//I can't remove 
-//all of these vars
-//as they are inherited from the parent. 
-//I may need to change this code
-//such that this obejct is not parented
-//to the tank as it's code diverges a lot
-
-
+damage = start_damage * floor(power(2, global.cur_wave / 10))
 
 
 //LD Montello
@@ -49,10 +39,6 @@ is_moving = function()
 //to start firing at them.
 enemy_fire_range = 600;
 
-//LD Montello
-//the distance to stop
-//moving towards the player
-target_stop_distance = 100;
 
 //LD Montello
 //the angle of the enemies gun.
@@ -62,7 +48,9 @@ gun_angle = direction;
 //how much xp this enemy
 //gives when it dies.
 //set xp value based on wave.
-xp = start_xp * floor(power(2, global.cur_wave / 10))
+//Scaling is too complex for our time restraint,
+//so it is not included.
+xp = start_xp //* floor(power(2, global.cur_wave / 10))
 
 
 //LD Montello
@@ -70,7 +58,9 @@ xp = start_xp * floor(power(2, global.cur_wave / 10))
 //Use a similar formula to player's
 //health scaling but increase health
 //exponentially as the waves increase.
-_health = start_health * floor(power(2, global.cur_wave / 2))
+//Scaling is too complex for our time restraint,
+//so it is not included.
+_health = start_health //* floor(power(2, global.cur_wave / 2))
 
 
 //LD Montello
