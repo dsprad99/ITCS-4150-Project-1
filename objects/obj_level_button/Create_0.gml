@@ -42,7 +42,6 @@ var weapon_upgrades = [
 var other_upgrades = [
 	"Upgrade movement: " + string(obj_player.speed),
     "Refill health: " + string(obj_player.mainPlayerHealth),
-    "Increase wave size: " + string(obj_spawner.cur_wave_size),
 	"Upgrade Regen cooldown: " + string(obj_player.time_between_regens)
 ];
 
@@ -131,10 +130,7 @@ apply_upgrade = function(upgrade_index) {
         case 1: // Refill health
             obj_player.set_health(obj_player.max_health);
             break;
-        case 2: // Increase wave size
-            obj_spawner.increment_wave_size();
-            break;
-		case 3: // Decrease the cooldown of regen health.
+		case 2: // Decrease the cooldown of regen health.
 			obj_player.set_time_between_regens(obj_player.time_between_regens - 0.1);
 		default: 
 			show_debug_message("Not valid upgrade");
