@@ -85,10 +85,30 @@ speed = min(speed, moveSpeed);
 //beyond the boundaries.
 var half_sprite_width = sprite_width/2;
 var half_sprite_height = sprite_height/2;
-x = clamp(x, 0 + half_sprite_width, room_width - half_sprite_width);
+x = clamp(x, half_sprite_width, room_width - half_sprite_width);
 y = clamp(y, half_sprite_height, room_height - half_sprite_height);
 
+if (x + hspeed <= half_sprite_width)
+{
+	hspeed = 0;
+}
 
+if (x - hspeed > half_sprite_width)
+{
+	hspeed = 0;
+}
+
+
+
+if (y + vspeed <= half_sprite_height)
+{
+	vspeed = 0;
+}
+
+if (y - vspeed > half_sprite_height)
+{
+	vspeed = 0;
+}
 
 //LD Montello
 //if we've
