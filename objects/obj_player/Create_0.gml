@@ -77,7 +77,7 @@ health_regen_amount = 1;
 
 //LD Montello
 //Time before next regen of health
-time_between_regens = 1;
+time_between_regens = 2;
 
 //LD Montello
 //The lowest time you can reach
@@ -118,6 +118,7 @@ set_health = function(_health)
 	//make sure to clamp our max health.
 	mainPlayerHealth = clamp(mainPlayerHealth, 0, max_health);
 
+	
 	
 	if (instance_exists(obj_temp_gui))
 	{
@@ -231,6 +232,15 @@ calc_health = function()
 	//but scaled to the new max health.
 	//that way the health bar visual is the same.
 	mainPlayerHealth = floor(max_health * health_percent)
+	
+	 //LD Montello
+	 //Make health regen amount scale with the player's
+	 //current health.
+	 health_regen_amount = floor(0.01 * max_health);
+	 if (health_regen_amount < 1)
+	 {
+		 health_regen_amount = 1;
+	 }
 }
 
 get_xp_to_reach_level = function(_level)

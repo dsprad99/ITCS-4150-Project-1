@@ -79,6 +79,7 @@
     {"id":{"name":"obj_xp_bar","path":"objects/obj_xp_bar/obj_xp_bar.yy",},},
     {"id":{"name":"ps_melee_death","path":"particles/ps_melee_death/ps_melee_death.yy",},},
     {"id":{"name":"ps_tank_death","path":"particles/ps_tank_death/ps_tank_death.yy",},},
+    {"id":{"name":"rm_controls","path":"rooms/rm_controls/rm_controls.yy",},},
     {"id":{"name":"rm_credits","path":"rooms/rm_credits/rm_credits.yy",},},
     {"id":{"name":"rm_lose","path":"rooms/rm_lose/rm_lose.yy",},},
     {"id":{"name":"rm_main_game","path":"rooms/rm_main_game/rm_main_game.yy",},},
@@ -144,6 +145,7 @@
     {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
     {"roomId":{"name":"rm_lose","path":"rooms/rm_lose/rm_lose.yy",},},
     {"roomId":{"name":"rm_rules","path":"rooms/rm_rules/rm_rules.yy",},},
+    {"roomId":{"name":"rm_controls","path":"rooms/rm_controls/rm_controls.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
