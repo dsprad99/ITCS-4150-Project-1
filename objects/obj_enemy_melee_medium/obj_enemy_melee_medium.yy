@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_melee",
+  "%Name":"obj_enemy_melee_medium",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_enemy_melee",
+  "name":"obj_enemy_melee_medium",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"propertyId":{"name":"start_health","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"propertyId":{"name":"start_health","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"propertyId":{"name":"start_xp","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"5",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"propertyId":{"name":"start_damage","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"5",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"propertyId":{"name":"attack_interval","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"60",},
@@ -19,8 +17,8 @@
     "path":"folders/Objects/Enemies/Melee.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_tank",
-    "path":"objects/obj_enemy_tank/obj_enemy_tank.yy",
+    "name":"obj_enemy_melee_small",
+    "path":"objects/obj_enemy_melee_small/obj_enemy_melee_small.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

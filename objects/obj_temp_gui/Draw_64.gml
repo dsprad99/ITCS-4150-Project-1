@@ -95,7 +95,7 @@ var debug_lines = [
 
 "Press 5 to upgrade burst count: " + string(obj_player.bursts_per_interval),
 
-"Press 6 to upgrade movement: " + string(obj_player.baseSpeed), 
+"Press 6 to upgrade movement: " + string(obj_player.moveSpeed), 
 
 "Press 7 to refill health: " + string(obj_player.mainPlayerHealth),
 

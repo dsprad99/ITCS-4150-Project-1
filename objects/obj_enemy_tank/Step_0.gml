@@ -76,7 +76,9 @@ if (attack_timer <= 0) {
 		//Create bullet,
 		//passing our damage into the 
 		//created object's damage parameter.
-        var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy, {damage : damage});
+		//The bullet will be in the bullets layer
+		//so it can't be covered up by enemies.
+        var bullet = instance_create_layer(x, y, "Bullets", obj_bullet_enemy, {damage : damage});
         
 		//Davis Spradling
 		//Adjust bullet angle so not all bullets are stacked on top of each other

@@ -149,7 +149,13 @@ damage = 1 //* floor(power(2, floor(level / 4)));
 //called every level up.
 calc_damage = function()
 {
-	damage = 1 * floor(power(2, level / 4));
+	//LD Montello
+	//we no longer update the damage
+	//as it was to overpowered,
+	//in the future we'll probably
+	//add a modifier of some kind that lets
+	//you increase damage.
+	damage = 1 //* floor(power(2, level / 4));
 }
 
 //LD Montello

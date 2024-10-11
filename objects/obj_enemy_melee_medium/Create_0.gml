@@ -12,7 +12,7 @@ image_yscale = 5;
 //LD Montello
 //Scale enemy damage with wave
 //For now, we won't scale enemy damage with wave.
-damage = start_damage * floor(power(2, global.cur_wave / 10))
+damage = start_damage * floor(power(2, global.cur_wave / 5))
 
 
 //LD Montello
@@ -163,8 +163,8 @@ layer_background_yscale(grid_background_id, 2.5);
 //to make it look like the lines are glowing
 //because of the object's color.
 ug1 = layer_sprite_create(grid_id, x, y, spr_lime_underglow);
-layer_sprite_xscale(ug1, 5);
-layer_sprite_yscale(ug1, 5);
+layer_sprite_xscale(ug1, image_xscale);
+layer_sprite_yscale(ug1, image_yscale);
 
 #endregion
 

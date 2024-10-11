@@ -7,9 +7,6 @@
 image_xscale = 5;
 image_yscale = 5;
 
-//LD Montello
-//init damage inflicted by bullet
-bullet_damage = 1;
 
 //LD Montello
 //The amount of health this bullet has.

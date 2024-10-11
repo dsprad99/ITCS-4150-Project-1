@@ -96,11 +96,12 @@ else if (enemies_left_to_spawn > 0)
 			break;
 		}
 		
+
 		//if the wave count is greater than or at 15
 		//we have a chance to spawn 
 		//a tank instead of a melee enemy.
 		//basically, 1 in 10 chance to spawn a tank.
-		if (global.cur_wave >= 15 and floor(random_range(0, 10)) == 0)
+		if (global.cur_wave >= 10 and floor(random_range(0, 10)) == 0)
 		{
 			//spawn in the tank instance.
 			instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_tank);
@@ -108,8 +109,41 @@ else if (enemies_left_to_spawn > 0)
 		//only spawn melee enemies
 		else
 		{
-			//spawn in the melee instance.
-			instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_melee);
+			//if we are currently at wave 5 or less.
+			if (global.cur_wave <= 5)
+			{
+			
+				//Chance to spawn medium melee enemy
+				//1 in 5.
+				if (floor(random_range(0, 5)) == 0)
+				{
+					//spawn in the medium melee instance.
+					instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_melee_medium);
+				}
+				else
+				{
+					//spawn in the small melee instance.
+					instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_melee_small);	
+				}
+			
+			}
+			//otherwise spawn more medium enemies.
+			else
+			{
+				//Chance to spawn medium melee enemy
+				//is now 1/2 or a 50/50 chance.
+				if (random_range(0, 1) < 0.5)
+				{
+					//spawn in the medium melee instance.
+					instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_melee_medium);
+				}
+				else
+				{
+					//spawn in the small melee instance.
+					instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_melee_small);	
+				}
+			}
+			
 		}
 		
 		

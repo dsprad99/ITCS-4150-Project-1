@@ -36,7 +36,7 @@ for (var i = 0; i < player_bullets_fired; i++) {
 		//gun's origin that the bullet spawns at.
 		//We also pass the player's current damage value
 		//to the bullet.
-        var bullet = instance_create_layer(x + lengthdir_x(100 + gun_x_offset, gun_angle), y + gun_y_offset + lengthdir_y(100, gun_angle), "Instances", obj_bullet_player, {damage : damage});
+        var bullet = instance_create_layer(x + lengthdir_x(100 + gun_x_offset, gun_angle), y + gun_y_offset + lengthdir_y(100, gun_angle), "Bullets", obj_bullet_player, {bullet_damage : damage});
         
 		//Davis Spradling
 		//Adjust bullet angle so not all bullets are stacked on top of each other

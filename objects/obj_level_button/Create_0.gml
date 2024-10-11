@@ -40,7 +40,7 @@ var weapon_upgrades = [
 ];
 
 var other_upgrades = [
-	"Upgrade movement: " + string(obj_player.speed),
+	"Upgrade movement: " + string(obj_player.moveSpeed),
     "Refill health: " + string(obj_player.mainPlayerHealth),
 	"Upgrade Regen cooldown: " + string(obj_player.time_between_regens)
 ];

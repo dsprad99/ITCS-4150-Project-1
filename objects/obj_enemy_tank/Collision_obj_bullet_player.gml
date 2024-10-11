@@ -11,7 +11,7 @@ if (!array_contains(ignored_bullets, other))
 	//bullets have a damage
 	//variable and we'll grab that
 	//by referring to the keyword "other" which would be the bullet.
-	decrement_health(other.damage);
+	decrement_health(other.bullet_damage);
 
 	//LD Montello
 	//Decrement the bullet
