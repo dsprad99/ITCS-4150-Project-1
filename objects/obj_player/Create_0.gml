@@ -141,7 +141,9 @@ templevel = 0;
 //Level 4 = 4 damage
 //level 8 = 
 //We'll update this every time we level up.
-damage = 1 * floor(power(2, floor(level / 4)));
+//We don't need to increase damage,
+//this is good enough for how upgrades scale.
+damage = 1 //* floor(power(2, floor(level / 4)));
 
 //updates damage value,
 //called every level up.

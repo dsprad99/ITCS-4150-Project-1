@@ -78,7 +78,7 @@ if (place_meeting(x, y, obj_player))
 
 	//LD Montello
 	//If we are ready to attack
-	if (attack_timer <= 0) {
+	if (attack_timer <= 0 and global.game_state != GAME_STATE.PAUSED) {
 		//LD Montello
 		//Reset attack timer
 		attack_timer = attack_interval;
