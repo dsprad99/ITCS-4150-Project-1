@@ -101,6 +101,10 @@ var debug_lines = [
 
 "Press 8 to increase wave size: " + string(obj_spawner.cur_wave_size), 
 
+"Press 9 to decrease game speed fps: " + string(game_get_speed(gamespeed_fps)),
+
+"Press 0 to increase game speed fps: " + string(game_get_speed(gamespeed_fps))
+
 ]
 
 for (i = 0; i < array_length(debug_lines); i++)

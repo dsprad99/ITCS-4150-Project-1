@@ -19,5 +19,5 @@ resume_button_y_relative = y - obj_resume_button.y;
 
 //LD Montello,
 //Do the same as the resume button with the only quit button in this room.
-quit_button_x_relative = x - obj_killGame.x;
-quit_button_y_relative = y - obj_killGame.y;
+quit_button_x_relative = x - obj_goto_room_button.x;
+quit_button_y_relative = y - obj_goto_room_button.y;

@@ -19,5 +19,5 @@ obj_resume_button.y = y - resume_button_y_relative
 //LD Montello
 //Set the position of the quit button
 //to be relative to this object (the pause menu).
-obj_killGame.x = x - quit_button_x_relative;
-obj_killGame.y = y - quit_button_y_relative;
+obj_goto_room_button.x = x - quit_button_x_relative;
+obj_goto_room_button.y = y - quit_button_y_relative;

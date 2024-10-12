@@ -1,6 +1,9 @@
 /// @description Draw underglow & Animate GUI
 // You can write your code in this editor
 
+
+
+
 //LD Montello
 #region health bar fill animation
 
@@ -130,6 +133,23 @@ if (keyboard_check_pressed(ord("7")))
 if (keyboard_check_pressed(ord("8")))
 {
 	obj_spawner.increment_wave_size();
+}
+
+//Decrease game step speed
+if (keyboard_check_pressed(ord("9")))
+{
+	//only decrease speed if we're greater
+	//than 60 so that we can't set it to 0.
+	if (game_get_speed(gamespeed_fps) > 60)
+		game_set_speed(game_get_speed(gamespeed_fps) - 60, gamespeed_fps) 
+}
+//Increase game step speed
+if (keyboard_check_pressed(ord("0")))
+{
+	//only increase speed if we're less
+	//than 60 so that we can't set it to 0.
+	if (game_get_speed(gamespeed_fps) < 60000)
+		game_set_speed(game_get_speed(gamespeed_fps) + 60, gamespeed_fps) 
 }
 
 }

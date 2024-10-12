@@ -234,7 +234,7 @@ calc_health = function()
 	//based on level,
 	//your health raises exponentially
 	//every 5 levels.
-	max_health = 100 * floor(power(2, level / 5))
+	max_health = 75 * floor(power(2, level / 5))
 	//set the current health
 	//so that it's the same as the previous health
 	//but scaled to the new max health.
@@ -244,11 +244,11 @@ calc_health = function()
 	 //LD Montello
 	 //Make health regen amount scale with the player's
 	 //current health.
-	 health_regen_amount = floor(0.01 * max_health);
-	 if (health_regen_amount < 1)
-	 {
-		 health_regen_amount = 1;
-	 }
+	 health_regen_amount = 0.01 * max_health;
+	 //if (health_regen_amount == 0)
+	 //{
+		// health_regen_amount = 1;
+	 //}
 }
 
 get_xp_to_reach_level = function(_level)
@@ -527,6 +527,8 @@ layer_sprite_xscale(ug1, 5);
 layer_sprite_yscale(ug1, 5);
 
 #endregion
+
+calc_health();
 
 
 
