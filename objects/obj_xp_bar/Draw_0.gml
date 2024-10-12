@@ -42,7 +42,7 @@ bar_y =  camera_get_view_y(cam) + 995;
 
 
 
-draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, cur_xp_fill, c_black, c_white, c_white, 0, false, false);
+draw_healthbar(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, cur_xp_fill, c_black, c_white, c_white, 0, true, false);
 #endregion
 
 #region draw LVL. Text

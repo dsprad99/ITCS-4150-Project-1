@@ -8,6 +8,11 @@ cam = view_get_camera(0);
 #region xp bar fill
 
 //LD Montello
+//The remaining number of times
+//the xp bar must fill up
+remaining_anims = 0;
+
+//LD Montello
 //Fill percent of the xp bar
 xp_fill = 0;
 

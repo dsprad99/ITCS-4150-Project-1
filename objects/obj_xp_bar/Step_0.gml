@@ -1,13 +1,21 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//if (global.game_state == GAME_STATE.PAUSED)
+//{
+//	return;
+//}
+
 //LD Montello
 #region xp bar fill animation
 
 //LD Montello
 //Start the xp bar fill animation
-if (should_play_xp_lerp)
+if (should_play_xp_lerp)//array_length(arr_xpstructs) > 0 and !is_lerping_xp)
 {	
+	//pop one animation off of the queue.
+	//cur_xpstruct = array_pop(arr_xpstructs);
+	
 	//LD Montello.
 	//If we were already lerping xp,
 	//don't change the starting
@@ -21,15 +29,18 @@ if (should_play_xp_lerp)
 		//Reset to default start values for the animation.
 		//This will reset the animation if it plays back to back.
 		cur_xp_anim_time = 0;
-	
-		//LD Montello
-		//Set the last xp fill value so we start lerping from there
-		last_xp_fill = xp_fill
 	}
 	
 	//LD Montello
+	//Set the last xp fill value so we start lerping from there
+	//This always makes it look like the xp is "jumping"
+	//forward so that it stays caught up with the actual
+	//player's xp and doesn't fall behind.
+	last_xp_fill = xp_fill
+	
+	//LD Montello
 	//Set the new target xp fill
-	xp_fill = obj_player.xp / obj_player.get_xp_to_reach_level(obj_player.level + 1) * 100;
+	xp_fill = (obj_player.xp - obj_player.get_xp_to_reach_level(obj_player.level)) / (obj_player.get_xp_to_reach_level(obj_player.level + 1) - obj_player.get_xp_to_reach_level(obj_player.level)) * 100;
 	
 	//LD Montello
 	//Set the new total time for the lerp
@@ -43,6 +54,8 @@ if (should_play_xp_lerp)
 		cur_total_xp_anim_time = abs(total_xp_anim_time * (xp_fill / 100 - last_xp_fill / 100));
 		should_rollover_fill = true;
 	}
+	 
+	
 	
 	//LD Montello
 	//Say we are playing the animation.
@@ -52,6 +65,7 @@ if (should_play_xp_lerp)
 	//Say we shouldn't restart the animation.
 	should_play_xp_lerp = false;
 	
+	//if (should_rollover_fill = false)
 	last_level = obj_player.level;
 }
 
@@ -75,8 +89,13 @@ if (is_lerping_xp)
 		should_play_text_bounce = true;
 		should_rollover_fill = false;
 		last_xp_fill = 0;
-		xp_fill = obj_player.xp / obj_player.get_xp_to_reach_level(obj_player.level + 1) * 100;
+		//cur_xp_fill = 0;
+		//xp_fill = 0;
+		xp_fill = (obj_player.xp - obj_player.get_xp_to_reach_level(obj_player.level)) / (obj_player.get_xp_to_reach_level(obj_player.level + 1) - obj_player.get_xp_to_reach_level(obj_player.level)) * 100;
+		cur_xp_anim_time = 0;
 		cur_total_xp_anim_time = abs(total_xp_anim_time * (xp_fill / 100 - last_xp_fill / 100));
+		is_lerping_xp = false;
+		should_play_xp_lerp = true;
 	}
 	//LD Montello
 	//if we've reached the end of our lerp
@@ -97,13 +116,6 @@ if (is_lerping_xp)
 #endregion
 
 #region LVL. text bounce animation
-
-//LD Montello
-//Play text bounce if P is hit.
-if (keyboard_check_pressed(ord("P")))
-{
-	should_play_text_bounce = true;
-}
 
 //LD Montello
 //Start the text bounce animation
