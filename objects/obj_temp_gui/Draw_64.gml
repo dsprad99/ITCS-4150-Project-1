@@ -103,7 +103,9 @@ var debug_lines = [
 
 "Press 9 to decrease game speed fps: " + string(game_get_speed(gamespeed_fps)),
 
-"Press 0 to increase game speed fps: " + string(game_get_speed(gamespeed_fps))
+"Press 0 to increase game speed fps: " + string(game_get_speed(gamespeed_fps)),
+
+"Hold x to increase xp: " + string(obj_player.xp)
 
 ]
 

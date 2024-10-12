@@ -1,6 +1,18 @@
 /// @description Playermovement and RenderStep functions
 // You can write your code in this editor
 
+
+//LD Montello,
+//if we aren't in the level up menu or paused,
+//and we are in need of calling the level up script,
+//then let the player choose an upgrade,
+//this is so that if they level up multiple times too fast
+//they get back to back upgrades.
+if (upgrades_left > 0 and global.game_state != GAME_STATE.PAUSED){
+		upgrades_left--;
+		level_up()
+}
+
 //LD Montello
 //If the player is dead
 //and we aren't lerping the health bar anymore

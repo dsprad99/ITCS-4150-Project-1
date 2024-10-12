@@ -196,6 +196,12 @@ add_xp = function(_xp_to_add){
 
 
 //LD Montello
+//The levels we gained
+//but haven't gotten an upgrade
+//for yet.
+upgrades_left = 0;
+
+//LD Montello
 //This is where James 
 //can tweak the Leveling algorithm
 //I just setup the method for him.
@@ -214,10 +220,21 @@ calc_level = function(_xp){
 	//James Reneo
 	//Checks if there is a difference in level
 	//if yes then call level up function
-	if (templevel != level){
+	//LD Montello,
+	//if we are already in a level up menu,
+	//then don't call the level up code
+	//and add an upgrade to our reserve
+	//so we can give the player another
+	//upgrade after they decide on the current one.
+	if (templevel != level and global.game_state != GAME_STATE.PAUSED){
 		
 		level_up()
 	}
+	else if (templevel != level and global.game_state == GAME_STATE.PAUSED)
+	{
+		upgrades_left++;
+	}
+	
 	
 }
 

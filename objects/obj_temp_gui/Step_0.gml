@@ -152,6 +152,14 @@ if (keyboard_check_pressed(ord("0")))
 		game_set_speed(game_get_speed(gamespeed_fps) + 60, gamespeed_fps) 
 }
 
+//LD Montello
+//Increase xp by holding x
+//Used to text the visuals of the xp bar.
+if (keyboard_check(ord("X")))
+{
+	obj_player.add_xp(1);
+}
+
 }
 
 #endregion
