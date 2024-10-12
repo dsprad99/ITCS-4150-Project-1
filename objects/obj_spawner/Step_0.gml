@@ -96,12 +96,24 @@ else if (enemies_left_to_spawn > 0)
 			break;
 		}
 		
-
+		//LD Montello
 		//if the wave count is greater than or at 15
+		//we have a chance to spawn an eye enemy.
+		//1 in 75 chance to spawn an eye,
+		//per enemy spawned for all 15 * 5 = 75 enemies
+		//spawned starting at wave 15. 
+		//So, the first wave they can spawn will most likely contain
+		//1 and with each wave after they will spawn more frequently.
+		if (global.cur_wave >= 15 and  floor(random_range(0, 75)) == 0)
+		{
+			//spawn in the eye instance.
+			instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_eye);
+		}
+		//if the wave count is greater than or at 10
 		//we have a chance to spawn 
 		//a tank instead of a melee enemy.
 		//basically, 1 in 10 chance to spawn a tank.
-		if (global.cur_wave >= 10 and floor(random_range(0, 10)) == 0)
+		else if (global.cur_wave >= 10 and floor(random_range(0, 10)) == 0)
 		{
 			//spawn in the tank instance.
 			instance_create_layer(spawn_x, spawn_y, "Instances", obj_enemy_tank);

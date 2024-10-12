@@ -10,6 +10,12 @@ image_yscale = 5;
 //init damage inflicted by bullet
 damage = 1;
 
+//The time this bullet exists before despawning
+time_till_despawn = 500;
+
+//Start the alarm for despawning.
+alarm_set(0, time_till_despawn)
+
 #region underglow
 
 //LD Montello

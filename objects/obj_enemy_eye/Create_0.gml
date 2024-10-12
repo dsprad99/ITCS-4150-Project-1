@@ -1,18 +1,18 @@
 /// @description Create function for enemies
 // You can write your code in this editor
 
+//LD Montello
+//Our sprite needs to be
+//a scale of 5x5 so that
+//it is the same size as the other
+//32x32 sprites.
+image_xscale = 5;
+image_yscale = 5;
 
 //LD Montello
-//the fps of the tread animation.
-tread_anim_fps = 10;
-
-//LD Montello
-//The speed the tank treads will move at in FPS
-tread_anim_speed = tread_anim_fps / 60;
-
-//LD Montello
-//The current index of the tank tread animatino
-tread_anim_index = 0;
+//Scale enemy damage with wave
+//For now, we won't scale enemy damage with wave.
+damage = start_damage * floor(power(2, global.cur_wave / 5))
 
 
 //LD Montello
@@ -39,10 +39,6 @@ is_moving = function()
 //to start firing at them.
 enemy_fire_range = 600;
 
-//LD Montello
-//the distance to stop
-//moving towards the player
-target_stop_distance = 100;
 
 //LD Montello
 //the angle of the enemies gun.
@@ -54,7 +50,8 @@ gun_angle = direction;
 //set xp value based on wave.
 //Scaling is too complex for our time restraint,
 //so it is not included.
-xp = start_xp //* floor(power(2, global.cur_wave / 2))
+xp = start_xp //* floor(power(2, global.cur_wave / 10))
+
 
 //LD Montello
 //Health Scaling
@@ -63,14 +60,8 @@ xp = start_xp //* floor(power(2, global.cur_wave / 2))
 //exponentially as the waves increase.
 //Scaling is too complex for our time restraint,
 //so it is not included.
-_health = start_health //* floor(power(2, global.cur_wave / 10))
+_health = start_health //* floor(power(2, global.cur_wave / 2))
 
-//LD Montello
-//Scale enemy damage with wave
-//for now we won't scale damage with wave.
-//Scaling is too complex for our time restraint,
-//so it is not included.
-damage = start_damage * floor(power(2, global.cur_wave / 5))
 
 //LD Montello
 //Only modify health
@@ -82,7 +73,7 @@ decrement_health = function(damage)
 	
 	//LD Montello
 	//Create particle effect for taking damage
-	var flare = instance_create_layer(x, y, "FX", obj_magenta_flare, {parent : id})
+	var flare = instance_create_layer(x, y, "FX", obj_yellow_large_flare, {parent : id})
 	flare.image_xscale = 5;
 	flare.image_yscale = 5;
 	
@@ -116,7 +107,7 @@ decrement_health = function(damage)
 //LD Montello
 //Speed enemies move.
 start_speed = 3;
-end_speed = 5
+end_speed = 5;
 //lerp from our start to our end
 //using our cur_wave / global.waves
 //to get a 0-1 value for progress in the lerp.
@@ -134,11 +125,6 @@ attack_timer = 0;
 //Initialize how fast bullet will travel
 bullet_speed = 7;
 
-//LD Copied Davis's stuff.
-//Davis Spradling
-//Initalize number of bullets fired
-bullets_fired = 1
-
 
 kill = function()
 {
@@ -146,7 +132,7 @@ kill = function()
 		//Create particle effect to show
 		//we were killed. 
 		if (instance_exists(obj_particle_sys_controller))
-			obj_particle_sys_controller.play_particle_system(ps_tank_death, x, y);
+			obj_particle_sys_controller.play_particle_system(ps_yellow_large_death, x, y);
 		
 		//LD Montello
 		//find the player instance
@@ -176,9 +162,9 @@ layer_background_yscale(grid_background_id, 2.5);
 //the background and the grid
 //to make it look like the lines are glowing
 //because of the object's color.
-ug1 = layer_sprite_create(grid_id, x, y, spr_magenta_underglow);
-layer_sprite_xscale(ug1, 5);
-layer_sprite_yscale(ug1, 5);
+ug1 = layer_sprite_create(grid_id, x, y, spr_yellow_large_underglow);
+layer_sprite_xscale(ug1, image_xscale);
+layer_sprite_yscale(ug1, image_yscale);
 
 #endregion
 

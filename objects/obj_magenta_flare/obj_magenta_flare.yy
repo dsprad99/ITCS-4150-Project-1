@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_tank_flare",
+  "%Name":"obj_magenta_flare",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_tank_flare",
+  "name":"obj_magenta_flare",
   "overriddenProperties":[],
   "parent":{
     "name":"FX",

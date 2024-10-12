@@ -73,7 +73,7 @@ decrement_health = function(damage)
 	
 	//LD Montello
 	//Create particle effect for taking damage
-	var flare = instance_create_layer(x, y, "FX", obj_melee_flare, {parent : id})
+	var flare = instance_create_layer(x, y, "FX", obj_green_flare, {parent : id})
 	flare.image_xscale = 5;
 	flare.image_yscale = 5;
 	

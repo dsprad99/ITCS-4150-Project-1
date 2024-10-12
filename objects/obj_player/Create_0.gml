@@ -386,7 +386,7 @@ decrement_main_players_health = function(_damage){
 	//Create visual flare to give 
 	//player feedback and show that they
 	//are recieving damage.
-	var flare = instance_create_layer(x, y, "FX", obj_player_flare, {parent : id})
+	var flare = instance_create_layer(x, y, "FX", obj_cyan_flare, {parent : id})
 	flare.image_xscale = 5;
 	flare.image_yscale = 5;
 	

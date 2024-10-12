@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_player_flare",
+  "%Name":"obj_cyan_flare",
   "eventList":[],
   "managed":true,
-  "name":"obj_player_flare",
+  "name":"obj_cyan_flare",
   "overriddenProperties":[],
   "parent":{
     "name":"FX",
     "path":"folders/Objects/FX.yy",
   },
   "parentObjectId":{
-    "name":"obj_tank_flare",
-    "path":"objects/obj_tank_flare/obj_tank_flare.yy",
+    "name":"obj_magenta_flare",
+    "path":"objects/obj_magenta_flare/obj_magenta_flare.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
