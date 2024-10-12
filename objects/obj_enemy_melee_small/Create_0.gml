@@ -110,8 +110,8 @@ decrement_health = function(damage)
 
 //LD Montello
 //Speed enemies move.
-start_speed = 2;
-end_speed = 3;
+start_speed = 3;
+end_speed = 5;
 //lerp from our start to our end
 //using our cur_wave / global.waves
 //to get a 0-1 value for progress in the lerp.
