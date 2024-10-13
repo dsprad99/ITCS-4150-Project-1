@@ -28,7 +28,7 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"song","filters":[
         "GMSound",
-      ],"listItems":[],"multiselect":false,"name":"song","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"snd_main_music","path":"sounds/snd_main_music/snd_main_music.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"snd_main_music","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"song","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"snd_music_loop","path":"sounds/snd_music_loop/snd_music_loop.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"snd_music_loop","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

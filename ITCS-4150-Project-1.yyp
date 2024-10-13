@@ -101,7 +101,7 @@
     {"id":{"name":"snd_hit","path":"sounds/snd_hit/snd_hit.yy",},},
     {"id":{"name":"snd_laser_shoot","path":"sounds/snd_laser_shoot/snd_laser_shoot.yy",},},
     {"id":{"name":"snd_level_up","path":"sounds/snd_level_up/snd_level_up.yy",},},
-    {"id":{"name":"snd_main_music","path":"sounds/snd_main_music/snd_main_music.yy",},},
+    {"id":{"name":"snd_music_loop","path":"sounds/snd_music_loop/snd_music_loop.yy",},},
     {"id":{"name":"snd_nextWave","path":"sounds/snd_nextWave/snd_nextWave.yy",},},
     {"id":{"name":"bullet_sprite","path":"sprites/bullet_sprite/bullet_sprite.yy",},},
     {"id":{"name":"checkered_sprite","path":"sprites/checkered_sprite/checkered_sprite.yy",},},
