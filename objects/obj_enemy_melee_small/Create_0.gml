@@ -10,8 +10,8 @@
 //they wanted the size to be changed.
 //I need to make a 16x16 px sprite
 //to replace this if I have time.
-image_xscale = 3;
-image_yscale = 3;
+image_xscale = 5;
+image_yscale = 5;
 
 //LD Montello
 //Scale enemy damage with wave
@@ -166,7 +166,7 @@ layer_background_yscale(grid_background_id, 2.5);
 //the background and the grid
 //to make it look like the lines are glowing
 //because of the object's color.
-ug1 = layer_sprite_create(grid_id, x, y, spr_lime_underglow);
+ug1 = layer_sprite_create(grid_id, x, y, spr_lime_underglow_small);
 layer_sprite_xscale(ug1, image_xscale);
 layer_sprite_yscale(ug1, image_yscale);
 

@@ -40,8 +40,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_squid_enemy",
-    "path":"sprites/spr_squid_enemy/spr_squid_enemy.yy",
+    "name":"spr_squid_enemy_small",
+    "path":"sprites/spr_squid_enemy_small/spr_squid_enemy_small.yy",
   },
   "spriteMaskId":null,
   "visible":true,
