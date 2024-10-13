@@ -10,6 +10,7 @@
     {"name":"inst_461BFC94","path":"rooms/rm_rules/rm_rules.yy",},
     {"name":"inst_1C45675E","path":"rooms/rm_rules/rm_rules.yy",},
     {"name":"inst_5E26B6A4","path":"rooms/rm_rules/rm_rules.yy",},
+    {"name":"inst_5E3ECDB","path":"rooms/rm_rules/rm_rules.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -19,13 +20,17 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_goto_room_button","path":"objects/obj_goto_room_button/obj_goto_room_button.yy",},"propertyId":{"name":"room_to_goto","path":"objects/obj_goto_room_button/obj_goto_room_button.yy",},"resource":{"name":"rm_controls","path":"rooms/rm_controls/rm_controls.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_controls",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":6.25,"scaleY":2.34375,"x":760.0,"y":915.0,},
         {"$GMRInstance":"v1","%Name":"inst_1C45675E","colour":4294314751,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1C45675E","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"properties":[
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"propertyId":{"name":"text","path":"objects/obj_text/obj_text.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Reach Level 50",},
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"propertyId":{"name":"font_size","path":"objects/obj_text/obj_text.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
-          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":544.0,},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"propertyId":{"name":"text","path":"objects/obj_text/obj_text.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Reach Wave 50",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"propertyId":{"name":"font_size","path":"objects/obj_text/obj_text.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"48/72",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":444.0,},
         {"$GMRInstance":"v1","%Name":"inst_5E26B6A4","colour":4294314751,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5E26B6A4","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"propertyId":{"name":"text","path":"objects/obj_text/obj_text.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Level up, Gain upgrades",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"propertyId":{"name":"font_size","path":"objects/obj_text/obj_text.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"48/72",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":572.0,},
+        {"$GMRInstance":"v1","%Name":"inst_5E3ECDB","colour":4294314751,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5E3ECDB","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"propertyId":{"name":"text","path":"objects/obj_text/obj_text.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Defeat malware",},
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"propertyId":{"name":"font_size","path":"objects/obj_text/obj_text.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
-          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":640.0,},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"propertyId":{"name":"font_size","path":"objects/obj_text/obj_text.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"48/72",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":700.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_rules_screen","path":"sprites/spr_rules_screen/spr_rules_screen.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
