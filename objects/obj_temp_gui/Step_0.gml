@@ -140,8 +140,8 @@ if (keyboard_check_pressed(ord("9")))
 {
 	//only decrease speed if we're greater
 	//than 60 so that we can't set it to 0.
-	if (game_get_speed(gamespeed_fps) > 60)
-		game_set_speed(game_get_speed(gamespeed_fps) - 60, gamespeed_fps) 
+	if (game_get_speed(gamespeed_fps) > 30)
+		game_set_speed(game_get_speed(gamespeed_fps) - 30, gamespeed_fps) 
 }
 //Increase game step speed
 if (keyboard_check_pressed(ord("0")))

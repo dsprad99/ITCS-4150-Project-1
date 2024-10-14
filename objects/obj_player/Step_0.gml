@@ -21,6 +21,74 @@ if (mainPlayerHealth <= 0 and !obj_temp_gui.is_lerping_health)
 {
 	kill();
 }
+//James Reneo
+//Dash Handling
+
+if (keyboard_check_pressed(vk_space) && dash_cooldown <= 0 && !dash_active) {
+    dash_active = true;
+    dash_cooldown = 120; // Set cooldown duration (in steps)
+    moveSpeed = moveSpeed * dash_mult; // Set dash speed
+	
+	audio_play_sound_on(global.sfx_emitter, snd_dash, false, 1,1,0,global.soundSpeed)
+	if (instance_exists(obj_particle_sys_controller))
+			obj_particle_sys_controller.play_particle_system(ps_dash, x, y);
+}
+
+
+if (dash_active) {
+    // Check if dash duration is over
+    if (dash_duration <= 0) {
+        dash_active = false; // End dash
+        moveSpeed = moveSpeed/dash_mult;
+    } else {
+        dash_duration -= 1; // Decrease duration
+    }
+}
+
+// Cooldown management
+if (dash_cooldown > 0) {
+    dash_cooldown -= 1; // Decrease cooldown
+}
+
+if (!dash_active) {
+    dash_duration = 20; // Reset for next use
+}
+
+
+//James Reneo
+//Slow-mo Handler
+// Check for R press
+if (keyboard_check_pressed(ord("R")) && !is_slow_motion) {
+    is_slow_motion = true; // Activate slow motion
+    slow_motion_duration = 100; // Duration in steps (2 seconds at normal speed)
+	
+	fx_set_parameter(fx_struct,"g_Intensity",.4);
+}
+
+// Manage slow motion duration
+if (is_slow_motion) {
+    slow_motion_duration -= 1; // Decrease duration counter
+
+    if (slow_motion_duration <= 0) {
+		
+        is_slow_motion = false; // Deactivate slow motion
+    }
+}
+
+if (!is_slow_motion && game_get_speed(gamespeed_fps) < 60){
+	game_set_speed(game_get_speed(gamespeed_fps) + 1, gamespeed_fps) 
+	fx_intensity = fx_intensity - .015
+}
+
+
+
+if (is_slow_motion && game_get_speed(gamespeed_fps) > 30){
+	game_set_speed(game_get_speed(gamespeed_fps) - 1, gamespeed_fps) 
+	fx_intensity = fx_intensity + .015
+}
+
+fx_set_parameter(fx_struct,"g_Intensity",fx_intensity);
+
 
 //Davis Spradling
 //Create variables to control player movement through keys.

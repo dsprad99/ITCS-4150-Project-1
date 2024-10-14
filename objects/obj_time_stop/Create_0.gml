@@ -3,6 +3,14 @@
 
 //James Reneo
 //Code for pausing the game
+soundlist = {}
+soundlist[0] = snd_dash
+soundlist[1] = snd_explosion_hit2
+soundlist[2] = snd_hit
+soundlist[3] = snd_laser_shoot
+soundlist[4] = snd_level_up
+soundlist[5] = snd_music_loop
+soundlist[6] = snd_nextWave
 
 pause_game = function(){
 	if (global.game_state == GAME_STATE.RUNNING){

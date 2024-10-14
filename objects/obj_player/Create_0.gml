@@ -40,6 +40,21 @@ image_yscale = y_sprite_size;
 //Initalize player moveSpeed (how fast they are)
 moveSpeed = 4;
 
+//James Reneo
+//Dash variables
+//INITIALIZES THEM, THEY WILL NEED TO CHANGED IN STEP EVENT
+dash_cooldown = 0;  // Cooldown timer
+dash_duration = 40; // Number of steps the dash lasts
+dash_active = false; // Whether the dash is currently active
+dash_mult = 4; //The amount moveSpeed is multiplied by
+
+//James Reneo
+//Slow-mo variables
+is_slow_motion = false; // Flag for slow motion
+slow_motion_duration = 0; // Duration counter
+fx_struct = layer_get_fx("EffectLayer");
+fx_intensity = 0;
+
 //LD Montello
 //the base move speed from
 //the start of the game.

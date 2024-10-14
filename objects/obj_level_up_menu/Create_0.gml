@@ -28,8 +28,5 @@ for (var j = 0; j < num_buttons; j++) {
 	//this object.
 	button.depth = depth - 1;
  
-	show_debug_message("ARE U KIDDING")
-    // Set button properties
-	
 }
 
