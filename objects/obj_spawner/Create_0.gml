@@ -123,6 +123,7 @@ spawn_wave_on_edge = function(wave_size)
 	//LD Montello
 	//when we reach
 	//this wave we have won.
+	//global.waves_to_win
 	if (global.cur_wave > global.waves_to_win)
 	{
 		win_condition_reached();
