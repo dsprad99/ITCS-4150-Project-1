@@ -28,7 +28,7 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"room_to_goto","filters":[
         "GMRoom",
-      ],"listItems":[],"multiselect":false,"name":"room_to_goto","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_main_game","path":"rooms/rm_main_game/rm_main_game.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_main_game","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"room_to_goto","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_start","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

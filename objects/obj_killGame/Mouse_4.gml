@@ -3,5 +3,4 @@
 
 //Davis Spradling
 //Exit to the main menu instead of killing the game.
-global.reset_global_vars()
-room_goto(rm_start)
+game_end();
