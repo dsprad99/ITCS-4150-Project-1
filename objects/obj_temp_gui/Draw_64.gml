@@ -28,24 +28,6 @@ draw_text_transformed_color(200, 870, "Wave: " + string(global.cur_wave),  24 / 
 draw_text_transformed_color(210, 970, "Health",  24 / 72, 24 / 72, 0, c_white, c_white, c_white, c_white, 1);
 
 
-//Davis Spradling
-//Draw the Jump Regen text 
-draw_text_transformed_color(190, 90, "Jump Regen",  24 / 72, 24 / 72, 0, c_white, c_white, c_white, c_white, 1);
-
-//Davis Spradling
-//Draw the regen bar that calculates regen time left
-var x_regen=340;       
-var y_regen=75;        
-var width_regen = 200;  
-var height_regen = 30;  
-draw_set_color(c_black); 
-//This will act as a constant background the bar that moves 
-draw_rectangle(x_regen, y_regen, x_regen + width_regen, y_regen+height_regen, false);
-var cooldown_ratio = obj_player.dash_cooldown/120; 
-draw_set_color(c_green); 
-//This is the part that will move according to cool down value which is generated through a ratio
-draw_rectangle(x_regen, y_regen, x_regen+(1-cooldown_ratio)*width_regen, y_regen+height_regen, false);
-
 //LD Montello
 //the fill value
 //is expressed as a ratio

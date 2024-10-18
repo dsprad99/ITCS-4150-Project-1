@@ -69,3 +69,41 @@ draw_set_font(-1)
 
 #endregion
 
+#region Draw dash regen
+
+
+//LD Montello
+//Set the font
+//Make the text pivot be the center of the text.
+draw_set_font(fnt_gamecuben)
+draw_set_halign(fa_center)
+draw_set_valign(fa_middle)
+
+var dash_regen_x = camera_get_view_x(cam) + 800;
+var dash_regen_y = camera_get_view_y(cam) + 890;
+
+//Davis Spradling
+//Draw the Jump Regen text 
+draw_text_transformed_color(dash_regen_x, dash_regen_y, "Dash Regen",  24 / 72, 24 / 72, 0, c_white, c_white, c_white, c_white, 1);
+
+//Davis Spradling
+//Draw the regen bar that calculates regen time left
+var x_regen=dash_regen_x+150;       
+var y_regen=dash_regen_y-15;        
+var width_regen = 200;  
+var height_regen = 30;  
+draw_set_color(c_black); 
+//This will act as a constant background the bar that moves 
+draw_rectangle(x_regen, y_regen, x_regen + width_regen, y_regen+height_regen, false);
+var cooldown_ratio = obj_player.dash_cooldown/120; 
+draw_set_color(c_green); 
+//This is the part that will move according to cool down value which is generated through a ratio
+draw_rectangle(x_regen, y_regen, x_regen+(1-cooldown_ratio)*width_regen, y_regen+height_regen, false);
+
+//Go back to default alignment.
+draw_set_valign(-1)
+draw_set_halign(-1)
+//Go back to default font
+draw_set_font(-1)
+
+#endregion
