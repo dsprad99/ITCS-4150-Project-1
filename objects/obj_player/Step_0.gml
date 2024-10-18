@@ -87,7 +87,7 @@ if (is_slow_motion && game_get_speed(gamespeed_fps) > 30){
 	fx_intensity = fx_intensity + .015
 }
 
-fx_set_parameter(fx_struct,"g_Intensity",fx_intensity);
+fx_set_parameter(fx_struct,"g_Intensity", clamp(fx_intensity, 0, 0.45));
 
 
 //Davis Spradling
